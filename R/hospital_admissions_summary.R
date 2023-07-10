@@ -1,10 +1,10 @@
 
-create_hospital_admissions_plot <- function(data, admission_type, health_board){
+create_hospital_admissions_plot <- function(data, admission_type_input, health_board){
   
   data %>% 
     filter(
       !is.na(age_group_qf) & !is.na(sex_qf) & # remove lines for different ages and sexes
-        admission_type == admission_type & # filter by type
+        admission_type == admission_type_input & # filter by type
         hb_name == health_board # filter by area
     ) %>% 
     group_by(week_ending) %>% 
