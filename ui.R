@@ -11,10 +11,24 @@ ui <- fluidPage(
          # plot admission over time 
        )
        ),
+       # plot percentages 
+       
+       #buttons for second plot
        
        fluidRow(column(
+         width = 3,
+         selectInput("hb",
+                     "Health Board",
+                     choices = hb_names),
+           
+         )
+       ),
+       
+       #precent plot
+       fluidRow(column(
          width = 6,
-         # plot percentages 
+         plotOutput("pre_plot")
+        
        ),
        column(
          width = 6,

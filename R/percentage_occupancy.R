@@ -1,5 +1,5 @@
 percentage_occupancy <- function(data, input_hb) {
-  beds_clean %>%
+  beds %>%
     mutate(year_q = str_c(year, quarter, sep = " Q", collapse = NULL)) %>%      filter(specialty_name == "All Acute") %>%
     filter(hb_name == input_hb) %>%
     group_by(year_q) %>%
