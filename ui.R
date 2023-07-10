@@ -36,7 +36,7 @@ ui <- fluidPage(
        
        fluidRow(
          width = 12,
-         
+         #map
          
        )
        
