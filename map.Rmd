@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(broom)
+library(tidyverse)
+library(rgdal)
+```
+```{r}
+health_boards_shapes <- readOGR(dsn = "raw_data/map_files/", 
+                     layer = "SG_NHS_HealthBoards_2019")
+
+beds_clean <- read_csv("clean_data/clean_bed_data")
+```
+
+
+```{r}
+health_boards_shapes_cleanish <- tidy(health_boards_shapes)
+health_boards_shapes$id <- row.names(health_boards_shapes)
+health_boards_shapes_cleanish <- left_join(health_boards_shapes_cleanish, health_boards_shapes@data)
+```
+
+```{r}
+
+
+beds_clean <- beds_clean %>% 
+    filter(specialty_name == "All Acute") %>% 
+  select(year,quarter,all_staffed_beddays,hb_name,specialty_name)
+```
+
+```{r}
+beds_clean <- beds_clean %>% 
+  na.omit() %>% 
+  rename(HBName = hb_name)
+
+beds_clean$HBName <- sub("^NHS ", "", beds_clean$HBName)
+  
+```
+
+```{r}
+map_data <- merge(health_boards_shapes_cleanish, beds_clean, by = "HBName", all.x = TRUE)
+```
+
+```{r}
+ggplot(map_data, aes(x = long, y = lat, group = group, fill = all_staffed_beddays)) +
+  geom_polygon(color = "black", size = 0.1) +
+  coord_equal() +
+  theme_void() +
+  labs(title = "Bed Availability by Region") +
+  theme(plot.title = element_text(margin = margin(t = 40, b = -40)))
+```
+
+
