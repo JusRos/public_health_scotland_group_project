@@ -31,7 +31,7 @@ map_data <- merge(health_boards_shapes_cleanish, beds_clean, by = "HBName", all.
 
 # UI
 ui <- fluidPage(
-  titlePanel("Filtered ggplot"),
+  titlePanel("title"),
   sidebarLayout(
     sidebarPanel(
       radioButtons("yearFilter", "Filter by Year:", choices = unique(map_data$year), selected = unique(map_data$year)[1]),
