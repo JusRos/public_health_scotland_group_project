@@ -7,6 +7,17 @@ ui <- fluidPage(
     tabPanel(
       "Meh",
       
+      #buttons for winter 
+      radioButtons("alpha_on",
+                       "Winter", 
+                      choices = c("Off" = 0, "On" = 0.3),
+                      
+                     
+          
+        ), 
+      
+      
+      
       # Inputs for hospital admissions over time plot --------------
       fluidRow(
         # Select Health Board
