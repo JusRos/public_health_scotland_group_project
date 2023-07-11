@@ -120,4 +120,8 @@ age_and_sex %>% filter(HBName == "NHS Ayrshire and Arran" & Sex == "Female" & Ag
     
   )
 ```
+```{r}
+hb_names <- sort(unique(beds$hb_name))
+
+```
 

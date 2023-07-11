@@ -17,12 +17,12 @@ source("R/hospital_admissions_summary.R")
 length_of_stay_data <- read_csv("clean_data/length_of_stay_data.csv")
 age_group_list <- sort(unique((length_of_stay_data$age)))
 length_health_board_list <- sort(unique(length_of_stay_data$hb_name))
-sex_list <- unique(length_of_stay_data$sex)
 source("R/length_of_stay.R")
 
 
 # age and sex data --------------
 age_and_sex <- read_csv("clean_data/age_and_sex.csv")
+
 
 # simd data
 
