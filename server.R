@@ -19,7 +19,8 @@ server <- function(input, output, session){
                              input$length_health_board_input,
                              input$length_admission_type_input,
                              input$age_input,
-                             input$sex_input)
+                             input$sex_input,
+                             input$alpha_on)
   })
 
   
