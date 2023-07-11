@@ -3,7 +3,7 @@ library(tidyverse)
 
 # Percent plot -------------
 beds <- read_csv("clean_data/clean_bed_data")
-hb_names <- unique(beds$hb_name)
+hb_names <- sort(unique(beds$hb_name))
 
 source("R/percentage_occupancy.R")
 
