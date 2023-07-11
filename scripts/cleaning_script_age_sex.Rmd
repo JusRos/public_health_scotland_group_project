@@ -16,7 +16,9 @@ hb_codes <- read_csv("../raw_data/health_board.csv") %>% select(HB, HBName)
 age_and_sex <- age_and_sex %>% 
   filter(!is.na(HBQF) & AdmissionType == "Elective Inpatients" | AdmissionType == " Elective Emergency Inpatients"| AdmissionType == "Transfer") %>% 
   left_join(hb_codes, by = "HB")
-age_and_sex <- age_and_sex %>% mutate(Date = as_date(yq(Quarter, quiet = FALSE, tz = NULL)))
+age_and_sex <- age_and_sex %>% 
+  mutate(Year = substr(Quarter, 1, 4),
+       Quarter_single = substr(Quarter, 5, 6))
 
 write_csv(age_and_sex, file = "../clean_data/clean_age_and_sex.csv")
 
