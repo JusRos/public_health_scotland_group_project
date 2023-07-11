@@ -2,21 +2,18 @@ ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
   
-  #buttons for winter 
-  radioButtons("alpha_on",
-               "Winter", 
-               choices = c("Off" = 0, "On" = 0.3),
-               inline = TRUE ), 
-               
+  checkboxInput("winter_shading",
+               "Winter",
+               FALSE),
   
   tabsetPanel(
     tabPanel(
       "Meh",
       
       
-                     
-          
-       
+      
+      
+      
       
       
       
@@ -81,10 +78,10 @@ ui <- fluidPage(
         column(
           width = 3,
           radioButtons("length_admission_type_input",
-                      "Admission Type",
-                      c("Emergency Inpatients",
-                        "Elective Inpatients",
-                        "All Inpatients"))
+                       "Admission Type",
+                       c("Emergency Inpatients",
+                         "Elective Inpatients",
+                         "All Inpatients"))
         ),
         
         column(
@@ -97,8 +94,8 @@ ui <- fluidPage(
         column(
           width = 3,
           radioButtons("sex_input",
-                      "Sex",
-                      sex_list)
+                       "Sex",
+                       sex_list)
         )
       ),
       
@@ -115,21 +112,21 @@ ui <- fluidPage(
     ),
     
     
-  
-  tabPanel( #map tab
-    "Map",
     
-    fluidRow(
-      width = 12,
+    tabPanel( #map tab
+      "Map",
       
-      selectInput("hb",
-                  "Health Board",
-                  choices = hb_names),
+      fluidRow(
+        width = 12,
+        
+        selectInput("hb",
+                    "Health Board",
+                    choices = hb_names),
+        
+        plotOutput("pre_plot")
+        
+        
+      )
       
-      plotOutput("pre_plot")
-      
-      
-    )
-    
-  ))
+    ))
 )
