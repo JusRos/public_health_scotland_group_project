@@ -9,7 +9,7 @@ health_boards <- clean_names(read_csv(here("raw_data/health_board.csv"))) %>%
 covid_admissions_clean <- covid_admissions %>% 
   left_join(health_boards, by = "hb") %>% 
   mutate(week_ending = ymd(week_ending),
-         hb_name = coalesce(hb_name, "All"),
+         hb_name = coalesce(hb_name, "All Scotland"),
          admission_type = coalesce(admission_type, "All"),
          month = month(week_ending, label = TRUE),
          year = year(week_ending))

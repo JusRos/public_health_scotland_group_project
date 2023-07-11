@@ -181,5 +181,8 @@ covid_admissions <- read_csv(here("clean_data/hospital_admissions_postcovid.csv"
 ```{r}
 covid_admissions %>% 
   filter(month(week_ending) == 4 & year(week_ending) == 2020)
+
+covid_admissions %>% 
+  distinct(hb)
 ```
 
