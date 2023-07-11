@@ -10,7 +10,7 @@ server <- function(input, output, session){
   
   output$pre_plot <- renderPlot({
     percentage_occupancy(data = beds(),
-                         input_hb = input$health_board_input,
+                         input_hb = input$hb,
                          input_alpha = alpha_on())
     
   })
@@ -19,7 +19,7 @@ server <- function(input, output, session){
   output$admissions_plot <- renderPlot({
     create_hospital_admissions_plot(covid_admissions,
                                     input$admission_type_input,
-                                    input$hb,
+                                    input$health_board_input,
                                     alpha_on())
 
   })
