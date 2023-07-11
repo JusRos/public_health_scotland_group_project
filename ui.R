@@ -71,7 +71,9 @@ ui <- fluidPage(
           width = 3,
           radioButtons("length_admission_type_input",
                       "Admission Type",
-                      c("Emergency Inpatients", "Elective Inpatients"))
+                      c("Emergency Inpatients",
+                        "Elective Inpatients",
+                        "All Inpatients"))
         ),
         
         column(
