@@ -21,7 +21,7 @@ simd <- simd %>%
   mutate(Year = substr(Quarter, 1, 4),
        Quarter_single = substr(Quarter, 5, 6))
 
-simd <-  left_join(simd, hb_codes, by = "HB")
+simd <-  left_join(simd, hb_codes, by = "HB") %>% simd <- simd %>% drop_na(SIMD)
 
 simd <- simd %>% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
 

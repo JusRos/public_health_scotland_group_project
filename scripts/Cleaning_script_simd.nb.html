@@ -1754,34 +1754,96 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KHNraW1yKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGhlcmUpXG5cbmhlcmU6OiBoZXJlXG5zaW1kIDwtIHJlYWRfY3N2KFwiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2XCIpXG5oYl9jb2RlcyA8LSByZWFkX2NzdihcIi4uL3Jhd19kYXRhL2hlYWx0aF9ib2FyZC5jc3ZcIikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKVxuc2tpbShzaW1kKVxuXG5zaW1kIDwtIHNpbWQgJT4lIFxuICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIFxuICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSBcIkVsZWN0aXZlIElucGF0aWVudHNcIiB8IEFkbWlzc2lvblR5cGUgPT0gXCJFbWVyZ2VuY3kgSW5wYXRpZW50c1wiKSAlPiVcbiAgbXV0YXRlKFllYXIgPSBzdWJzdHIoUXVhcnRlciwgMSwgNCksXG4gICAgICAgUXVhcnRlcl9zaW5nbGUgPSBzdWJzdHIoUXVhcnRlciwgNSwgNikpXG5cbnNpbWQgPC0gIGxlZnRfam9pbihzaW1kLCBoYl9jb2RlcywgYnkgPSBcIkhCXCIpXG5cbnNpbWQgPC0gc2ltZCAlPiUgc2VsZWN0KFF1YXJ0ZXIsIFllYXIsIFF1YXJ0ZXJfc2luZ2xlLCBIQk5hbWUsIEFkbWlzc2lvblR5cGUsIFNJTUQsIEVwaXNvZGVzLCBMZW5ndGhPZkVwaXNvZGUsIEF2ZXJhZ2VMZW5ndGhPZkVwaXNvZGUsIFN0YXlzLCBMZW5ndGhPZlN0YXksIEF2ZXJhZ2VMZW5ndGhPZlN0YXkpXG5cblxud3JpdGVfY3N2KHNpbWQsIGZpbGUgPSBcIi4uL2NsZWFuX2RhdGEvc2ltZF9jbGVhbi5jc3ZcIilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KHNraW1yKVxuYGBgIn0= -->
 <pre class="r"><code>library(tidyverse)
 library(ggplot2)
-library(skimr)
-library(lubridate)
+library(skimr)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhza2ltcuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4zXG4ifQ== -->
+<pre><code>Warning: package ‘skimr’ was built under R version 4.2.3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGhlcmUpXG5cbmhlcmU6OiBoZXJlXG5gYGAifQ== -->
+<pre class="r"><code>library(lubridate)
 library(here)
 
-here:: here
-simd &lt;- read_csv(&quot;../raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_and_simd.csv&quot;)
-hb_codes &lt;- read_csv(&quot;../raw_data/health_board.csv&quot;) %&gt;% select(HB, HBName)
-skim(simd)
-
-simd &lt;- simd %&gt;% 
+here:: here</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiZnVuY3Rpb24gKC4uLikgXG57XG4gICAgLnJvb3RfZW52JHJvb3QkZiguLi4pXG59XG48Ynl0ZWNvZGU6IDB4MDAwMDAyMmIzYmIwODRkMD5cbjxlbnZpcm9ubWVudDogbmFtZXNwYWNlOmhlcmU+XG4ifQ== -->
+<pre><code>function (...) 
+{
+    .root_env$root$f(...)
+}
+&lt;bytecode: 0x0000022b3bb084d0&gt;
+&lt;environment: namespace:here&gt;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2ltZCA8LSByZWFkX2NzdihcIi4uL3Jhd19kYXRhL2lucGF0aWVudF9hbmRfZGF5Y2FzZV9ieV9uaHNfYm9hcmRfb2ZfdHJlYXRtZW50X2FuZF9zaW1kLmNzdlwiKVxuYGBgIn0= -->
+<pre class="r"><code>simd &lt;- read_csv(&quot;../raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_and_simd.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNDA2MzIgQ29sdW1uczogMTjilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgKDExKTogUXVhcnRlciwgUXVhcnRlclFGLCBIQiwgSEJRRiwgTG9jYXRpb24sIExvY2F0aW9uUUYsIEFkbWlzc2lvblR5cGUsIEFkbWlzLi4uXG5kYmwgICg3KTogU0lNRCwgRXBpc29kZXMsIExlbmd0aE9mRXBpc29kZSwgQXZlcmFnZUxlbmd0aE9mRXBpc29kZSwgU3RheXMsIExlbmd0aE9mLi4uXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
+<pre><code>Rows: 40632 Columns: 18── Column specification ──────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (11): Quarter, QuarterQF, HB, HBQF, Location, LocationQF, AdmissionType, Admis...
+dbl  (7): SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOf...
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGJfY29kZXMgPC0gcmVhZF9jc3YoXCIuLi9yYXdfZGF0YS9oZWFsdGhfYm9hcmQuY3N2XCIpICU+JSBzZWxlY3QoSEIsIEhCTmFtZSlcbmBgYCJ9 -->
+<pre class="r"><code>hb_codes &lt;- read_csv(&quot;../raw_data/health_board.csv&quot;) %&gt;% select(HB, HBName)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMTggQ29sdW1uczogNuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoMyk6IEhCLCBIQk5hbWUsIENvdW50cnlcbmRibCAoMyk6IF9pZCwgSEJEYXRlRW5hY3RlZCwgSEJEYXRlQXJjaGl2ZWRcbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
+<pre><code>Rows: 18 Columns: 6── Column specification ──────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (3): HB, HBName, Country
+dbl (3): _id, HBDateEnacted, HBDateArchived
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2tpbShzaW1kKVxuYGBgIn0= -->
+<pre class="r"><code>skim(simd)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIERhdGEgU3VtbWFyeSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIFZhbHVlc1xuTmFtZSAgICAgICAgICAgICAgICAgICAgICAgc2ltZCAgXG5OdW1iZXIgb2Ygcm93cyAgICAgICAgICAgICA0MDYzMiBcbk51bWJlciBvZiBjb2x1bW5zICAgICAgICAgIDE4ICAgIFxuX19fX19fX19fX19fX19fX19fX19fX18gICAgICAgICAgXG5Db2x1bW4gdHlwZSBmcmVxdWVuY3k6ICAgICAgICAgICBcbiAgY2hhcmFjdGVyICAgICAgICAgICAgICAgIDExICAgIFxuICBudW1lcmljICAgICAgICAgICAgICAgICAgNyAgICAgXG5fX19fX19fX19fX19fX19fX19fX19fX18gICAgICAgICBcbkdyb3VwIHZhcmlhYmxlcyAgICAgICAgICAgIE5vbmUgIFxuIn0= -->
+<pre><code>── Data Summary ────────────────────────
+                           Values
+Name                       simd  
+Number of rows             40632 
+Number of columns          18    
+_______________________          
+Column type frequency:           
+  character                11    
+  numeric                  7     
+________________________         
+Group variables            None  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbIm9uZV9za2ltX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxMSwibmNvbCI6OCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxMSDDlyA4Il19fSwicmRmIjoiSDRzSUFBQUFBQUFBQnExVXoydlVRQlNlcHNudVpwZit3Rkx4VVArRUxxMVNXa1ZZVzJxcHRLSzFGWG95blNhenUwT1RTWnFadEYzMTBJc0tIanpxb2VoSndhTkh2UWtLSHZSWTd5SW9lUFBpdGV0TU1wUGRIVVVVR2tqZWU5OTg4eWJ2elRkemZYNzliSG05REFEb0I2WmhnSDZMdThDNnNiWXdQZ000d29NK1lBSmIyRDFPR3VGT2liL0QvSzNJZ2VKS0FtT0dZaG5hTWx4WmtJQ3hPQ2M5YzNFdVIwdkxvUXNaRG9tTXl5ck9HUU96WG9BcDVkQmFLMElTSE9vQmMyNWg5ZktWK1R3Nk5idURZdGhBeTRnMFdQTnEvVktFYWVoMTJLUGErQ3FETFQ3SWwwekxTcC9IRTVrOVdNZ3N2cDlaM3dUZ3dUTUE3bjBBNEhiQ2dVRXhwL1lqRzYyOVdHcHN2TDV6TVk4Zm5iODVjUEFONVBHbitOMW45R1FzancrM3Y5ODkvWEs0OW1aeTh2bjd5b1hhMjZXSEoyOTl1VmI3R0g1MUsvWmgxejhWMHIzb1dFdGFXOXJ1VjU5amEzYnNMM1ArNTFGelJtV09FOUpPUzFzOG5uVjZkR2dSR0NBS01nMldsRmJvRmc2Y0hSaGp1T2tycmRqRVNiVkNHb3JsaGtIa0k0YWNHRExGNmc4d3lWMjRwMVpCUWNSYVNxdkVTUWplVHRTVThtNFRNMFFqNkNMdDUrdzQzSzJxSHhTVkd2djgwMjYzZitwRUR6TG9jTFlpOHRZOGZmVkhraHY2WFNUUjR4NVMwYXM3WWtYWkVRVVhOaWdPdkEyTlhQQ1lzNFZhb2dhQjd2L2Uza0lqRHBOSTlWY2ZIZGlFRkRtaTJRR0tGY240eDM1cnFWUVdKNkhJNDFsRzBsUlpTdXVZTnFkSEpHYUFvTXBtVUU5NTBZUmFJVG96bGJ0VEhYUmFvV1kwT2FGZ3M0a3B5MG95Mm5vajNDYU1vZHU1RTRzazRaVmlsN3RIK2g2bnltWGlodXZkd0s0azJnRndmVWlweGk0THFWVHJjU1lFZlpGaUdJbXJsY291Vzlya3ZsZ0RoaElpSk9XTnU4MkViSTJmVTNvQm5TTXNiS1hMTDJtOVVEdFk0SGNzSm1wekxCOXVJbDhHZzF6KzZWbXBSakVtVEZVaURrV1ZoUXdxWGxtY0FJbWt0WUdqWDQvNWNGQzRCZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["skim_variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n_missing"],"name":[2],"type":["int"],"align":["right"]},{"label":["complete_rate"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[4],"type":["int"],"align":["right"]},{"label":["max"],"name":[5],"type":["int"],"align":["right"]},{"label":["empty"],"name":[6],"type":["int"],"align":["right"]},{"label":["n_unique"],"name":[7],"type":["int"],"align":["right"]},{"label":["whitespace"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Quarter","2":"0","3":"1.00000000","4":"6","5":"6","6":"0","7":"21","8":"0","_rn_":"1"},{"1":"QuarterQF","2":"38704","3":"0.04745029","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"2"},{"1":"HB","2":"0","3":"1.00000000","4":"6","5":"9","6":"0","7":"18","8":"0","_rn_":"3"},{"1":"HBQF","2":"39750","3":"0.02170703","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"4"},{"1":"Location","2":"0","3":"1.00000000","4":"5","5":"9","6":"0","7":"55","8":"0","_rn_":"5"},{"1":"LocationQF","2":"27015","3":"0.33512995","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"6"},{"1":"AdmissionType","2":"0","3":"1.00000000","4":"9","5":"28","6":"0","7":"7","8":"0","_rn_":"7"},{"1":"AdmissionTypeQF","2":"27652","3":"0.31945265","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"8"},{"1":"SIMDQF","2":"35492","3":"0.12650128","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"9"},{"1":"AverageLengthOfEpisodeQF","2":"34507","3":"0.15074326","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"10"},{"1":"AverageLengthOfStayQF","2":"31605","3":"0.22216480","4":"1","5":"1","6":"0","7":"1","8":"0","_rn_":"11"}],"options":{"columns":{"min":{},"max":[10],"total":[8]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbIm9uZV9za2ltX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93Ijo3LCJuY29sIjoxMSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI3IMOXIDExIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQnNWVlcwZ1ZRUmllY3p3WFBkN3pWRkErS0VGQm9LaGg2b002M2dvaEwyU0ZrclNPWjlkekZzOWUydDNqSll6c1FRd0R1eUNHRVVFUUZSV0I1a005QkdGaDlWUlNJUFFRbFQwb1ZoaUZGb1MybDVuVk0va1FRVFRzN3YvUE45OC8rKzkvbWQxZjJiakwxK2dEQU1RQWw5TUpZdHk2Q3R3SEQrekpLZ1E2b2s4Y3dBWGlETm1sazlKMEpWNi9VL1RiaXhkY0RkVTFsVmlQclpKNVZXSTVGYytUOTNGaVVBdlZ0V0VjdzV2S09qZ0ZCYm4xVjkwTkd1b21PeVFRamdGaUxJMHlONWNBU0RTZEFuNC9zTWZtVDZ2NnRncjlrV1J3U3VlLzNoMGVMTTR0WGJCV2JEbWZsWDRNN1EzL2hzOSs4Rnd2TGo1TjdLRjNwbUxneW9QUDhFTG1yRFE2NllPajc0NzBacFJud3ZqYkd4TkczbXlGZzdrT1oycGNBeHg3bEhQMmNHWUI5QWVmRDMxN01tYS9mN0drdG1qSHVRazQvckNuLzA1R0twd2E2TXRRMldLWU5pa1VucEdmd1Z1dmx1bzZKbS9DbHg1WVBUM1VDTGMwTGp0cjgyWnMrd1h3dDhQeUgwL2c3dWpGMHFXcUthMm40VDcwVS9qUDJzY2ZTK1p5YlB0WWJDLzNXckt6M3BLdXArTW52bFRYdzJhTU4yZFlNaFhWWEdxYTNtN2JwMkQ3ODJGTDNuaHRHc0RraWZyY1E0dmw4RlNYaFYvZGFjbDB5bi9zSC93Kzk5YVFaYW5qUStaY3V0Wm1ETGpROThMQ3B4Wk0vSGpUaUQ0dUFsSzRvTmNzenZmRC9XdXZLUGlrZmYwWE9LcjEzQ0lTOUpheXZJL0hZS0xhemd0TUIxSjQxQm9tclJNbk1nS3ZxcndZSkt5QUpNaGhUdU1ZQldtRTVSSTRKR0xkcWJKRWszT3dGaVBuNWR0cS9pcGFRRkNYbkp0RFlGZUlWelhLNFRoRjZzd21UaHR0NlRUeXU3S3k4b01tc2toRGpNNG1SQWNBbCsrdFN3cEk0VFVrc0lFaWVkazJ4bmdqamhLQlBTMHFMN0F0Rk5uRGFrdzdaNXdaeHRIbnNLbzFtaEZVcEloTVlrNnZKcllpbFdPTUJBaWNRa2pPUDh3QnRSWFpoWW1vSEt2dmttWnVaVzNwSnFFWGVORldVUmNwQzA2UU5YSW14b3BNUk9TUFJraU9mWjBoWHVOVUdRVklTR0wvY2ZhZEszUWdBaUdrb0lER0tTUkhZa1QvVWo2Z3E4dDBqczFxMXJwbE9vR3JOdEV0RVFnalZhVzRQcU5Rc3RzVXF3em9WM2dsV2VNbFVjVXhkbFBHRG9VQ2tpT2lVVkJzVmlBVUVkdXppa2kxNEpzVW9uZU5IazlGZ3VUUG8vK29lTkgrdjRWUkt4ZkdreVM5K00xT3laWVZYdFRJbHhndGthMUpHaUk4bjFIL0dERy9EU3ovQXJCc0llZTlCd0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["skim_variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n_missing"],"name":[2],"type":["int"],"align":["right"]},{"label":["complete_rate"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["mean"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["sd"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["p0"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["p25"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["p50"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["p75"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["p100"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["hist"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"SIMD","2":"5140","3":"0.8734987","4":"2.985969","5":"1.390211","6":"1","7":"2.000000","8":"3.000000","9":"4.00000","10":"5.0","11":"▇▇▇▇▇","_rn_":"1"},{"1":"Episodes","2":"0","3":"1.0000000","4":"1480.476989","5":"5312.486445","6":"0","7":"22.000000","8":"264.000000","9":"1179.00000","10":"102046.0","11":"▇▁▁▁▁","_rn_":"2"},{"1":"LengthOfEpisode","2":"0","3":"1.0000000","4":"4577.369143","5":"17962.080106","6":"0","7":"0.000000","8":"373.000000","9":"3181.25000","10":"290085.0","11":"▇▁▁▁▁","_rn_":"3"},{"1":"AverageLengthOfEpisode","2":"6125","3":"0.8492567","4":"3.459025","5":"4.943776","6":"0","7":"1.454545","8":"2.598001","9":"3.96988","10":"253.2","11":"▇▁▁▁▁","_rn_":"4"},{"1":"Stays","2":"0","3":"1.0000000","4":"966.125492","5":"3562.483028","6":"0","7":"5.000000","8":"114.000000","9":"783.00000","10":"67677.0","11":"▇▁▁▁▁","_rn_":"5"},{"1":"LengthOfStay","2":"0","3":"1.0000000","4":"4803.189703","5":"19481.004507","6":"0","7":"0.000000","8":"112.500000","9":"2581.00000","10":"291964.0","11":"▇▁▁▁▁","_rn_":"6"},{"1":"AverageLengthOfStay","2":"9027","3":"0.7778352","4":"5.101378","5":"6.586906","6":"0","7":"1.769231","8":"4.345023","9":"7.00000","10":"469.6","11":"▇▁▁▁▁","_rn_":"7"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2ltZCA8LSBzaW1kICU+JSBcbiAgZmlsdGVyKGlzLm5hKEhCUUYpJiAhaXMubmEoTG9jYXRpb25RRikpICU+JSBcbiAgZmlsdGVyKEFkbWlzc2lvblR5cGUgPT0gXCJFbGVjdGl2ZSBJbnBhdGllbnRzXCIgfCBBZG1pc3Npb25UeXBlID09IFwiRW1lcmdlbmN5IElucGF0aWVudHNcIikgJT4lXG4gIG11dGF0ZShZZWFyID0gc3Vic3RyKFF1YXJ0ZXIsIDEsIDQpLFxuICAgICAgIFF1YXJ0ZXJfc2luZ2xlID0gc3Vic3RyKFF1YXJ0ZXIsIDUsIDYpKVxuXG5zaW1kIDwtICBsZWZ0X2pvaW4oc2ltZCwgaGJfY29kZXMsIGJ5ID0gXCJIQlwiKSAlPiUgc2ltZCA8LSBzaW1kICU+JSBkcm9wX25hKFNJTUQpXG5gYGAifQ== -->
+<pre class="r"><code>simd &lt;- simd %&gt;% 
   filter(is.na(HBQF)&amp; !is.na(LocationQF)) %&gt;% 
   filter(AdmissionType == &quot;Elective Inpatients&quot; | AdmissionType == &quot;Emergency Inpatients&quot;) %&gt;%
   mutate(Year = substr(Quarter, 1, 4),
        Quarter_single = substr(Quarter, 5, 6))
 
-simd &lt;-  left_join(simd, hb_codes, by = &quot;HB&quot;)
-
-simd &lt;- simd %&gt;% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
-
-
-write_csv(simd, file = &quot;../clean_data/simd_clean.csv&quot;)</code></pre>
+simd &lt;-  left_join(simd, hb_codes, by = &quot;HB&quot;) %&gt;% simd &lt;- simd %&gt;% drop_na(SIMD)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGVmdF9qb2luKHNpbWQsIGhiX2NvZGVzLCBieSA9IFwiSEJcIikgJT4lIHNpbWQgPC0gc2ltZCAlPiUgZHJvcF9uYShTSU1EKSA6IFxuICBjb3VsZCBub3QgZmluZCBmdW5jdGlvbiBcIiU+JTwtXCJcbiJ9 -->
+<pre><code>Error in left_join(simd, hb_codes, by = &quot;HB&quot;) %&gt;% simd &lt;- simd %&gt;% drop_na(SIMD) : 
+  could not find function &quot;%&gt;%&lt;-&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShza2ltcikNCmxpYnJhcnkobHVicmlkYXRlKQ0KbGlicmFyeShoZXJlKQ0KDQpoZXJlOjogaGVyZQ0Kc2ltZCA8LSByZWFkX2NzdigiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2IikNCmhiX2NvZGVzIDwtIHJlYWRfY3N2KCIuLi9yYXdfZGF0YS9oZWFsdGhfYm9hcmQuY3N2IikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKQ0Kc2tpbShzaW1kKQ0KDQpzaW1kIDwtIHNpbWQgJT4lIA0KICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIA0KICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSAiRWxlY3RpdmUgSW5wYXRpZW50cyIgfCBBZG1pc3Npb25UeXBlID09ICJFbWVyZ2VuY3kgSW5wYXRpZW50cyIpICU+JQ0KICBtdXRhdGUoWWVhciA9IHN1YnN0cihRdWFydGVyLCAxLCA0KSwNCiAgICAgICBRdWFydGVyX3NpbmdsZSA9IHN1YnN0cihRdWFydGVyLCA1LCA2KSkNCg0Kc2ltZCA8LSAgbGVmdF9qb2luKHNpbWQsIGhiX2NvZGVzLCBieSA9ICJIQiIpDQoNCnNpbWQgPC0gc2ltZCAlPiUgc2VsZWN0KFF1YXJ0ZXIsIFllYXIsIFF1YXJ0ZXJfc2luZ2xlLCBIQk5hbWUsIEFkbWlzc2lvblR5cGUsIFNJTUQsIEVwaXNvZGVzLCBMZW5ndGhPZkVwaXNvZGUsIEF2ZXJhZ2VMZW5ndGhPZkVwaXNvZGUsIFN0YXlzLCBMZW5ndGhPZlN0YXksIEF2ZXJhZ2VMZW5ndGhPZlN0YXkpDQoNCg0Kd3JpdGVfY3N2KHNpbWQsIGZpbGUgPSAiLi4vY2xlYW5fZGF0YS9zaW1kX2NsZWFuLmNzdiIpDQpgYGA=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShza2ltcikNCmxpYnJhcnkobHVicmlkYXRlKQ0KbGlicmFyeShoZXJlKQ0KDQpoZXJlOjogaGVyZQ0Kc2ltZCA8LSByZWFkX2NzdigiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2IikNCmhiX2NvZGVzIDwtIHJlYWRfY3N2KCIuLi9yYXdfZGF0YS9oZWFsdGhfYm9hcmQuY3N2IikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKQ0Kc2tpbShzaW1kKQ0KDQpzaW1kIDwtIHNpbWQgJT4lIA0KICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIA0KICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSAiRWxlY3RpdmUgSW5wYXRpZW50cyIgfCBBZG1pc3Npb25UeXBlID09ICJFbWVyZ2VuY3kgSW5wYXRpZW50cyIpICU+JQ0KICBtdXRhdGUoWWVhciA9IHN1YnN0cihRdWFydGVyLCAxLCA0KSwNCiAgICAgICBRdWFydGVyX3NpbmdsZSA9IHN1YnN0cihRdWFydGVyLCA1LCA2KSkNCg0Kc2ltZCA8LSAgbGVmdF9qb2luKHNpbWQsIGhiX2NvZGVzLCBieSA9ICJIQiIpICU+JSBzaW1kIDwtIHNpbWQgJT4lIGRyb3BfbmEoU0lNRCkNCg0Kc2ltZCA8LSBzaW1kICU+JSBzZWxlY3QoUXVhcnRlciwgWWVhciwgUXVhcnRlcl9zaW5nbGUsIEhCTmFtZSwgQWRtaXNzaW9uVHlwZSwgU0lNRCwgRXBpc29kZXMsIExlbmd0aE9mRXBpc29kZSwgQXZlcmFnZUxlbmd0aE9mRXBpc29kZSwgU3RheXMsIExlbmd0aE9mU3RheSwgQXZlcmFnZUxlbmd0aE9mU3RheSkNCg0KDQp3cml0ZV9jc3Yoc2ltZCwgZmlsZSA9ICIuLi9jbGVhbl9kYXRhL3NpbWRfY2xlYW4uY3N2IikNCmBgYA==</div>
 
 
 

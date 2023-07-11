@@ -8,13 +8,13 @@ library(tidyverse)
 library(ggplot2)
 library(here)
 
-simd <- read.csv(here("../clean_data/simd_clean.csv"))
+simd <- read.csv("../clean_data/simd_clean.csv")
 
 ```
 SIMD  by Admission type
 
 ```{r}
-simd <- simd %>% drop_na(SIMD)
+
 
 simd %>% filter(AdmissionType == "Elective Inpatients" & HBName == "NHS Ayrshire and Arran") %>% group_by(Quarter, SIMD) %>% summarise(number_admissions = sum(Stays)) %>% mutate(SIMD = as.factor(SIMD)) %>% 
   
@@ -68,7 +68,6 @@ simd %>% filter(HBName == "NHS Ayrshire and Arran" & SIMD == 1) %>%
     x = "\nQuarter\n",
     y = "\nAverage length of stay (days)\n")
 ```
-
 
 
 

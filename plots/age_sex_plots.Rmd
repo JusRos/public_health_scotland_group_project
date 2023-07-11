@@ -13,7 +13,7 @@ library(here)
 
 ```{r}
 
-age_and_sex <- read_csv(here("clean_data/age_and_sex.csv"))
+age_and_sex <- read_csv("../clean_data/clean_age_and_sex.csv")
 
 ```
 
