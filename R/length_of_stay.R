@@ -2,17 +2,19 @@ create_length_of_stay_plot <- function(data, health_board,
                                        admission_type_input, age_input,
                                        sex_input) {
   
-  mean_stay <- 
-    data %>% 
-    filter(
-      admission_type == admission_type_input & 
-        hb_name == health_board & 
-        age == age_input &
-        str_detect(quarter, "201")
-    ) %>% 
-    summarise(average = sum(length_of_stay)/sum(stays)) %>% 
-    pull()
+  # Calcuate the mean stay length from before covid
+  # mean_stay <- 
+  #   data %>% 
+  #   filter(
+  #     admission_type == admission_type_input & 
+  #       hb_name == health_board & 
+  #       age == age_input &
+  #       str_detect(quarter, "201")
+  #   ) %>% 
+  #   summarise(average = sum(length_of_stay)/sum(stays)) %>% 
+  #   pull()
   
+  # Filter data for inputs
   length_data <- length_of_stay_data %>% 
     filter(
       admission_type == admission_type_input &  
@@ -29,23 +31,22 @@ create_length_of_stay_plot <- function(data, health_board,
            quarter = str_remove(quarter, "[0-9]{4}"))
   
   years <- unique(length_data$year)
-  #min_data <- min(length_data$avg_stay)
-    
+  
+  # Plot
   length_data %>% 
     ggplot(aes(interaction(quarter, year), avg_stay), size = 5) +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
-    annotate("text", x = seq_len(nrow(length_data)),
-             y = -(0.1 * max(length_data$avg_stay)),
+    annotate("text", x = seq_len(nrow(length_data)), # Add quarter x axis
+             y = -(0.1 * max(length_data$avg_stay)), # Place it below axis, as a % of total y
              label = length_data$quarter) +
-    annotate("text", x = 1 + 4 * (0:(length(years)-1)),
-             y = -(0.16 * max(length_data$avg_stay)),
+    annotate("text", x = 1 + 4 * (0:(length(years)-1)), # Add year x axis
+             y = -(0.16 * max(length_data$avg_stay)), # Place it below axis, as a % of total y
              label = years) +
-    coord_cartesian(ylim = c(-0.01, max(length_data$avg_stay) + 0.5),
-                    #xlim = ,
-                    expand = TRUE,
+    coord_cartesian(ylim = c(-0.01, max(length_data$avg_stay) + 0.5), # set y axis limits
+                    expand = TRUE, # adds space at right and left of data
                     clip = "off") +
-    #geom_hline(aes(yintercept = mean_stay,
+    #geom_hline(aes(yintercept = mean_stay, # pre-covid average line
     #               colour = "Pre-covid 2018-2019 Average"), alpha = 0.5) + 
     # annotate("rect", xmin = 1, xmax = 2, ymin = -Inf, ymax = Inf,
     #          fill = "steelblue", alpha = 0.5) + 

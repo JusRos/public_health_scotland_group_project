@@ -21,3 +21,7 @@ sex_list <- unique(length_of_stay_data$sex)
 source("R/length_of_stay.R")
 
 
+# 
+
+
+
