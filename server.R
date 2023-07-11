@@ -5,7 +5,7 @@ server <- function(input, output, session){
     
   })
   
-  # Create Plot of Hospital Admissions over time
+  # Create plot of Hospital Admissions over time
   output$admissions_plot <- renderPlot({
     create_hospital_admissions_plot(covid_admissions,
                                     input$admission_type_input,
