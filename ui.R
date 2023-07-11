@@ -36,7 +36,7 @@ ui <- fluidPage(
         )
       ),
       
-      #buttons for second plot
+      # Buttons for second plot ---------
       fluidRow(column(
         width = 3,
         selectInput("hb",
@@ -69,9 +69,25 @@ ui <- fluidPage(
         
         column(
           width = 3,
+          radioButtons("length_admission_type_input",
+                      "Admission Type",
+                      c("Emergency Inpatients",
+                        "Elective Inpatients",
+                        "All Inpatients"))
+        ),
+        
+        column(
+          width = 3,
           selectInput("age_input",
                       "Age Group",
                       age_group_list)
+        ),
+        
+        column(
+          width = 3,
+          radioButtons("sex_input",
+                      "Sex",
+                      sex_list)
         )
       ),
       
