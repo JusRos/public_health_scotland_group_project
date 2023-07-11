@@ -25,8 +25,8 @@ create_length_of_stay_plot <- function(data, health_board,
     group_by(quarter) %>% 
     summarise(avg_stay = sum(length_of_stay)/sum(stays)) %>% 
     ggplot(aes(quarter, avg_stay), size = 5) +
-    geom_line(group = 1) +
-    geom_point() +
+    geom_line(group = 1, size = 2) +
+    geom_point(size = 3) +
     #geom_hline(aes(yintercept = mean_stay,
     #               colour = "Pre-covid 2018-2019 Average"), alpha = 0.5) + 
     # annotate("rect", xmin = 1, xmax = 2, ymin = -Inf, ymax = Inf,

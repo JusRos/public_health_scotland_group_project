@@ -1,6 +1,8 @@
 
 create_hospital_admissions_plot <- function(data, admission_type_input, health_board){
   
+  pre_covid_text <- str_wrap("Pre-covid 2018-2019 Average", 8)
+  
   data %>% 
     filter(
       !is.na(age_group_qf) & !is.na(sex_qf) & # remove lines for different ages and sexes
@@ -11,13 +13,13 @@ create_hospital_admissions_plot <- function(data, admission_type_input, health_b
     summarise(number_admissions = sum(number_admissions),
               pre_covid_admissions = sum(average20182019)) %>% 
     ggplot(aes(week_ending, number_admissions, colour = "Post-covid")) +
-    geom_line() + # Main data (post covid)
+    geom_line(size = 2) + # Main data (post covid)
     geom_line(aes(y = pre_covid_admissions, # Pre covid average
-                  colour = "Pre-covid 2018-2019 Average"),
-              linetype = "dashed") +
+                  colour = "Pre-covid\n 2018-2019 Average"),
+              linetype = "dotted", size = 1.5) +
     scale_colour_manual(name = "", # Add legend
-                        breaks = c("Pre-covid 2018-2019 Average", "Post-covid"),
-                        values = c("Pre-covid 2018-2019 Average" = "grey31",
+                        breaks = c("Pre-covid\n 2018-2019 Average", "Post-covid"),
+                        values = c("Pre-covid\n 2018-2019 Average" = "tomato1",
                                    "Post-covid" = "black")) +
     scale_x_date(date_breaks = "3 months",
                  date_minor_breaks = "1 month",
