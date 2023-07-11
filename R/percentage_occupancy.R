@@ -24,6 +24,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
       fill = "steelblue") +
     geom_vline(xintercept = "2020 Q2",
                size = 1.5,
-               colour = "red")
+               colour = "red") +
+    theme_light()
   
 } 

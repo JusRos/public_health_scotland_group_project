@@ -2,19 +2,21 @@ ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
   
+  #buttons for winter 
+  radioButtons("alpha_on",
+               "Winter", 
+               choices = c("Off" = 0, "On" = 0.3),
+               inline = TRUE ), 
+               
   
   tabsetPanel(
     tabPanel(
       "Meh",
       
-      #buttons for winter 
-      radioButtons("alpha_on",
-                       "Winter", 
-                      choices = c("Off" = 0, "On" = 0.3),
-                      
+      
                      
           
-        ), 
+       
       
       
       
@@ -50,17 +52,15 @@ ui <- fluidPage(
       # Buttons for second plot ---------
       fluidRow(column(
         width = 3,
-        selectInput("hb",
-                    "Health Board",
-                    choices = hb_names),
+        
         
       )
       ),
       
-      # Percent plot ---------------
+      # SID ---------------
       fluidRow(column(
         width = 6,
-        plotOutput("pre_plot")
+        
         
       ),
       
@@ -121,6 +121,12 @@ ui <- fluidPage(
     
     fluidRow(
       width = 12,
+      
+      selectInput("hb",
+                  "Health Board",
+                  choices = hb_names),
+      
+      plotOutput("pre_plot")
       
       
     )
