@@ -138,10 +138,14 @@ length_data %>%
   ggplot(aes(interaction(quarter, year), avg_stay), size = 5) +
   geom_line(group = 1, size = 2) +
   geom_point(size = 3) +
-  annotate("text", x = seq_len(nrow(length_data)), y = -0.7, label = length_data$quarter) +
+  annotate("text", x = seq_len(nrow(length_data)),
+           y = min(length_data$avg_stay)-0.7,
+           label = length_data$quarter) +
   annotate("text", x = 1 + 4 * (0:(length(years)-1)),
-           y = -1.3, label = years) +
-  coord_cartesian(ylim = c(0, 7.5), clip = "off") +
+           y = min(length_data$avg_stay)-1.3,
+           label = years) +
+  coord_cartesian(ylim = c(min(length_data$avg_stay), 7.5),
+                  clip = "off") +
   geom_vline(xintercept = 9, size = 1.5, colour = "red") +
   
   scale_colour_manual(name = "", # Add legend
@@ -151,12 +155,22 @@ length_data %>%
     text = element_text(size = 15),
     axis.text.x = element_blank(),
     axis.title.x = element_text(vjust = -8),
-    plot.margin = unit(c(1, 1, 3, 1), "lines")
+    plot.margin = unit(c(1, 1, 6, 1), "lines")
   ) +
   labs(
     title = "Average length of stay",
     x = "Quarter",
     y = "Average Length of Stay (days)"
   )
+```
+
+```{r}
+data %>% 
+  filter(admission_type %in% c("Emergency Inpatients", "Elective Inpatients", "All Inpatients")) %>% 
+  summarise(max(average_length_of_stay, na.rm = TRUE))
+```
+```{r}
+data %>% 
+  filter(average_length_of_stay == 601.6)
 ```
 
