@@ -16,6 +16,7 @@ hb_codes <- read_csv("../raw_data/health_board.csv") %>% select(HB, HBName)
 age_and_sex <- age_and_sex %>% 
   filter(!is.na(HBQF) & AdmissionType == "Elective Inpatients" | AdmissionType == " Elective Emergency Inpatients"| AdmissionType == "Transfer") %>% 
   left_join(hb_codes, by = "HB")
+
 age_and_sex <- age_and_sex %>% 
   mutate(Year = substr(Quarter, 1, 4),
        Quarter_single = substr(Quarter, 5, 6))
