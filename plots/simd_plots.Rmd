@@ -6,8 +6,9 @@ output: html_notebook
 ```{r}
 library(tidyverse)
 library(ggplot2)
+library(here)
 
-simd <- read.csv("../clean_data/simd_clean.csv")
+simd <- read.csv(here("../clean_data/simd_clean.csv"))
 
 ```
 SIMD  by Admission type
