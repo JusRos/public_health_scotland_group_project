@@ -21,9 +21,9 @@ source("R/length_of_stay.R")
 
 
 # age and sex data --------------
-age_and_sex <- read_csv("../clean_data/clean_age_and_sex.csv")
+age_and_sex <- read_csv("clean_data/age_and_sex.csv")
 
 # simd data
 
-simd <- read.csv("../clean_data/simd_clean.csv")
+simd <- read.csv("clean_data/simd_clean.csv")
 

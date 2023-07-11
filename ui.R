@@ -83,6 +83,7 @@ ui <- fluidPage(
           plotOutput("length_of_stay_plot")
         )
       )
+      # Hospital Admissions 
       
       
     ),
