@@ -85,10 +85,10 @@ ui <- fluidPage(
       )
       
       
-    )
+    ),
     
     
-  ),
+  
   tabPanel( #map tab
     "Map",
     
@@ -98,5 +98,5 @@ ui <- fluidPage(
       
     )
     
-  )
+  ))
 )
