@@ -36,8 +36,7 @@ create_hospital_admissions_plot <- function(data, admission_type_input, health_b
       text = element_text(size = 15),
       line = element_line(size = 5),
       panel.grid = element_line(size = 1),
-      axis.ticks = element_line(size = 1)#,
-      #axis.title.y = element_text(angle = 0, vjust = 0.5)
+      axis.ticks = element_line(size = 1)
     ) 
 }
 
