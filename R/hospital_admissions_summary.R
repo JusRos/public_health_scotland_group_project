@@ -1,5 +1,6 @@
 
-create_hospital_admissions_plot <- function(data, admission_type_input, health_board){
+create_hospital_admissions_plot <- function(data, admission_type_input,
+                                            health_board, alpha_input){
   
   pre_covid_text <- str_wrap("Pre-covid 2018-2019 Average", 8)
   
@@ -17,6 +18,22 @@ create_hospital_admissions_plot <- function(data, admission_type_input, health_b
     geom_line(aes(y = pre_covid_admissions, # Pre covid average
                   colour = "Pre-covid\n 2018-2019\n Average"),
               linetype = "dotted", size = 1.5) +
+    annotate("rect", xmin = as.Date("2020-01-05"),
+             xmax = as.Date("2020-04-05"),
+             ymin = -Inf, ymax = Inf,
+             fill = "steelblue", alpha = as.numeric(alpha_input)) +
+    annotate("rect", xmin = as.Date("2020-10-04"),
+             xmax = as.Date("2021-04-04"),
+             ymin = -Inf, ymax = Inf,
+             fill = "steelblue", alpha = as.numeric(alpha_input)) +
+    annotate("rect", xmin = as.Date("2021-10-03"),
+             xmax = as.Date("2022-04-03"),
+             ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = as.numeric(alpha_input)) +
+    annotate("rect", xmin = as.Date("2022-10-02"),
+             xmax = as.Date("2023-04-02"),
+             ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = as.numeric(alpha_input)) +
     scale_colour_manual(name = "", # Add legend
                         breaks = c("Pre-covid\n 2018-2019\n Average", "Post-covid"),
                         values = c("Pre-covid\n 2018-2019\n Average" = "tomato1",

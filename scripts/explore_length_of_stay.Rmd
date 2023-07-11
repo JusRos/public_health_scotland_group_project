@@ -174,3 +174,12 @@ data %>%
   filter(average_length_of_stay == 601.6)
 ```
 
+```{r}
+library(tidyverse)
+covid_admissions <- read_csv(here("clean_data/hospital_admissions_postcovid.csv"))
+```
+```{r}
+covid_admissions %>% 
+  filter(month(week_ending) == 4 & year(week_ending) == 2020)
+```
+

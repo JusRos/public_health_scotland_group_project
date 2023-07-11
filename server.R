@@ -9,7 +9,8 @@ server <- function(input, output, session){
   output$admissions_plot <- renderPlot({
     create_hospital_admissions_plot(covid_admissions,
                                     input$admission_type_input,
-                                    input$health_board_input)
+                                    input$health_board_input,
+                                    input$alpha_on)
 
   })
   
