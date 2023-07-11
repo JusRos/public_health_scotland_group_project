@@ -1,12 +1,12 @@
 percentage_occupancy <- function(data, input_hb, input_alpha) {
   beds %>%
-    #mutate(year_q = str_c(year, quarter, sep = " Q", collapse = NULL)) %>% 
+    mutate(year_q = str_c(year, quarter, sep = " Q", collapse = NULL)) %>% 
     filter(specialty_name == "All Acute") %>%
     filter(hb_name == input_hb) %>%
-    group_by(quarter) %>%
+    group_by(year_q) %>%
     summarise(avg = mean(percentage_occupancy)) %>%
     ggplot() +
-    aes(interaction(quarter, year), y = avg) +
+    aes(x = year_q, y = avg) +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -26,8 +26,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_vline(xintercept = "2020 Q2",
                size = 1.5,
                colour = "red") +
-    theme_light() +
-    annotate("text", x = seq_len(nrow(beds)), y = -0.5) +
-    coord_cartesian(ylim = c(0, 100), expand = TRUE, clip = "off") 
+    theme_light() 
+    
   
 } 
