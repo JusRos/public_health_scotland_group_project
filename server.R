@@ -1,7 +1,7 @@
 server <- function(input, output, session){
   
   output$pre_plot <- renderPlot({
-    percentage_occupancy(data = beds(), input_hb = input$hb)
+    percentage_occupancy(data = beds(), input_hb = input$hb, input_alpha = input$alpha_on)
     
   })
   
@@ -17,7 +17,9 @@ server <- function(input, output, session){
   output$length_of_stay_plot <- renderPlot({
   create_length_of_stay_plot(length_of_stay_data,
                              input$length_health_board_input,
-                             input$age_input)
+                             input$length_admission_type_input,
+                             input$age_input,
+                             input$sex_input)
   })
 
   
