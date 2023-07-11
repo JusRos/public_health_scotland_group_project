@@ -1,6 +1,6 @@
 create_length_of_stay_plot <- function(data, health_board, 
                                        admission_type_input, age_input,
-                                       sex_input) {
+                                       sex_input, alpha_input) {
   
   # Calcuate the mean stay length from before covid
   # mean_stay <- 
@@ -48,17 +48,17 @@ create_length_of_stay_plot <- function(data, health_board,
                     clip = "off") +
     #geom_hline(aes(yintercept = mean_stay, # pre-covid average line
     #               colour = "Pre-covid 2018-2019 Average"), alpha = 0.5) + 
-    # annotate("rect", xmin = 1, xmax = 2, ymin = -Inf, ymax = Inf,
-    #          fill = "steelblue", alpha = 0.5) + 
-    # annotate("rect", xmin = 5, xmax = 6, ymin = -Inf, ymax = Inf,
-    #          fill = "steelblue",alpha = 0.5) +
-    # annotate("rect", xmin = 9, xmax = 10, ymin = -Inf, ymax = Inf,
-    #          fill = "steelblue",alpha = 0.5) + 
-    # annotate("rect", xmin = 13, xmax = 14, ymin = -Inf, ymax = Inf,
-    #          fill = "steelblue",alpha = 0.5) + 
-    # annotate("rect", xmin = 17, xmax = 18, ymin = -Inf, ymax = Inf,
-    #          fill = "steelblue",alpha = 0.5) +
-    geom_vline(xintercept = 9, size = 1.5, colour = "red") +
+    annotate("rect", xmin = 0, xmax = 2, ymin = -Inf, ymax = Inf,
+             fill = "steelblue", alpha = alpha_input) +
+    annotate("rect", xmin = 4, xmax = 6, ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = alpha_input) +
+    annotate("rect", xmin = 8, xmax = 10, ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = alpha_input) +
+    annotate("rect", xmin = 12, xmax = 14, ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = alpha_input) +
+    annotate("rect", xmin = 16, xmax = 18, ymin = -Inf, ymax = Inf,
+             fill = "steelblue",alpha = alpha_input) +
+    geom_vline(xintercept = 10, size = 1.5, colour = "red") +
     scale_colour_manual(name = "", # Add legend
                         breaks = "Pre-covid 2018-2019 Average",
                         values = c("Pre-covid 2018-2019 Average" = "red")) +

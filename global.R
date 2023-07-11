@@ -1,11 +1,11 @@
 library(tidyverse)
 
-<<<<<<< Updated upstream
-=======
 
 health_boards <- (read_csv("clean_data/health_boards.csv"))
 health_board_list <- sort(unique(health_boards$hb_name))
->>>>>>> Stashed changes
+
+health_boards <- (read_csv("clean_data/health_boards.csv"))
+health_board_list <- sort(unique(health_boards$hb_name))
 
 # Percent plot -------------
 beds <- read_csv("clean_data/clean_bed_data")
@@ -15,7 +15,7 @@ source("R/percentage_occupancy.R")
 
 # Hospital Admissions data ------------
 covid_admissions <- read_csv("clean_data/hospital_admissions_postcovid.csv")
-health_board_list <- sort(unique(covid_admissions$hb_name)) # check this name doesn't conflict with others!!
+
 admission_type_list <- sort(unique(covid_admissions$admission_type))
 source("R/hospital_admissions_summary.R")
 
