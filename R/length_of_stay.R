@@ -36,14 +36,14 @@ create_length_of_stay_plot <- function(data, health_board,
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
     annotate("text", x = seq_len(nrow(length_data)),
-             y = -(0.05 * max(length_data$avg_stay)),
+             y = -(0.1 * max(length_data$avg_stay)),
              label = length_data$quarter) +
     annotate("text", x = 1 + 4 * (0:(length(years)-1)),
-             y = -(0.13 * max(length_data$avg_stay)),
+             y = -(0.16 * max(length_data$avg_stay)),
              label = years) +
     coord_cartesian(ylim = c(-0.01, max(length_data$avg_stay) + 0.5),
                     #xlim = ,
-                    expand = FALSE,
+                    expand = TRUE,
                     clip = "off") +
     #geom_hline(aes(yintercept = mean_stay,
     #               colour = "Pre-covid 2018-2019 Average"), alpha = 0.5) + 

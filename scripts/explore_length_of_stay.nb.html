@@ -1911,15 +1911,19 @@ lower_ci &lt;- bootstrap_ci %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVuZ3RoX2RhdGEgJT4lIFxuICBnZ3Bsb3QoYWVzKGludGVyYWN0aW9uKHF1YXJ0ZXIsIHllYXIpLCBhdmdfc3RheSksIHNpemUgPSA1KSArXG4gIGdlb21fbGluZShncm91cCA9IDEsIHNpemUgPSAyKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDMpICtcbiAgYW5ub3RhdGUoXCJ0ZXh0XCIsIHggPSBzZXFfbGVuKG5yb3cobGVuZ3RoX2RhdGEpKSwgeSA9IG1pbihsZW5ndGhfZGF0YSRhdmdfc3RheSktMC43LCBsYWJlbCA9IGxlbmd0aF9kYXRhJHF1YXJ0ZXIpICtcbiAgYW5ub3RhdGUoXCJ0ZXh0XCIsIHggPSAxICsgNCAqICgwOihsZW5ndGgoeWVhcnMpLTEpKSxcbiAgICAgICAgICAgeSA9IG1pbihsZW5ndGhfZGF0YSRhdmdfc3RheSktMS4zLCBsYWJlbCA9IHllYXJzKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyhtaW4obGVuZ3RoX2RhdGEkYXZnX3N0YXkpLCA3LjUpLCBjbGlwID0gXCJvZmZcIikgK1xuICBnZW9tX3ZsaW5lKHhpbnRlcmNlcHQgPSA5LCBzaXplID0gMS41LCBjb2xvdXIgPSBcInJlZFwiKSArXG4gIFxuICBzY2FsZV9jb2xvdXJfbWFudWFsKG5hbWUgPSBcIlwiLCAjIEFkZCBsZWdlbmRcbiAgICAgICAgICAgICAgICAgICAgICBicmVha3MgPSBcIlByZS1jb3ZpZCAyMDE4LTIwMTkgQXZlcmFnZVwiLFxuICAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCJQcmUtY292aWQgMjAxOC0yMDE5IEF2ZXJhZ2VcIiA9IFwicmVkXCIpKSArXG4gIHRoZW1lKFxuICAgIHRleHQgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDE1KSxcbiAgICBheGlzLnRleHQueCA9IGVsZW1lbnRfYmxhbmsoKSxcbiAgICBheGlzLnRpdGxlLnggPSBlbGVtZW50X3RleHQodmp1c3QgPSAtOCksXG4gICAgcGxvdC5tYXJnaW4gPSB1bml0KGMoMSwgMSwgNiwgMSksIFwibGluZXNcIilcbiAgKSArXG4gIGxhYnMoXG4gICAgdGl0bGUgPSBcIkF2ZXJhZ2UgbGVuZ3RoIG9mIHN0YXlcIixcbiAgICB4ID0gXCJRdWFydGVyXCIsXG4gICAgeSA9IFwiQXZlcmFnZSBMZW5ndGggb2YgU3RheSAoZGF5cylcIlxuICApXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVuZ3RoX2RhdGEgJT4lIFxuICBnZ3Bsb3QoYWVzKGludGVyYWN0aW9uKHF1YXJ0ZXIsIHllYXIpLCBhdmdfc3RheSksIHNpemUgPSA1KSArXG4gIGdlb21fbGluZShncm91cCA9IDEsIHNpemUgPSAyKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDMpICtcbiAgYW5ub3RhdGUoXCJ0ZXh0XCIsIHggPSBzZXFfbGVuKG5yb3cobGVuZ3RoX2RhdGEpKSxcbiAgICAgICAgICAgeSA9IG1pbihsZW5ndGhfZGF0YSRhdmdfc3RheSktMC43LFxuICAgICAgICAgICBsYWJlbCA9IGxlbmd0aF9kYXRhJHF1YXJ0ZXIpICtcbiAgYW5ub3RhdGUoXCJ0ZXh0XCIsIHggPSAxICsgNCAqICgwOihsZW5ndGgoeWVhcnMpLTEpKSxcbiAgICAgICAgICAgeSA9IG1pbihsZW5ndGhfZGF0YSRhdmdfc3RheSktMS4zLFxuICAgICAgICAgICBsYWJlbCA9IHllYXJzKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyhtaW4obGVuZ3RoX2RhdGEkYXZnX3N0YXkpLCA3LjUpLFxuICAgICAgICAgICAgICAgICAgY2xpcCA9IFwib2ZmXCIpICtcbiAgZ2VvbV92bGluZSh4aW50ZXJjZXB0ID0gOSwgc2l6ZSA9IDEuNSwgY29sb3VyID0gXCJyZWRcIikgK1xuICBcbiAgc2NhbGVfY29sb3VyX21hbnVhbChuYW1lID0gXCJcIiwgIyBBZGQgbGVnZW5kXG4gICAgICAgICAgICAgICAgICAgICAgYnJlYWtzID0gXCJQcmUtY292aWQgMjAxOC0yMDE5IEF2ZXJhZ2VcIixcbiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSBjKFwiUHJlLWNvdmlkIDIwMTgtMjAxOSBBdmVyYWdlXCIgPSBcInJlZFwiKSkgK1xuICB0aGVtZShcbiAgICB0ZXh0ID0gZWxlbWVudF90ZXh0KHNpemUgPSAxNSksXG4gICAgYXhpcy50ZXh0LnggPSBlbGVtZW50X2JsYW5rKCksXG4gICAgYXhpcy50aXRsZS54ID0gZWxlbWVudF90ZXh0KHZqdXN0ID0gLTgpLFxuICAgIHBsb3QubWFyZ2luID0gdW5pdChjKDEsIDEsIDYsIDEpLCBcImxpbmVzXCIpXG4gICkgK1xuICBsYWJzKFxuICAgIHRpdGxlID0gXCJBdmVyYWdlIGxlbmd0aCBvZiBzdGF5XCIsXG4gICAgeCA9IFwiUXVhcnRlclwiLFxuICAgIHkgPSBcIkF2ZXJhZ2UgTGVuZ3RoIG9mIFN0YXkgKGRheXMpXCJcbiAgKVxuYGBgIn0= -->
 <pre class="r"><code>length_data %&gt;% 
   ggplot(aes(interaction(quarter, year), avg_stay), size = 5) +
   geom_line(group = 1, size = 2) +
   geom_point(size = 3) +
-  annotate(&quot;text&quot;, x = seq_len(nrow(length_data)), y = min(length_data$avg_stay)-0.7, label = length_data$quarter) +
+  annotate(&quot;text&quot;, x = seq_len(nrow(length_data)),
+           y = min(length_data$avg_stay)-0.7,
+           label = length_data$quarter) +
   annotate(&quot;text&quot;, x = 1 + 4 * (0:(length(years)-1)),
-           y = min(length_data$avg_stay)-1.3, label = years) +
-  coord_cartesian(ylim = c(min(length_data$avg_stay), 7.5), clip = &quot;off&quot;) +
+           y = min(length_data$avg_stay)-1.3,
+           label = years) +
+  coord_cartesian(ylim = c(min(length_data$avg_stay), 7.5),
+                  clip = &quot;off&quot;) +
   geom_vline(xintercept = 9, size = 1.5, colour = &quot;red&quot;) +
   
   scale_colour_manual(name = &quot;&quot;, # Add legend
