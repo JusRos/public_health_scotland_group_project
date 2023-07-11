@@ -1,0 +1,56 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+simd <- read.csv("../clean_data/simd_clean.csv")
+
+```
+SIMD  by Admission type
+
+```{r}
+simd <- simd %>% drop_na(SIMD)
+simd %>% filter(AdmissionType == "Emergency Inpatients" & HBName == "NHS Ayrshire and Arran") %>% group_by(Quarter, SIMD) %>% summarise(number_admissions = sum(Stays)) %>% mutate(SIMD = as.factor(SIMD)) %>% 
+  ggplot()+
+  geom_line(aes(x = Quarter, y = number_admissions, group = SIMD, colour = SIMD), size = 1.5)+
+  scale_colour_manual(values = c("#1F3F49","#488A99" ,"#1C4E80","#4cb5f5" ,"#A5d8DD"  ))+
+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+     labs(
+    title = "Hospital Admissions by SIMD"
+  )
+```
+hospital admissions per Health Board per SIMD
+```{r}
+
+simd %>% filter(HBName == "NHS Ayrshire and Arran" & SIMD == 4) %>% 
+  ggplot(aes(x = Quarter_single, y = AverageLengthOfStay, fill = AdmissionType, colour = AdmissionType)) +
+  geom_col(position = "dodge", colour = "white")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    facet_wrap(~ Year)+
+    labs(
+    title = "\nAverage length of hospital stay by SIMD\n",
+    x = "\nQuarter\n",
+    y = "\nAverage length of stay (days)\n")
+    
+```
+
+```{r}
+# filtered by HBName and SIMD level
+simd %>% filter(HBName == "NHS Ayrshire and Arran" & SIMD == 1) %>% 
+  ggplot(aes(x = Quarter, y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
+  geom_point()+
+  geom_line(size = 1)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  labs(
+    title = "\nAverage length of hospital stay by Admission Type\n",
+    x = "\nQuarter\n",
+    y = "\nAverage length of stay (days)\n")
+```
+
+
+
+
