@@ -1,5 +1,11 @@
 library(tidyverse)
 
+<<<<<<< Updated upstream
+=======
+
+health_boards <- (read_csv("clean_data/health_boards.csv"))
+health_board_list <- sort(unique(health_boards$hb_name))
+>>>>>>> Stashed changes
 
 # Percent plot -------------
 beds <- read_csv("clean_data/clean_bed_data")

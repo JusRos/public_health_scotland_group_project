@@ -1,5 +1,16 @@
 server <- function(input, output, session){
   
+<<<<<<< Updated upstream
+=======
+   alpha_on <- observe({
+     if(input$winter_shading == TRUE){
+      0.3
+    } else {
+      0
+    }
+   })
+  
+>>>>>>> Stashed changes
   output$pre_plot <- renderPlot({
     percentage_occupancy(data = beds(), input_hb = input$hb, input_alpha = input$alpha_on)
     
@@ -23,4 +34,11 @@ server <- function(input, output, session){
   })
 
   
+<<<<<<< Updated upstream
+=======
+  
+  
+  
+  
+>>>>>>> Stashed changes
 }

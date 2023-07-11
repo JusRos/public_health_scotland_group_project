@@ -2,12 +2,25 @@ ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
   
+<<<<<<< Updated upstream
   #buttons for winter 
   radioButtons("alpha_on",
                "Winter", 
                choices = c("Off" = 0, "On" = 0.3),
                inline = TRUE ), 
                
+=======
+  fluidRow(
+    column(
+      width = 3,
+      actionButton("winter_shading",
+                   "Winter", 
+                   icon = icon("fa-light fa-snowflake", class = NULL, lib = "font-awesome"), width = 250, class = "btn-info",),
+    )
+    
+  ),
+  
+>>>>>>> Stashed changes
   
   tabsetPanel(
     tabPanel(
