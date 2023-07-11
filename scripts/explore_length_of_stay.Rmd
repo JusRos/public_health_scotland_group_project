@@ -72,17 +72,18 @@ data %>%
 data %>% 
   # admission type, health board, age, sex, quarter
   filter(
-    admission_type == "All Inpatients" & 
+    admission_type == "Elective Inpatients" & 
       !is.na(hbqf) & 
-      #age == "10-19 years" &
-      str_detect(quarter, "202")
+      age == "10-19 years" &
+      sex == "Female"
+      #str_detect(quarter, "202")
   ) %>% 
   group_by(quarter, sex) %>% 
   summarise(avg_stay = mean(average_length_of_stay)) %>% 
   ggplot(aes(quarter, avg_stay, fill = sex)) +
-  geom_col(position = "dodge") +
-  geom_rect(aes(ymax = upper_ci, ymin = lower_ci, xmin = 0, xmax = Inf), fill = "red", alpha = 0.2) +
-  geom_hline(aes(yintercept = mean_stay)) +  
+  geom_line(group = 1) +
+  #geom_rect(aes(ymax = upper_ci, ymin = lower_ci, xmin = 0, xmax = Inf), fill = "red", alpha = 0.2) +
+  #geom_hline(aes(yintercept = mean_stay)) +  
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
