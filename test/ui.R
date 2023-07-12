@@ -62,6 +62,7 @@ ui <- dashboardPage( skin = "blue",
                                    "Health Board",
                                    choices = hb_names)),
                        
+                       br(),
                        
                        column(
                          width = 12,  
@@ -127,7 +128,7 @@ ui <- dashboardPage( skin = "blue",
                           width = 4, 
                           box(background = "purple",
                               radioButtons("simd_level_input_s",
-                                       "SIMD",
+                                       "SIMD Level",
                                        choices = simd_level
                                        )))
                         
