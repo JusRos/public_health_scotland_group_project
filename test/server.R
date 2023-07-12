@@ -89,8 +89,15 @@ server <- function(input, output, session){
       theme_void() +
       labs(fill = "Number of Staffed Beds") +
       scale_fill_binned(n.breaks = 6, labels = number_format()) +
-      ggtitle("Available Beds by Health Board")
-  })  
+      ggtitle("Available Beds by Health Board") +
+      theme(
+        plot.title = element_text(size = 16, face = "bold"),
+        legend.text = element_text(size = 10, face = "bold"),
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.key.size = unit(1, "cm")
+      )
+  })
+  
   
   
   
