@@ -3,10 +3,7 @@ ui <- fluidPage(
   titlePanel(tags$h1("Working title")),
 
   #buttons for winter 
-  radioButtons("alpha_on",
-               "Winter", 
-               choices = c("Off" = 0, "On" = 0.3),
-               inline = TRUE ), 
+  
                
 
   fluidRow(
