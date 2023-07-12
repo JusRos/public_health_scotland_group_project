@@ -142,35 +142,34 @@ ui <- dashboardPage( skin = "blue",
                       
               ),
       tabItem(tabName = "beds",
-              
-              sidebarLayout(
-                sidebarPanel(
+              fluidRow(
+                column(
+                  width = 12,
+                  selectInput("hb", "Health Board", choices = hb_names)
+                ),
+                column(
+                  width = 12,
+                  plotOutput("pre_plot")
+                )
+              ),
+              fluidRow(
+                column(
+                  width = 8,
+                  plotOutput("bedsPlot")
+                ),
+                column(
+                  width = 4,
+                  box(background = "purple",
                   selectInput("year", "Select Year:", choices = unique(joined_data$year)),
                   selectInput("quarter", "Select Quarter:", choices = unique(joined_data$quarter)),
-                  actionButton("submit", "Submit")
-                ),
-                
-                mainPanel(
-                  plotOutput("bedsPlot"),
-                  
-                  fluidRow(
-                    width = 12,
-                    
-                    selectInput("hb",
-                                "Health Board",
-                                choices = hb_names),
-                    
-                    plotOutput("pre_plot")
-                    
+                  actionButton("submit", "Submit"))
                 )
-              )
+              ),
               
-              
-              
-              
-              
-      
-      
-     ) ))))
+      )
+    )
+  )
+)
+
   
   
