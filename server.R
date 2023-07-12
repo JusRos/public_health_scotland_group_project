@@ -1,13 +1,17 @@
 server <- function(input, output, session){
-  
+
+
    alpha_on <- reactive({
-     if(input$winter_shading == TRUE){
+
+     if(input$winter_shading %% 2 != 0  ){ #looks for odd numbers 
       0.3
     } else {
       0
     }
    })
   
+
+
   output$pre_plot <- renderPlot({
     percentage_occupancy(data = beds(),
                          input_hb = input$hb,
@@ -52,6 +56,4 @@ server <- function(input, output, session){
                      input$health_board_input_s,
                      input$simd_level_input_s)
   })
-
-  
 }
