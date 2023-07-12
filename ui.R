@@ -1,7 +1,22 @@
 ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
+
+  #buttons for winter 
   
+               
+
+  fluidRow(
+    column(
+      width = 3,
+      actionButton("winter_shading",
+                   "Winter", 
+                   icon = icon("fa-light fa-snowflake", class = NULL, lib = "font-awesome"), width = 250, class = "btn-info",),
+    )
+    
+  ),
+  
+
   fluidRow(
     column(
       width = 3,
@@ -10,8 +25,7 @@ ui <- fluidPage(
                     FALSE),
     )
   ),
-  
-  
+
   tabsetPanel(
     tabPanel(
       "Meh",
@@ -45,25 +59,51 @@ ui <- fluidPage(
         
       ),
       
-      # Buttons for second plot ---------
-      fluidRow(column(
-        width = 3,
+     # Buttons for second plot ---------
+    
+     # drop down for age  ------------ 
+      fluidRow(
+        column(
+         width = 4,
+          selectInput("age_input",
+                    "Age",
+                    age)
+            ),
+     # drop down for HB -------------
         
-        
-      )
+         column(width = 2), 
+        column(
+          width = 2,  
+            selectInput("health_board_input_s",
+                      "Health Board",
+                      choices = hb_names)
+          
+          ),
+     # radio buttons for SIMD level --------------
+        column(
+          width = 2, 
+          radioButtons("simd_level_input_s",
+                       "SIMD",
+                       choices = simd_level,
+                       inline = TRUE)
+        )
       ),
       
-      # SID ---------------
-      fluidRow(column(
-        width = 6,
+      # plots 2 and 3 ---------------
+    
+     fluidRow(
+        column(
+          width = 5,  
+        plotOutput("age_and_sex_plot")
+        ),
         
-        
-      ),
-      
-      column(
-        width = 6,
-        #age/gender plot 
+        column(width = 1),
+        column(
+        width = 5,
+       plotOutput("simd_plot") 
       )),
+      
+      
       
       # Length of stay inputs -------------
       fluidRow(

@@ -17,14 +17,15 @@ skim(simd)
 
 simd <- simd %>% 
   filter(is.na(HBQF)& !is.na(LocationQF)) %>% 
-  filter(AdmissionType == "Elective Inpatients" | AdmissionType == "Emergency Inpatients") %>%
+  filter(AdmissionType == "Elective Inpatients" | AdmissionType == "Emergency Inpatients" | AdmissionType == "All Inpatients") %>%
   mutate(Year = substr(Quarter, 1, 4),
-       Quarter_single = substr(Quarter, 5, 6))
+       Quarter_single = substr(Quarter, 5, 6)) %>% 
+  mutate(SIMD = as.integer(SIMD))
+ 
 
 simd <-  left_join(simd, hb_codes, by = "HB")
 
-simd <- simd %>% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
-
-
+# simd <- simd %>% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
+simd %>% distinct(SIMD)
 write_csv(simd, file = "../clean_data/simd_clean.csv")
 ```
