@@ -15,9 +15,11 @@ ui <- dashboardPage( skin = "blue",
               fluidRow(
                 box(width = 12, background = "navy",
                     column(width = 2,
-                  checkboxInput("winter_shading",
-                                  "Winter",
-                                  FALSE)),
+                           actionButton("winter_shading",
+                                        "Winter", 
+                                        icon = icon("fa-light fa-snowflake", 
+                                                    class = NULL, lib = "font-awesome"), 
+                                        width = 150, class = "btn-info",)),
                     column(
                       width = 5,
                       selectInput("health_board_input",
@@ -80,9 +82,11 @@ ui <- dashboardPage( skin = "blue",
                         box(width = 12, background = "navy",
                             
                             column(width = 2,
-                                   checkboxInput("winter_shading2",
-                                                 "Winter",
-                                                 FALSE)),
+                                   actionButton("winter_shading2",
+                                                "Winter", 
+                                                icon = icon("fa-light fa-snowflake", 
+                                                            class = NULL, lib = "font-awesome"), 
+                                                width = 150, class = "btn-info",)),
                         column(width = 5,
                         radioButtons("length_admission_type_input",
                                      "Admission Type",
@@ -147,7 +151,17 @@ ui <- dashboardPage( skin = "blue",
                 ),
                 
                 mainPanel(
-                  plotOutput("bedsPlot")
+                  plotOutput("bedsPlot"),
+                  
+                  fluidRow(
+                    width = 12,
+                    
+                    selectInput("hb",
+                                "Health Board",
+                                choices = hb_names),
+                    
+                    plotOutput("pre_plot")
+                    
                 )
               )
               
@@ -157,6 +171,6 @@ ui <- dashboardPage( skin = "blue",
               
       
       
-     ) )))
+     ) ))))
   
   

@@ -3,7 +3,7 @@ server <- function(input, output, session){
 
    alpha_on <- reactive({
 
-     if(input$winter_shading == TRUE){
+     if(input$winter_shading %% 2 != 0){
       0.3
     } else {
       0
@@ -12,7 +12,7 @@ server <- function(input, output, session){
    
    alpha_on2 <- reactive({
      
-     if(input$winter_shading2 == TRUE){
+     if(input$winter_shading2 %% 2 != 0){
        0.3
      } else {
        0
