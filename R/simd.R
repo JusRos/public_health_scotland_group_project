@@ -8,7 +8,7 @@ create_simd_plot <- function(data, health_board_input_s, simd_level_input_s){
     ggplot(aes(x = interaction(Quarter_single, Year), y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
     scale_x_discrete(NULL, guide = "axis_nested")+
 
-    geom_vline(xintercept = "2020Q2", size = 1.5, colour = "red")+
+    geom_vline(xintercept = 11, size = 1.5, colour = "red")+
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax =10, alpha = 0.2, fill = "lightblue" ) +
     annotate("rect", xmin = 5, xmax = 7, ymin = 0, ymax = 10, alpha = 0.2, fill = "lightblue") +
     annotate("rect", xmin = 9, xmax = 11, ymin = 0, ymax = 10, alpha = 0.2, fill = "lightblue") +
