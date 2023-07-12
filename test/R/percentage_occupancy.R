@@ -5,14 +5,18 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     filter(hb_name == input_hb) %>%
     group_by(year_q) %>%
     summarise(avg = mean(percentage_occupancy)) %>%
+    mutate(year = str_sub(year_q, 1, 4), 
+           quarter = str_sub(year_q, 5)) %>% 
     ggplot() +
     aes(x = year_q, y = avg) +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     theme(text =  element_text(size = 20)) +
+    scale_x_discrete(NULL, guide = "axis_nested") +
     labs(x = "Year",
-         y = "Bed Occupancy (%)") +
+         y = "Bed Occupancy (%)",
+         title = "Percentage Of Bed Occupancy Over Time") +
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax = 100, alpha = as.numeric(input_alpha),
       fill = "steelblue")  +
     annotate("rect", xmin = 5, xmax = 7, ymin = 0, ymax = 100, alpha = as.numeric(input_alpha),
@@ -27,6 +31,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
                size = 1.5,
                colour = "red") +
     theme_light() 
+    
     
   
 } 
