@@ -56,7 +56,10 @@ create_length_of_stay_plot <- function(data, health_board,
       text = element_text(size = 15),
       axis.text.x = element_blank(),
       axis.title.x = element_text(vjust = -10),
-      plot.margin = unit(c(1, 1, 3, 1), "lines")
+      plot.margin = unit(c(1, 1, 3, 1), "lines"),
+      axis.text.y = element_text(size = 16),
+      title  = element_text(size = 18, face = "bold")
+      
     ) +
     labs(
       title = "Average Length of Stay for Inpatients by Demographic",

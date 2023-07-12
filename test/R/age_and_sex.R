@@ -21,8 +21,10 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
     scale_colour_manual(values = c("#1F3F49","#EA6A47" ,"#1C4E80","#4cb5f5" ,"#A5d8DD", "#488A99" ,"#7E909A", "#AC3E31", "#484848", "#DBAE58", "#20283E"  ))+
     
     theme(axis.text.x = element_text(hjust = 1, size = 12),
-          axis.text.y = element_text(size = 20),
-          title  = element_text(size = 14, face = "bold") 
+          axis.text.y = element_text(size = 16),
+          title  = element_text(size = 18, face = "bold"),
+          legend.text = element_text(size = 14),
+          legend.title = element_blank()
           
     )+
     labs(

@@ -30,7 +30,12 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_vline(xintercept = "2020 Q2",
                size = 1.5,
                colour = "red") +
-    theme_light() 
+    theme_light()+
+    theme(axis.text.x = element_text(hjust = 1, size = 12),
+          axis.text.y = element_text(size = 16),
+          title  = element_text(size = 18, face = "bold"),
+          legend.text = element_text(size = 14),
+          legend.title = element_blank())
     
     
   

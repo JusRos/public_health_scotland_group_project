@@ -20,7 +20,9 @@
     # scale_x_discrete(labels = c("2017Q4" = "2017   Q4", "2018Q1" = "2018   Q1", "2018Q2" = "Q2", "2018Q3" = "Q3", "2018Q4" = "Q4", "2019Q1" = "2019   Q1", "2019Q2" = "Q2", "2019Q3" = "Q3", "2019Q4" = "Q4", "2020Q1" = "2020   Q1", "2020Q2" = "Q2", "2020Q3" = "Q3", "2020Q4" =  "Q4","2021Q1" = "2021   Q1", "2021Q2" = "Q2", "2021Q3" = "Q3", "2021Q4" = "Q4", "2022Q1" = "2022   Q1", "2022Q2" = "Q2", "2022Q3" = "Q3", "2022Q4" = "Q4"))+
     theme(axis.text.x = element_text(hjust = 1, size = 12),
           axis.text.y = element_text(size = 16),
-          title  = element_text(size = 14, face = "bold")
+          title  = element_text(size = 18, face = "bold"),
+          legend.text = element_text(size = 14),
+          legend.title = element_blank()
     )+
     labs(
       title = "\nAverage length of stay by Health Board, Admission Type and SIMD\n",
