@@ -142,16 +142,18 @@ ui <- dashboardPage( skin = "blue",
       tabItem(tabName = "beds",
               fluidRow(
                   box(width = 12, background = "navy",
-                      column(width = 6,
+                      column(width = 2,
                       actionButton("winter_shading3",
                                    "Winter", 
                                    icon = icon("fa-light fa-snowflake", 
                                                class = NULL, lib = "font-awesome"), 
-                                   width = 150, class = "btn-info"),
-                      column(
-                  width = 6,
-                  selectInput("hb", "Health Board", choices = hb_names)
+                                   width = 150, class = "btn-info")),
+                      column(width = 5,
+                      selectInput("hb",
+                                  "Health Board",
+                                   choices = hb_names)
                 ))),
+              fluidRow(
                 column(
                   width = 12,
                   box(width = 12, plotOutput("pre_plot"))
