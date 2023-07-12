@@ -1,6 +1,8 @@
 server <- function(input, output, session){
-  
+
+
    alpha_on <- reactive({
+
      if(input$winter_shading == TRUE){
       0.3
     } else {
@@ -8,6 +10,7 @@ server <- function(input, output, session){
     }
    })
   
+
   output$pre_plot <- renderPlot({
     percentage_occupancy(data = beds(),
                          input_hb = input$hb,

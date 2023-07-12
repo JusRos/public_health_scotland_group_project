@@ -1,7 +1,22 @@
 ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
+
+  #buttons for winter 
   
+               
+
+  fluidRow(
+    column(
+      width = 3,
+      actionButton("winter_shading",
+                   "Winter", 
+                   icon = icon("fa-light fa-snowflake", class = NULL, lib = "font-awesome"), width = 250, class = "btn-info",),
+    )
+    
+  ),
+  
+
   fluidRow(
     column(
       width = 3,
@@ -10,8 +25,7 @@ ui <- fluidPage(
                     FALSE),
     )
   ),
-  
-  
+
   tabsetPanel(
     tabPanel(
       "Meh",

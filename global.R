@@ -1,5 +1,9 @@
 library(tidyverse)
 
+
+health_boards <- (read_csv("clean_data/health_boards.csv"))
+health_board_list <- sort(unique(health_boards$hb_name))
+
 health_boards <- (read_csv("clean_data/health_boards.csv"))
 health_board_list <- sort(unique(health_boards$hb_name))
 
