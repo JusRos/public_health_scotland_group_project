@@ -51,7 +51,7 @@ server <- function(input, output) {
       geom_sf() +
       theme_void() +
       labs(fill = "Number of Staffed Beds") +
-      scale_fill_binned(n.breaks = 10, labels = number_format()) +
+      scale_fill_binned(n.breaks = 6, labels = number_format()) +
       ggtitle("Available Beds by Health Board")
   })
 }
