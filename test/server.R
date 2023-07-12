@@ -38,4 +38,22 @@ server <- function(input, output, session){
   })
 
 
+  # create plot for age and sex
+  
+  output$age_and_sex_plot <- renderPlot({
+    create_age_and_sex_plot(age_and_sex, 
+                            input$age_input,
+                            alpha_on())
+                            # input$health_board_input,
+                            # input$gender_input)
+    
+      
+  })
+  # create SIMD output
+  
+  output$simd_plot<- renderPlot({
+    create_simd_plot(simd, 
+                     input$health_board_input_s,
+                     input$simd_level_input_s)
+  })
 }
