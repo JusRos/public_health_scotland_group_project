@@ -52,6 +52,4 @@ server <- function(input, output, session){
                      input$health_board_input_s,
                      input$simd_level_input_s)
   })
-
-  
 }
