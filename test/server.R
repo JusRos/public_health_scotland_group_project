@@ -50,7 +50,7 @@ server <- function(input, output, session){
   create_length_of_stay_plot(length_of_stay_data,
                              input$health_board_input,
                              input$length_admission_type_input,
-                             input$age_input,
+                             input$length_age_input,
                              input$sex_input,
                              alpha_on2())
   })
