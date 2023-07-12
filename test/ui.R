@@ -69,7 +69,8 @@ ui <- dashboardPage( skin = "blue",
                          width = 12,  
                          selectInput("age_input",
                                      "Age",
-                                     age)
+                                     age, 
+                                      selected = "80-89 years")
                        ))
                   
                 ))),
@@ -137,6 +138,23 @@ ui <- dashboardPage( skin = "blue",
                       
               ),
       tabItem(tabName = "beds",
+              
+              sidebarLayout(
+                sidebarPanel(
+                  selectInput("year", "Select Year:", choices = unique(joined_data$year)),
+                  selectInput("quarter", "Select Quarter:", choices = unique(joined_data$quarter)),
+                  actionButton("submit", "Submit")
+                ),
+                
+                mainPanel(
+                  plotOutput("bedsPlot")
+                )
+              )
+              
+              
+              
+              
+              
       
       
      ) )))

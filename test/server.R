@@ -56,4 +56,25 @@ server <- function(input, output, session){
                      input$health_board_input_s,
                      input$simd_level_input_s)
   })
-}
+
+#graph -----------------------------
+  
+  filtered_data <- eventReactive(input$submit, {
+    joined_data %>%
+      filter(year == input$year, quarter == input$quarter)
+  })
+  
+  output$bedsPlot <- renderPlot({
+    ggplot(data = filtered_data(), aes(geometry = geometry, fill = all_staffed_beddays)) +
+      geom_sf() +
+      theme_void() +
+      labs(fill = "Number of Staffed Beds") +
+      scale_fill_binned(n.breaks = 6, labels = number_format()) +
+      ggtitle("Available Beds by Health Board")
+  })  
+  
+  
+  
+  
+  
+  }

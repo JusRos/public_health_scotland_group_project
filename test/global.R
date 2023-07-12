@@ -1,4 +1,9 @@
 library(tidyverse)
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(scales)
 
 
 health_boards <- (read_csv("clean_data/health_boards.csv"))
@@ -41,5 +46,25 @@ source("R/age_and_sex.R")
 simd <- read_csv("clean_data/simd_clean.csv")
 simd_level <- sort(unique(simd$SIMD))
 source("R/simd.R")
+
+
+#graph stuff ----------------------
+
+health_boards_shapes <- st_read(dsn = "raw_data/map_files/", 
+                                layer = "SG_NHS_HealthBoards_2019")
+
+beds_clean <- read_csv("clean_data/clean_bed_data")
+
+beds_clean <- beds_clean %>% 
+  filter(specialty_name == "All Acute") %>% 
+  select(year,quarter,all_staffed_beddays,hb_name,specialty_name)
+
+beds_clean <- beds_clean %>% 
+  na.omit() %>% 
+  rename(HBName = hb_name)
+
+beds_clean$HBName <- sub("^NHS ", "", beds_clean$HBName)
+
+joined_data <- left_join(beds_clean, health_boards_shapes, by = "HBName")
 
 
