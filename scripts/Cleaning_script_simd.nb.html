@@ -1754,34 +1754,16 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KHNraW1yKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGhlcmUpXG5cbmhlcmU6OiBoZXJlXG5zaW1kIDwtIHJlYWRfY3N2KFwiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2XCIpXG5oYl9jb2RlcyA8LSByZWFkX2NzdihcIi4uL3Jhd19kYXRhL2hlYWx0aF9ib2FyZC5jc3ZcIikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKVxuc2tpbShzaW1kKVxuXG5zaW1kIDwtIHNpbWQgJT4lIFxuICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIFxuICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSBcIkVsZWN0aXZlIElucGF0aWVudHNcIiB8IEFkbWlzc2lvblR5cGUgPT0gXCJFbWVyZ2VuY3kgSW5wYXRpZW50c1wiKSAlPiVcbiAgbXV0YXRlKFllYXIgPSBzdWJzdHIoUXVhcnRlciwgMSwgNCksXG4gICAgICAgUXVhcnRlcl9zaW5nbGUgPSBzdWJzdHIoUXVhcnRlciwgNSwgNikpXG5cbnNpbWQgPC0gIGxlZnRfam9pbihzaW1kLCBoYl9jb2RlcywgYnkgPSBcIkhCXCIpXG5cbnNpbWQgPC0gc2ltZCAlPiUgc2VsZWN0KFF1YXJ0ZXIsIFllYXIsIFF1YXJ0ZXJfc2luZ2xlLCBIQk5hbWUsIEFkbWlzc2lvblR5cGUsIFNJTUQsIEVwaXNvZGVzLCBMZW5ndGhPZkVwaXNvZGUsIEF2ZXJhZ2VMZW5ndGhPZkVwaXNvZGUsIFN0YXlzLCBMZW5ndGhPZlN0YXksIEF2ZXJhZ2VMZW5ndGhPZlN0YXkpXG5cblxud3JpdGVfY3N2KHNpbWQsIGZpbGUgPSBcIi4uL2NsZWFuX2RhdGEvc2ltZF9jbGVhbi5jc3ZcIilcbmBgYCJ9 -->
-<pre class="r"><code>library(tidyverse)
-library(ggplot2)
-library(skimr)
-library(lubridate)
-library(here)
-
-here:: here
-simd &lt;- read_csv(&quot;../raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_and_simd.csv&quot;)
-hb_codes &lt;- read_csv(&quot;../raw_data/health_board.csv&quot;) %&gt;% select(HB, HBName)
-skim(simd)
-
-simd &lt;- simd %&gt;% 
-  filter(is.na(HBQF)&amp; !is.na(LocationQF)) %&gt;% 
-  filter(AdmissionType == &quot;Elective Inpatients&quot; | AdmissionType == &quot;Emergency Inpatients&quot;) %&gt;%
-  mutate(Year = substr(Quarter, 1, 4),
-       Quarter_single = substr(Quarter, 5, 6))
-
-simd &lt;-  left_join(simd, hb_codes, by = &quot;HB&quot;)
-
-simd &lt;- simd %&gt;% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
-
-
-write_csv(simd, file = &quot;../clean_data/simd_clean.csv&quot;)</code></pre>
-<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDEiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbDFReXc2Q01CQmNLc1ZJNGlQeE8rQ2dGeitBbUhqdzRpUGhXcUVxRVZzQ05YcjB1ejJJVzJ3VDdZRjBkakl6dThNbVNlZGhHZ0pBRDN4Q29FY1JBdDN2bHRFQ2tNSEJBeDhHK24yZ2FOb1JBRVA4QW9OSjUwYTFkajYxLzk5SUJidnlCc0hraC9TM3EzWGlDQWUxdk1kV3JEY1FuZGEyN2N0TnpFcld1SWxoemhTTGp6WDZjWG83bHI2c1ZDRUZtb2p1UUIyelZ6dkUrQ2IwSlhtVW5XL2lFczMwQXRNWHpIV2UrUWNXZTkrVnBEVlIxRVFGWEp3S3dlM3RKVHZ3MGd3amJOd1ZqcXU2RU1vMlFiYUpsVlRNNnNKTWxwYnB1c0g3QStDek0vVzZBUUFBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["SIMD"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"1"},{"1":"2"},{"1":"3"},{"1":"4"},{"1":"5"},{"1":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShza2ltcikNCmxpYnJhcnkobHVicmlkYXRlKQ0KbGlicmFyeShoZXJlKQ0KDQpoZXJlOjogaGVyZQ0Kc2ltZCA8LSByZWFkX2NzdigiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2IikNCmhiX2NvZGVzIDwtIHJlYWRfY3N2KCIuLi9yYXdfZGF0YS9oZWFsdGhfYm9hcmQuY3N2IikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKQ0Kc2tpbShzaW1kKQ0KDQpzaW1kIDwtIHNpbWQgJT4lIA0KICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIA0KICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSAiRWxlY3RpdmUgSW5wYXRpZW50cyIgfCBBZG1pc3Npb25UeXBlID09ICJFbWVyZ2VuY3kgSW5wYXRpZW50cyIpICU+JQ0KICBtdXRhdGUoWWVhciA9IHN1YnN0cihRdWFydGVyLCAxLCA0KSwNCiAgICAgICBRdWFydGVyX3NpbmdsZSA9IHN1YnN0cihRdWFydGVyLCA1LCA2KSkNCg0Kc2ltZCA8LSAgbGVmdF9qb2luKHNpbWQsIGhiX2NvZGVzLCBieSA9ICJIQiIpDQoNCnNpbWQgPC0gc2ltZCAlPiUgc2VsZWN0KFF1YXJ0ZXIsIFllYXIsIFF1YXJ0ZXJfc2luZ2xlLCBIQk5hbWUsIEFkbWlzc2lvblR5cGUsIFNJTUQsIEVwaXNvZGVzLCBMZW5ndGhPZkVwaXNvZGUsIEF2ZXJhZ2VMZW5ndGhPZkVwaXNvZGUsIFN0YXlzLCBMZW5ndGhPZlN0YXksIEF2ZXJhZ2VMZW5ndGhPZlN0YXkpDQoNCg0Kd3JpdGVfY3N2KHNpbWQsIGZpbGUgPSAiLi4vY2xlYW5fZGF0YS9zaW1kX2NsZWFuLmNzdiIpDQpgYGA=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShza2ltcikNCmxpYnJhcnkobHVicmlkYXRlKQ0KbGlicmFyeShoZXJlKQ0KDQpoZXJlOjogaGVyZQ0Kc2ltZCA8LSByZWFkX2NzdigiLi4vcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYW5kX3NpbWQuY3N2IikNCmhiX2NvZGVzIDwtIHJlYWRfY3N2KCIuLi9yYXdfZGF0YS9oZWFsdGhfYm9hcmQuY3N2IikgJT4lIHNlbGVjdChIQiwgSEJOYW1lKQ0Kc2tpbShzaW1kKQ0KDQpzaW1kIDwtIHNpbWQgJT4lIA0KICBmaWx0ZXIoaXMubmEoSEJRRikmICFpcy5uYShMb2NhdGlvblFGKSkgJT4lIA0KICBmaWx0ZXIoQWRtaXNzaW9uVHlwZSA9PSAiRWxlY3RpdmUgSW5wYXRpZW50cyIgfCBBZG1pc3Npb25UeXBlID09ICJFbWVyZ2VuY3kgSW5wYXRpZW50cyIgfCBBZG1pc3Npb25UeXBlID09ICJBbGwgSW5wYXRpZW50cyIpICU+JQ0KICBtdXRhdGUoWWVhciA9IHN1YnN0cihRdWFydGVyLCAxLCA0KSwNCiAgICAgICBRdWFydGVyX3NpbmdsZSA9IHN1YnN0cihRdWFydGVyLCA1LCA2KSkgJT4lIA0KICBtdXRhdGUoU0lNRCA9IGFzLmludGVnZXIoU0lNRCkpDQogDQoNCnNpbWQgPC0gIGxlZnRfam9pbihzaW1kLCBoYl9jb2RlcywgYnkgPSAiSEIiKQ0KDQojIHNpbWQgPC0gc2ltZCAlPiUgc2VsZWN0KFF1YXJ0ZXIsIFllYXIsIFF1YXJ0ZXJfc2luZ2xlLCBIQk5hbWUsIEFkbWlzc2lvblR5cGUsIFNJTUQsIEVwaXNvZGVzLCBMZW5ndGhPZkVwaXNvZGUsIEF2ZXJhZ2VMZW5ndGhPZkVwaXNvZGUsIFN0YXlzLCBMZW5ndGhPZlN0YXksIEF2ZXJhZ2VMZW5ndGhPZlN0YXkpDQpzaW1kICU+JSBkaXN0aW5jdChTSU1EKQ0Kd3JpdGVfY3N2KHNpbWQsIGZpbGUgPSAiLi4vY2xlYW5fZGF0YS9zaW1kX2NsZWFuLmNzdiIpDQpgYGA=</div>
 
 
 
