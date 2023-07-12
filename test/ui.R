@@ -42,29 +42,25 @@ ui <- dashboardPage( skin = "blue",
               fluidRow(
                 column(
                   width = 12,
-                  plotOutput("admissions_plot")
+                  box(width = 12,  plotOutput("admissions_plot"))
                 )
                 
               ),
               
-              fluidRow(
-                
-                br()
-                
-                
-              ),
+    
               
               fluidRow(
                 column(
                   width = 6,  
-                  plotOutput("age_and_sex_plot")
+                  box(width = 12, plotOutput("age_and_sex_plot"))
                 ),
                 column(
                   width = 6,
-                  box( title = "Contols",  background = "purple",
+                  box( title = "Controls",  background = "purple",
+                       column( width = 12,
                        selectInput("health_board_input_s",
                                    "Health Board",
-                                   choices = hb_names),
+                                   choices = hb_names)),
                        
                        
                        column(
@@ -116,20 +112,21 @@ ui <- dashboardPage( skin = "blue",
                         column(
                           width = 12,
                           #length of stay
-                          plotOutput("length_of_stay_plot")
+                          box(width = 12, plotOutput("length_of_stay_plot"))
                         )
                       ),
                       
-                      br(),
+                  
                       
                       fluidRow( 
                         column(
                           width = 8,
-                          plotOutput("simd_plot") 
+                          box(width = 12, plotOutput("simd_plot")) 
                         ),
                         column(
                           width = 4, 
-                          box(background = "purple",radioButtons("simd_level_input_s",
+                          box(background = "purple",
+                              radioButtons("simd_level_input_s",
                                        "SIMD",
                                        choices = simd_level
                                        )))
