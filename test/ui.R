@@ -6,7 +6,7 @@ ui <- dashboardPage( skin = "blue",
   dashboardSidebar(
     sidebarMenu(
       menuItem("Admissions", tabName = "admissions", icon = icon("fa-solid fa-folder", class = NULL, lib = "font-awesome")),
-      menuItem("Lenght Of Stay", tabName = "lenght_of_stay", icon = icon("fa-solid fa-clock", class = NULL, lib = "font-awesome")),
+      menuItem("Length Of Stay", tabName = "length_of_stay", icon = icon("fa-solid fa-clock", class = NULL, lib = "font-awesome")),
       menuItem("Beds", tabName = "beds", icon = icon("fa-duotone fa-map", class = NULL, lib = "font-awesome"))
     )),
   dashboardBody(
@@ -76,7 +76,7 @@ ui <- dashboardPage( skin = "blue",
                        ))
                   
                 ))),
-              tabItem(tabName = "lenght_of_stay",
+              tabItem(tabName = "length_of_stay",
                       
                       fluidRow(
                         box(width = 12, background = "navy",
@@ -98,7 +98,7 @@ ui <- dashboardPage( skin = "blue",
                       
                       column(
                         width = 3,
-                        selectInput("age_input",
+                        selectInput("length_age_input",
                                     "Age Group",
                                     age_group_list)
                       ),
