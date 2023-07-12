@@ -60,7 +60,7 @@ ui <- fluidPage(
          column(width = 2), 
         column(
           width = 2,  
-            selectInput("health_board_input",
+            selectInput("health_board_input_s",
                       "Health Board",
                       choices = hb_names)
           
@@ -68,7 +68,7 @@ ui <- fluidPage(
      # radio buttons for SIMD level --------------
         column(
           width = 2, 
-          radioButtons("simd_level_input",
+          radioButtons("simd_level_input_s",
                        "SIMD",
                        choices = simd_level,
                        inline = TRUE)

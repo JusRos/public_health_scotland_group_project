@@ -2,7 +2,7 @@ create_age_and_sex_plot <- function(data, age_input){
 
   age_and_sex %>% filter(Age == age_input) %>%
   
-  group_by(Quarter, Age, Sex) %>% summarise(number_admissions = sum(Stays))%>% 
+  group_by(Quarter, Age, Sex) %>% summarise(number_admissions = sum(Stays), .groups = "drop")%>% 
   ggplot()+
   geom_vline(xintercept = "2020Q2", size = 1.5, colour = "red")+
   annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax =17000, alpha = 0.3, fill = "lightblue" ) +

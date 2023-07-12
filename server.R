@@ -49,6 +49,9 @@ server <- function(input, output, session){
   
   output$simd_plot<- renderPlot({
     create_simd_plot(simd, 
-                     input$health_board_input,
-                     input$simd_level_input)
+                     input$health_board_input_s,
+                     input$simd_level_input_s)
   })
+
+  
+}
