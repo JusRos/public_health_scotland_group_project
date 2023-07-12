@@ -61,10 +61,11 @@ ui <- dashboardPage( skin = "blue",
                 ),
                 column(
                   width = 6,
-                  box( title = "Contols",  background = "purple",
+                  box( title = "Controls",  background = "purple",
+                       column( width = 12,
                        selectInput("health_board_input_s",
                                    "Health Board",
-                                   choices = hb_names),
+                                   choices = hb_names)),
                        
                        
                        column(
