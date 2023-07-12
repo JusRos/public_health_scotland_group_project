@@ -39,7 +39,7 @@ server <- function(input, output, session){
   
   output$age_and_sex_plot <- renderPlot({
     create_age_and_sex_plot(age_and_sex, 
-                            input$age_input)
+                            input$age_input_s)
                             # input$health_board_input,
                             # input$gender_input)
     

@@ -48,44 +48,44 @@ ui <- fluidPage(
      # Buttons for second plot ---------
     
      # drop down for age  ------------ 
-      fluidRow(
-        column(
+     fluidRow(
+       column(
          width = 4,
-          selectInput("age_input",
-                    "Age",
+         selectInput("age_input_s",
+                     "Age",
                     age)
-            ),
+       ),
      # drop down for HB -------------
         
-         column(width = 2), 
-        column(
-          width = 2,  
-            selectInput("health_board_input_s",
-                      "Health Board",
-                      choices = hb_names)
+     column(width = 2), 
+     column(
+       width = 2,  
+       selectInput("health_board_input_s",
+                   "Health Board",
+                   choices = hb_names)
           
           ),
      # radio buttons for SIMD level --------------
-        column(
-          width = 2, 
-          radioButtons("simd_level_input_s",
-                       "SIMD",
-                       choices = simd_level,
-                       inline = TRUE)
-        )
+     column(
+       width = 2, 
+       radioButtons("simd_level_input_s",
+                    "SIMD",
+                    choices = simd_level,
+                    inline = TRUE)
+     )
       ),
       
       # plots 2 and 3 ---------------
     
      fluidRow(
         column(
-          width = 5,  
+          width = 6,  
         plotOutput("age_and_sex_plot")
         ),
         
-        column(width = 1),
+        
         column(
-        width = 5,
+        width = 6,
        plotOutput("simd_plot") 
       )),
       

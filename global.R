@@ -27,8 +27,8 @@ source("R/length_of_stay.R")
 age_and_sex <- read_csv("clean_data/age_and_sex.csv")
 admission_type <- age_and_sex %>% distinct(AdmissionType)
 #hb_names <- age_and_sex %>% distinct(HBName)
-gender <- age_and_sex %>% distinct(Sex)
-age <- age_and_sex %>% distinct(Age)
+gender <- age_and_sex %>% distinct(Sex) %>% pull()
+age <- age_and_sex %>% distinct(Age) %>% pull()
 source("R/age_and_sex.R")
 
 

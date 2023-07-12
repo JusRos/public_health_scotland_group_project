@@ -17,7 +17,7 @@ skim(simd)
 
 simd <- simd %>% 
   filter(is.na(HBQF)& !is.na(LocationQF)) %>% 
-  filter(AdmissionType == "Elective Inpatients" | AdmissionType == "Emergency Inpatients" | AdmissionType == "All Inpatients") %>%
+  filter(AdmissionType == "Elective Inpatients" | AdmissionType == "Emergency Inpatients") %>%
   mutate(Year = substr(Quarter, 1, 4),
        Quarter_single = substr(Quarter, 5, 6)) %>% 
   mutate(SIMD = as.integer(SIMD))
