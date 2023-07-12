@@ -44,7 +44,4 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_vline(xintercept = "2.2020",
                size = 1.5,
                colour = "red")
-  
-  
-  
 } 
