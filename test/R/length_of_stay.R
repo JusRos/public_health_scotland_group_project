@@ -2,18 +2,6 @@ create_length_of_stay_plot <- function(data, health_board,
                                        admission_type_input, age_input,
                                        sex_input, alpha_input) {
   
-  # Calcuate the mean stay length from before covid
-  # mean_stay <- 
-  #   data %>% 
-  #   filter(
-  #     admission_type == admission_type_input & 
-  #       hb_name == health_board & 
-  #       age == age_input &
-  #       str_detect(quarter, "201")
-  #   ) %>% 
-  #   summarise(average = sum(length_of_stay)/sum(stays)) %>% 
-  #   pull()
-  
   # Filter data for inputs
   length_data <- length_of_stay_data %>% 
     filter(
@@ -22,7 +10,6 @@ create_length_of_stay_plot <- function(data, health_board,
         age == age_input &
         sex == sex_input &
         !str_detect(quarter, "2017")
-      #str_detect(quarter, "202")
     ) %>% 
     group_by(quarter) %>% 
     summarise(avg_stay = sum(length_of_stay)/sum(stays)) %>% 
@@ -59,6 +46,8 @@ create_length_of_stay_plot <- function(data, health_board,
     annotate("rect", xmin = 16, xmax = 18, ymin = -Inf, ymax = Inf,
              fill = "steelblue",alpha = alpha_input) +
     geom_vline(xintercept = 10, size = 1.5, colour = "red") +
+    geom_text(aes(x = 11.5, y = Inf, vjust = 1.2),
+                  label = "Covid Pandemic\n Start", size = 5, colour = "red") +
     scale_colour_manual(name = "", # Add legend
                         breaks = "Pre-covid 2018-2019 Average",
                         values = c("Pre-covid 2018-2019 Average" = "red")) +

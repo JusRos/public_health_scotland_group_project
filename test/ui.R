@@ -51,11 +51,11 @@ ui <- dashboardPage( skin = "blue",
               
               fluidRow(
                 column(
-                  width = 6,  
+                  width = 7,  
                   box(width = 12, plotOutput("age_and_sex_plot"))
                 ),
                 column(
-                  width = 6,
+                  width = 5,
                   box( title = "Controls",  background = "purple",
                        column( width = 12,
                        selectInput("health_board_input_s",
@@ -121,11 +121,11 @@ ui <- dashboardPage( skin = "blue",
                       
                       fluidRow( 
                         column(
-                          width = 8,
+                          width = 9,
                           box(width = 12, plotOutput("simd_plot")) 
                         ),
                         column(
-                          width = 4, 
+                          width = 3, 
                           box(background = "purple",
                               radioButtons("simd_level_input_s",
                                        "SIMD Level",
