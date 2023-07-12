@@ -5,21 +5,21 @@ ui <- dashboardPage( skin = "blue",
   dashboardHeader(title = "Working Title"),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Admissions", tabName = "admissions", icon = icon("dashboard")),
-      menuItem("Lenght Of Stay", tabName = "lenght_of_stay", icon = icon("th")),
-      menuItem("Beds", tabName = "beds", icon = icon("th"))
+      menuItem("Admissions", tabName = "admissions", icon = icon("fa-solid fa-folder", class = NULL, lib = "font-awesome")),
+      menuItem("Lenght Of Stay", tabName = "lenght_of_stay", icon = icon("fa-solid fa-clock", class = NULL, lib = "font-awesome")),
+      menuItem("Beds", tabName = "beds", icon = icon("fa-duotone fa-map", class = NULL, lib = "font-awesome"))
     )),
   dashboardBody(
     tabItems(
       tabItem(tabName = "admissions",
               fluidRow(
                 box(width = 12, background = "navy",
-                    column(width = 3,
+                    column(width = 2,
                   checkboxInput("winter_shading",
                                   "Winter",
                                   FALSE)),
                     column(
-                      width = 3,
+                      width = 5,
                       selectInput("health_board_input",
                                   "Health Board",
                                   health_board_list,
@@ -79,11 +79,11 @@ ui <- dashboardPage( skin = "blue",
                       fluidRow(
                         box(width = 12, background = "navy",
                             
-                            column(width = 3,
-                                   checkboxInput("winter_shading",
+                            column(width = 2,
+                                   checkboxInput("winter_shading2",
                                                  "Winter",
                                                  FALSE)),
-                        column(width = 3,
+                        column(width = 5,
                         radioButtons("length_admission_type_input",
                                      "Admission Type",
                                      c("Emergency Inpatients",
@@ -100,7 +100,7 @@ ui <- dashboardPage( skin = "blue",
                       ),
                       
                       column(
-                        width = 3,
+                        width = 2,
                         radioButtons("sex_input",
                                      "Sex",
                                      sex_list,

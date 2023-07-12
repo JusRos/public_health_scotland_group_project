@@ -9,6 +9,15 @@ server <- function(input, output, session){
       0
     }
    })
+   
+   alpha_on2 <- reactive({
+     
+     if(input$winter_shading2 == TRUE){
+       0.3
+     } else {
+       0
+     }
+   })
   
 
   output$pre_plot <- renderPlot({
@@ -34,7 +43,7 @@ server <- function(input, output, session){
                              input$length_admission_type_input,
                              input$age_input,
                              input$sex_input,
-                             alpha_on())
+                             alpha_on2())
   })
 
 
@@ -54,7 +63,8 @@ server <- function(input, output, session){
   output$simd_plot<- renderPlot({
     create_simd_plot(simd, 
                      input$health_board_input_s,
-                     input$simd_level_input_s)
+                     input$simd_level_input_s,
+                     alpha_on2())
   })
 
 #graph -----------------------------
