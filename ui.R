@@ -2,27 +2,22 @@ ui <- fluidPage(
   
   titlePanel(tags$h1("Working title")),
   
-  #buttons for winter 
-  radioButtons("alpha_on",
-               "Winter", 
-               choices = c("Off" = 0, "On" = 0.3),
-               inline = TRUE ), 
-               
+  fluidRow(
+    column(
+      width = 3,
+      checkboxInput("winter_shading",
+                    "Winter",
+                    FALSE),
+    )
+  ),
+  
   
   tabsetPanel(
     tabPanel(
       "Meh",
       
       
-                     
-          
-       
-      
-      
-      
-      # Inputs for hospital admissions over time plot --------------
       fluidRow(
-        # Select Health Board
         column(
           width = 3,
           selectInput("health_board_input",
@@ -30,23 +25,24 @@ ui <- fluidPage(
                       health_board_list,
                       selected = "All")
         ),
-        # Select Admission Type ---------------
         column(
           width = 3,
+          offset = 2,
           radioButtons("admission_type_input",
                        "Admission Type",
                        admission_type_list,
                        inline = TRUE,
                        selected = "All")
-        ),
+        )
       ),
       
       # Hospital admissions over time plot ---------------
       fluidRow(
         column(
-          width = 12,
+          width = 10,
           plotOutput("admissions_plot")
         )
+        
       ),
       
      # Buttons for second plot ---------
@@ -97,20 +93,21 @@ ui <- fluidPage(
       
       # Length of stay inputs -------------
       fluidRow(
-        column(
-          width = 3,
-          selectInput("length_health_board_input",
-                      "Health Board",
-                      length_health_board_list)
-        ),
+        # column(
+        #   width = 3,
+        #   selectInput("length_health_board_input",
+        #               "Health Board",
+        #               length_health_board_list)
+        # ),
         
         column(
-          width = 3,
+          width = 6,
           radioButtons("length_admission_type_input",
-                      "Admission Type",
-                      c("Emergency Inpatients",
-                        "Elective Inpatients",
-                        "All Inpatients"))
+                       "Admission Type",
+                       c("Emergency Inpatients",
+                         "Elective Inpatients",
+                         "All Inpatients"),
+                       inline = TRUE)
         ),
         
         column(
@@ -123,8 +120,9 @@ ui <- fluidPage(
         column(
           width = 3,
           radioButtons("sex_input",
-                      "Sex",
-                      sex_list)
+                       "Sex",
+                       sex_list,
+                       inline = TRUE)
         )
       ),
       
@@ -141,21 +139,21 @@ ui <- fluidPage(
     ),
     
     
-  
-  tabPanel( #map tab
-    "Map",
     
-    fluidRow(
-      width = 12,
+    tabPanel( #map tab
+      "Map",
       
-      selectInput("hb",
-                  "Health Board",
-                  choices = hb_names),
+      fluidRow(
+        width = 12,
+        
+        selectInput("hb",
+                    "Health Board",
+                    choices = hb_names),
+        
+        plotOutput("pre_plot")
+        
+        
+      )
       
-      plotOutput("pre_plot")
-      
-      
-    )
-    
-  ))
+    ))
 )

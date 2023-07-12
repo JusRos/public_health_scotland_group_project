@@ -8,6 +8,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     ggplot() +
     aes(x = year_q, y = avg) +
     geom_line(group = 1, size = 2) +
+    geom_point(size = 3) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     theme(text =  element_text(size = 20)) +
     labs(x = "Year",
@@ -25,6 +26,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_vline(xintercept = "2020 Q2",
                size = 1.5,
                colour = "red") +
-    theme_light()
+    theme_light() 
+    
   
 } 
