@@ -16,6 +16,8 @@ ui <- dashboardPage( skin = "blue",
     }
   ")),
   
+  
+  
                        tabItems(
                          # Admissions Tab -----------------
                          tabItem(tabName = "admissions",
@@ -44,9 +46,7 @@ ui <- dashboardPage( skin = "blue",
                                                       "Admission Type",
                                                       admission_type_list,
                                                       inline = TRUE,
-                                                      selected = "All",
-                                                      icon = icon("calendar")
-                                                      )
+                                                      selected = "All")
                                        )
                                        
                                    )),
