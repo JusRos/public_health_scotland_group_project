@@ -186,3 +186,99 @@ covid_admissions %>%
   distinct(hb)
 ```
 
+```{r}
+data_by_age <- data %>% 
+  filter(admission_type == "Emergency Inpatients",
+         hb == "S92000003") %>% 
+  mutate(covid = case_when(
+    str_detect(quarter, "2017|2018|2019|2020Q1") ~ "Pre",
+    .default = "Post"
+  ), 
+         age_group = case_when(
+    age == "0-9 years" | age == "10-19 years" ~ "0-19",
+    age == "20-29 years" | age == "30-39 years" ~ "20-39",
+    age == "40-49 years" | age == "50-59 years" ~ "40-59",
+    age == "60-69 years" | age == "70-79 years" ~ "60-79",
+    .default = "80 and over"
+  ), .after = age) %>% 
+  select(quarter, covid, age, age_group, stays, length_of_stay, average_length_of_stay)
+
+data_by_age
+```
+
+```{r}
+data_by_age %>% 
+  # select(age, covid, average_length_of_stay) %>% 
+  group_by(age, covid) %>% 
+  summarise(average_length_of_stay = mean(average_length_of_stay)) %>% 
+  ggplot(aes(age, average_length_of_stay, fill = reorder(covid, desc(covid)))) +
+  geom_col(position = "dodge") +
+  theme_light() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  labs(
+    title = "Average Length of Stay by Age",
+    x = "Age Group",
+    y = "Average Length of Stay (days)",
+    fill = "Covid"
+  )
+  
+```
+
+
+```{r}
+data_by_age %>% 
+  ggplot(aes(age_group, average_length_of_stay, fill = reorder(covid, desc(covid)))) +
+  geom_boxplot() +
+  labs(
+    title = "Average Length of Stay by Age",
+    x = "Age Group",
+    y = "Average Length of Stay (days)",
+    fill = "Covid"
+  ) +
+  theme_light()
+```
+
+```{r}
+data_by_age %>% 
+  filter(age_group %in% c("60-79", "80 and over")) %>% 
+  ggplot(aes(age_group, average_length_of_stay, fill = reorder(covid, desc(covid)))) +
+  geom_boxplot() +
+  labs(
+    title = "Average Length of Stay by Age",
+    x = "Age Group",
+    y = "Average Length of Stay (days)",
+    fill = "Covid"
+  ) +
+  theme_light()
+```
+
+```{r}
+library(infer)
+null_dist <- data_by_age %>% 
+  filter(age_group == "80 and over") %>% 
+  specify(average_length_of_stay ~ covid) %>% 
+  hypothesise("independence") %>% 
+  generate(1000, "permute") %>% 
+  calculate("diff in means", order = c("Pre", "Post"))
+```
+
+```{r}
+obs_stat <- data_by_age %>% 
+  filter(age_group == "80 and over") %>% 
+  specify(average_length_of_stay ~ covid) %>% 
+  calculate("diff in means", order = c("Pre", "Post"))
+```
+
+```{r}
+null_dist %>% 
+  visualise()+
+  shade_p_value(obs_stat = obs_stat, direction = "left")
+```
+
+```{r}
+null_dist %>% 
+  get_p_value(obs_stat = obs_stat, direction = "left")
+```
+
