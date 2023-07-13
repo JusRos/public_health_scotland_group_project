@@ -2,7 +2,7 @@ library(shiny)
 library(shinydashboard)
 
 ui <- dashboardPage( skin = "blue",
-                     dashboardHeader(title = "Working Title"),
+                     dashboardHeader(title = "PHS Dashboard "),
                      dashboardSidebar(
                        sidebarMenu(
                          menuItem("Admissions", tabName = "admissions", icon = icon("fa-solid fa-folder", class = NULL, lib = "font-awesome")),
@@ -126,12 +126,12 @@ ui <- dashboardPage( skin = "blue",
                                  ## SIMD Plot ----------------
                                  fluidRow( 
                                    column(
-                                     width = 8,
+                                     width = 7,
                                      box(width = 12, plotOutput("simd_plot")) 
                                    ),
                                    ## SIMD inputs ------------------------
                                    column(
-                                     width = 4, 
+                                     width = 5, 
                                      box(title = "Controls",
                                          background = "purple",
                                          column( width = 12,
@@ -176,7 +176,7 @@ ui <- dashboardPage( skin = "blue",
                                    ## Beds map inputs ----------------------------
                                    column(
                                      width = 4,
-                                     box(background = "purple",
+                                     box(background = "purple", title = "Create Map",
                                          selectInput("year", "Select Year:",
                                                      choices = sort(unique(joined_data$year))),
                                          selectInput("quarter", "Select Quarter:",
