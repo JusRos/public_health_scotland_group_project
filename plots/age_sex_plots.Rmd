@@ -130,4 +130,3 @@ age_and_sex %>% filter(HBName == "NHS Ayrshire and Arran" & Sex == "Female" & Ag
 ```{r}
 simd %>% distinct(SIMD)
 ```
-
