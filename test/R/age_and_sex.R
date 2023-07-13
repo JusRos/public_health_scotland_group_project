@@ -8,6 +8,8 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
     ggplot(aes(x = interaction(Quarter_single, Year), y = number_admissions, group = Sex, colour = Sex)) +
     scale_x_discrete(NULL, guide = "axis_nested")+
     geom_vline(xintercept = 11, size = 1.5, colour = "red")+
+    geom_text(aes(x = 15, y = Inf, vjust = 1.2),
+              label = "Covid Pandemic\n Start", size = 5, colour = "red") +
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax =17000, alpha = as.numeric(input_alpha), fill = "steelblue" ) +
     annotate("rect", xmin = 5, xmax = 7, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
     annotate("rect", xmin = 9, xmax = 11, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
@@ -15,7 +17,7 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
     annotate("rect", xmin = 17, xmax = 19, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
     annotate("rect", xmin = 21, xmax = 22, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
     geom_line(aes(x = interaction(Quarter_single, Year), y = number_admissions, group = Sex, colour = Sex), size = 1.5)+
-    scale_x_discrete(NULL, guide = "axis_nested")+
+    scale_x_discrete(guide = "axis_nested")+
     scale_y_continuous(labels = scales::comma)+
     
     theme_light()+
@@ -29,7 +31,7 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
           
     )+
     labs(
-      title = "\nHospital Admissions by Age and Gender\n", 
+      title = "\nHospital Admissions by\nAge and Gender\n", 
       x = "\nQuarter\n", 
       y = "\nNumber of Admissions\n"
     )}

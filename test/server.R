@@ -39,9 +39,9 @@ server <- function(input, output, session){
   # Create plot of average length of stay
   output$length_of_stay_plot <- renderPlot({
   create_length_of_stay_plot(length_of_stay_data,
-                             input$health_board_input,
+                             input$length_health_board_input,
                              input$length_admission_type_input,
-                             input$age_input,
+                             input$length_age_input,
                              input$sex_input,
                              alpha_on2())
   })
@@ -81,7 +81,9 @@ server <- function(input, output, session){
       theme_void() +
       labs(fill = "Number of Staffed Beds") +
       scale_fill_binned(n.breaks = 6, labels = number_format()) +
-      ggtitle("Available Beds by Health Board")
+      ggtitle("Available Beds by Health Board") +
+      theme(text = element_text(size = 18))
+
   })  
   
   
