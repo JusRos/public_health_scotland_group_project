@@ -2,7 +2,7 @@ library(shiny)
 library(shinydashboard)
 
 ui <- dashboardPage( skin = "blue",
-                     dashboardHeader(title = "PHS Dashboard "),
+                     dashboardHeader(title = tags$h3("PHS Dashboard ")),
                      dashboardSidebar(
                        sidebarMenu(
                          menuItem("Admissions", tabName = "admissions", icon = icon("fa-solid fa-folder", class = NULL, lib = "font-awesome")),
@@ -10,6 +10,12 @@ ui <- dashboardPage( skin = "blue",
                          menuItem("Beds", tabName = "beds", icon = icon("fa-duotone fa-map", class = NULL, lib = "font-awesome"))
                        )),
                      dashboardBody(
+                       tags$style(HTML("
+    .selectize-control.single .selectize-input {
+      font-size: 20px;
+    }
+  ")),
+  
                        tabItems(
                          # Admissions Tab -----------------
                          tabItem(tabName = "admissions",
@@ -22,13 +28,14 @@ ui <- dashboardPage( skin = "blue",
                                                            icon = icon("fa-light fa-snowflake", 
                                                                        class = NULL,
                                                                        lib = "font-awesome"), 
-                                                           width = 150, class = "btn-info",)),
+                                                           width = 200, class = "btn-info",
+                                                           style = "padding:25px; font-size:100%")),
                                        column(
                                          width = 5,
                                          selectInput("health_board_input",
                                                      "Health Board",
                                                      health_board_list,
-                                                     selected = "All")
+                                                     selected = "All", width = "100%")
                                        ),
                                        column(
                                          width = 3,
@@ -37,7 +44,9 @@ ui <- dashboardPage( skin = "blue",
                                                       "Admission Type",
                                                       admission_type_list,
                                                       inline = TRUE,
-                                                      selected = "All")
+                                                      selected = "All",
+                                                      icon = icon("calendar")
+                                                      )
                                        )
                                        
                                    )),
@@ -54,19 +63,19 @@ ui <- dashboardPage( skin = "blue",
                                  ## Age Sex Plot ------------------------
                                  fluidRow(
                                    column(
-                                     width = 7,  
+                                     width = 9,  
                                      box(width = 12, plotOutput("age_and_sex_plot"))
                                    ),
                                    column(
-                                     width = 5,
+                                     width = 3,
                                      ## Age and Sex Inputs ---------------------
-                                     column(width = 12,
-                                            box( background = "purple",       
+                                     
+                                            box(width = 12, background = "purple",       
                                                  selectInput("age_input",
                                                              "Age",
                                                              age, 
                                                              selected = "80-89 years")
-                                            ))
+                                            )
                                      
                                    ))),
                          # Length of Stay Tab ------------------
@@ -81,12 +90,12 @@ ui <- dashboardPage( skin = "blue",
                                                            icon = icon("fa-light fa-snowflake", 
                                                                        class = NULL,
                                                                        lib = "font-awesome"), 
-                                                           width = 150, class = "btn-info")),
+                                                           width = 200, class = "btn-info", style = "padding:25px; font-size:100%")),
                                        column(
                                          width = 2,
                                          selectInput("length_health_board_input",
                                                      "Health Board",
-                                                     choices = hb_names)),
+                                                     choices = length_health_board_list)),
                                        
                                        column(width = 4,
                                               radioButtons("length_admission_type_input",
@@ -126,22 +135,22 @@ ui <- dashboardPage( skin = "blue",
                                  ## SIMD Plot ----------------
                                  fluidRow( 
                                    column(
-                                     width = 7,
+                                     width = 9,
                                      box(width = 12, plotOutput("simd_plot")) 
                                    ),
                                    ## SIMD inputs ------------------------
                                    column(
-                                     width = 5, 
-                                     box(title = "Controls",
+                                     width = 3, 
+                                     box(width = 12, title = "Controls",
                                          background = "purple",
-                                         column( width = 12,
+                                       
                                                  selectInput("health_board_input_s",
                                                              "Health Board",
-                                                             choices = hb_names)),
-                                         column(width = 12,
+                                                             choices = hb_names),
+                                         
                                                 selectInput("simd_level_input_s",
                                                             "SIMD Level",
-                                                            choices = simd_level)))
+                                                            choices = simd_level))
                                    )
                                    
                                    # Beds tab -----------------      
@@ -155,7 +164,8 @@ ui <- dashboardPage( skin = "blue",
                                                            "Winter", 
                                                            icon = icon("fa-light fa-snowflake", 
                                                                        class = NULL, lib = "font-awesome"), 
-                                                           width = 150, class = "btn-info")),
+                                                           width = 200, class = "btn-info",
+                                                           style = "padding:25px; font-size:100%")),
                                        column(width = 5,
                                               selectInput("hb",
                                                           "Health Board",
@@ -170,13 +180,13 @@ ui <- dashboardPage( skin = "blue",
                                  ),
                                  fluidRow(
                                    column(
-                                     width = 8,
+                                     width = 9,
                                      box(width = 12, plotOutput("bedsPlot"))
                                    ),
                                    ## Beds map inputs ----------------------------
                                    column(
-                                     width = 4,
-                                     box(background = "purple", title = "Create Map",
+                                     width = 3,
+                                     box(width = 12, background = "purple", title = "Create Map",
                                          selectInput("year", "Select Year:",
                                                      choices = sort(unique(joined_data$year))),
                                          selectInput("quarter", "Select Quarter:",
