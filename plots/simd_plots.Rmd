@@ -13,17 +13,19 @@ simd <- read.csv("../clean_data/simd_clean.csv")
 ```
 SIMD  by Admission type
 
+
+Emergency admissions drive the volume - simd 1 and 2 tend to be admitted more often that otehr SIMD groups - across Scotland
 ```{r}
 library(ggh4x) 
  # and then this updated according to your data set 
 
-
-simd %>% filter(AdmissionType == "Emergency Inpatients") %>%  
+simd<- simd %>% drop_na(SIMD)
+simd %>%  
   #& HBName == "NHS Ayrshire and Arran") %>% 
-group_by(Year, Quarter_single, SIMD) %>% summarise(number_admissions = sum(Stays)) %>% mutate(SIMD = as.factor(SIMD)) %>% 
-  
+group_by(Year, Quarter_single, AdmissionType, SIMD) %>% summarise(number_admissions = sum(Stays)) %>% 
   ggplot(aes(x = interaction(Quarter_single, Year), y = number_admissions, group = SIMD, colour = SIMD))+
-   scale_x_discrete(NULL, guide = "axis_nested")+
+   scale_x_discrete(guide = "axis_nested")+
+   facet_wrap( ~ AdmissionType)+
   geom_vline(xintercept = "2020Q2", size = 1.5, colour = "red")+
   annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax = 600, alpha = 0.2, fill = "lightblue" ) +
   annotate("rect", xmin = 5, xmax = 7, ymin = 0, ymax = 600, alpha = 0.2, fill = "lightblue") +
@@ -34,11 +36,12 @@ group_by(Year, Quarter_single, SIMD) %>% summarise(number_admissions = sum(Stays
   geom_line(size = 1.5)+
   theme_light()+
   scale_colour_manual(values = c("#1F3F49","#488A99" ,"#1C4E80","#4cb5f5" ,"#A5d8DD"  ))+
-theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+theme(axis.text.x = element_text(hjust = 1, size = 12),
       axis.text.y = element_text(size = 20),
       title  = element_text(size = 20, face = "bold"), 
  
       )+
+ 
      labs(
     title = "\nHospital Admissions by SIMD\n",
     x = "\nQuarter\n",
@@ -91,10 +94,16 @@ simd %>% filter(HBName == "NHS Borders" & SIMD == 1) %>%
   
   
 ```
-
+emergency admissions in SIMD 1 and Simd 2 - length of stay
 
 ```{r}
 simd %>% (distinct(SIMD)
 ```
+
+SIMD - pre-covid and post-covid emergency admissions have always been at the higher level for SIMD 1 and 2  than SIMD 4 or 5
+
+planned admissions were at similar levels regardless of simd and pre-, after-covid
+
+emergency appoitments drive the pressures on NHS across the entire year
 
 

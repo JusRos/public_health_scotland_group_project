@@ -47,6 +47,7 @@ age_and_sex %>% filter(HBName == "NHS Ayrshire and Arran" & Sex == "Female" & Ag
 
 
 ```{r}
+age_and_sex <- read_csv("../clean_data/age_and_sex.csv")
 age_and_sex %>%
   filter(Age == "20-29 years") %>%
   group_by(Year, Quarter_single, Age, Sex) %>%
@@ -130,3 +131,4 @@ age_and_sex %>% filter(HBName == "NHS Ayrshire and Arran" & Sex == "Female" & Ag
 ```{r}
 simd %>% distinct(SIMD)
 ```
+emergency stays across different age groups vs planned stays across different age groups.
