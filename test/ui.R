@@ -33,17 +33,17 @@ ui <- dashboardPage( skin = "blue",
                                                            width = 200, class = "btn-info",
                                                            style = "padding:25px; font-size:100%")),
                                        column(
-                                         width = 5,
+                                         width = 4,
                                          selectInput("health_board_input",
                                                      "Health Board",
                                                      health_board_list,
-                                                     selected = "All", width = "100%")
+                                                     selected = "All", width = 400)
                                        ),
                                        column(
-                                         width = 3,
+                                         width = 5,
                                          
                                          radioButtons("admission_type_input",
-                                                      "Admission Type",
+                                                      tags$h4("Admission Type"),
                                                       admission_type_list,
                                                       inline = TRUE,
                                                       selected = "All")
@@ -99,7 +99,7 @@ ui <- dashboardPage( skin = "blue",
                                        
                                        column(width = 4,
                                               radioButtons("length_admission_type_input",
-                                                           "Admission Type",
+                                                           tags$h4("Admission Type"),
                                                            c("Emergency Inpatients",
                                                              "Elective Inpatients",
                                                              "All Inpatients"),
@@ -117,7 +117,7 @@ ui <- dashboardPage( skin = "blue",
                                        column(
                                          width = 2,
                                          radioButtons("sex_input",
-                                                      "Sex",
+                                                      tags$h4("Sex"),
                                                       sex_list,
                                                       inline = TRUE)
                                          
