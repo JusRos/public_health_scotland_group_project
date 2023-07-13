@@ -1,6 +1,7 @@
 create_age_and_sex_plot <- function(data, age_input, input_alpha){
   
-  age_and_sex %>% filter(Age == age_input) %>%
+  age_and_sex %>% #filter(HBName == health_board_input_s) %>%
+    filter(Age == age_input) %>% 
     
     group_by(Year, Quarter_single, Age, Sex) %>% summarise(number_admissions = sum(Stays), .groups = "drop")%>% 
     

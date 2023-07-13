@@ -56,23 +56,22 @@ ui <- dashboardPage( skin = "blue",
                 ),
                 column(
                   width = 5,
-                  box( title = "Controls",  background = "purple",
-                       column( width = 12,
-                       selectInput("health_board_input_s",
-                                   "Health Board",
-                                   choices = hb_names)),
+                  box(background = "purple",
+                       # column(width = 12,
+                       # selectInput("health_board_input_s",
+                       #             "Health Board",
+                       #             choices = hb_names)),
                        
-                       br(),
-                       
-                       column(
-                         width = 12,  
-                         selectInput("age_input",
+                       # br(),
+                       column(width = 12,
+                     selectInput("age_input",
                                      "Age",
                                      age, 
-                                      selected = "80-89 years")
+                                     selected = "80-89 years")
                        ))
                   
                 ))),
+    
               tabItem(tabName = "length_of_stay",
                       
                       fluidRow(

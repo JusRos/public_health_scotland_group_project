@@ -1,9 +1,9 @@
 
 library(ggh4x)
-create_simd_plot <- function(data, health_board_input_s, simd_level_input_s){
+create_simd_plot <- function(data, health_board_input_ss, simd_level_input_s){
   
   simd %>% 
-    filter(HBName == health_board_input_2) %>% 
+    filter(HBName == health_board_input_ss) %>% 
     filter(SIMD == simd_level_input_s) %>% 
     ggplot(aes(x = interaction(Quarter_single, Year), y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
     scale_x_discrete(NULL, guide = "axis_nested")+
@@ -30,3 +30,4 @@ create_simd_plot <- function(data, health_board_input_s, simd_level_input_s){
       y = "\nAverage length of stay (days)\n"
     )
 }
+
