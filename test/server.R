@@ -98,9 +98,17 @@ server <- function(input, output, session){
       )
   })
   
-  
-  
-  
-  
-  
+  observeEvent(input$year, {
+    choices <- if (input$year == 2017) {
+      4 
+      } else {
+      1:4
+    }
+      updateSelectInput(session, "quarter",
+                        choices = choices)
+      
+    })
   }
+  
+  
+  
