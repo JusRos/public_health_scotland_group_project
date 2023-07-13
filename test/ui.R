@@ -85,7 +85,13 @@ ui <- dashboardPage( skin = "blue",
                                                 icon = icon("fa-light fa-snowflake", 
                                                             class = NULL,
                                                             lib = "font-awesome"), 
-                                                width = 150, class = "btn-info",)),
+                                                width = 150, class = "btn-info")),
+                            column(
+                              width = 2,
+                              selectInput("length_health_board_input",
+                                          "Health Board",
+                                          choices = hb_names)),
+                            
                         column(width = 4,
                         radioButtons("length_admission_type_input",
                                      "Admission Type",
@@ -96,7 +102,7 @@ ui <- dashboardPage( skin = "blue",
                       ,
                       
                       column(
-                        width = 4,
+                        width = 2,
                         selectInput("length_age_input",
                                     "Age Group",
                                     age_group_list)
