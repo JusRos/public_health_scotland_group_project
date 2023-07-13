@@ -45,6 +45,7 @@ bootstrap_resample %>%
 bootstrap_ci
 
 ```
+
 ```{r}
 mean_stay <- data %>% 
   filter(admission_type == "All Inpatients" & str_detect(quarter, "201")) %>% 
@@ -191,8 +192,9 @@ data_by_age <- data %>%
   filter(admission_type == "Emergency Inpatients",
          hb == "S92000003") %>% 
   mutate(covid = case_when(
-    str_detect(quarter, "2017|2018|2019|2020Q1") ~ "Pre",
-    .default = "Post"
+    str_detect(quarter, "2017|2018|2019|2020Q1") ~ "Pre (2017 Q4 - 2020 Q1)",
+    str_detect(quarter, "2020|2021") ~ "During (2020 Q2 - 2021 Q4)",
+    .default = "Post (2022)"
   ), 
          age_group = case_when(
     age == "0-9 years" | age == "10-19 years" ~ "0-19",
@@ -201,6 +203,7 @@ data_by_age <- data %>%
     age == "60-69 years" | age == "70-79 years" ~ "60-79",
     .default = "80 and over"
   ), .after = age) %>% 
+  mutate(covid = factor(covid, levels = c("Pre (2017 Q4 - 2020 Q1)", "During (2020 Q2 - 2021 Q4)", "Post (2022)"))) %>% 
   select(quarter, covid, age, age_group, stays, length_of_stay, average_length_of_stay)
 
 data_by_age
@@ -211,7 +214,7 @@ data_by_age %>%
   # select(age, covid, average_length_of_stay) %>% 
   group_by(age, covid) %>% 
   summarise(average_length_of_stay = mean(average_length_of_stay)) %>% 
-  ggplot(aes(age, average_length_of_stay, fill = reorder(covid, desc(covid)))) +
+  ggplot(aes(age, average_length_of_stay, fill = covid)) +
   geom_col(position = "dodge") +
   theme_light() +
   theme(
@@ -223,7 +226,8 @@ data_by_age %>%
     y = "Average Length of Stay (days)",
     fill = "Covid"
   )
-  
+
+ggsave(here("plots/length_of_stay_age.png"))
 ```
 
 
@@ -242,16 +246,19 @@ data_by_age %>%
 
 ```{r}
 data_by_age %>% 
-  filter(age_group %in% c("60-79", "80 and over")) %>% 
-  ggplot(aes(age_group, average_length_of_stay, fill = reorder(covid, desc(covid)))) +
-  geom_boxplot() +
+  filter(age_group == "80 and over") %>% 
+  mutate(year = str_extract(quarter, "[0-9]{4}")) %>% 
+  ggplot(aes(covid, average_length_of_stay, fill = covid)) +
+  geom_boxplot(show.legend = FALSE) +
   labs(
-    title = "Average Length of Stay by Age",
-    x = "Age Group",
+    title = "Average Length of Stay for over 80s",
+    x = "Covid Period",
     y = "Average Length of Stay (days)",
     fill = "Covid"
   ) +
   theme_light()
+
+ggsave(here("plots/over_80_length_of_stay.png"))
 ```
 
 ```{r}
@@ -280,5 +287,10 @@ null_dist %>%
 ```{r}
 null_dist %>% 
   get_p_value(obs_stat = obs_stat, direction = "left")
+```
+
+
+```{r}
+
 ```
 
