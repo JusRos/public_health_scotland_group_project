@@ -7,8 +7,9 @@
     scale_x_discrete(guide = "axis_nested")+
     
     geom_vline(xintercept = 11, size = 1.5, colour = "red")+
-      geom_text(aes(x = 15, y = Inf, vjust = 1.2),
-                label = "Covid Pandemic\n Start", size = 5, colour = "red") +
+      geom_text(aes(x = 11.2, y = Inf, vjust = 1.2),
+                label = "Covid Pandemic\n Start",
+                size = 5, colour = "red", hjust = 0) +
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax =10, alpha = as.numeric(input_alpha), fill = "steelblue" ) +
     annotate("rect", xmin = 5, xmax = 7, ymin = 0, ymax = 10, alpha = as.numeric(input_alpha), fill = "steelblue") +
     annotate("rect", xmin = 9, xmax = 11, ymin = 0, ymax = 10, alpha = as.numeric(input_alpha), fill = "steelblue") +

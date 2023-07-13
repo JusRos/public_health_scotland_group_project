@@ -29,8 +29,9 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_vline(xintercept = 11,
                size = 1.5,
                colour = "red") +
-    geom_text(aes(x = 12.5, y = Inf, vjust = 1.2),
-              label = "Covid Pandemic\n Start", size = 5, colour = "red") +
+    geom_text(aes(x = 11.2, y = Inf, vjust = 1.2),
+              label = "Covid Pandemic\n Start",
+              size = 5, colour = "red", hjust = 0) +
     theme_light()+
     theme(axis.text.x = element_text(hjust = 1, size = 12),
           axis.text.y = element_text(size = 16),

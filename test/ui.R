@@ -11,7 +11,9 @@ ui <- dashboardPage( skin = "blue",
     )),
   dashboardBody(
     tabItems(
+      # Admissions Tab -----------------
       tabItem(tabName = "admissions",
+              ## Admissions Inputs --------------------
               fluidRow(
                 box(width = 12, background = "navy",
                     column(width = 2,
@@ -39,7 +41,7 @@ ui <- dashboardPage( skin = "blue",
                     )
                     
                 )),
-              
+              ## Admissions Plot --------------------
               fluidRow(
                 column(
                   width = 12,
@@ -49,7 +51,7 @@ ui <- dashboardPage( skin = "blue",
               ),
               
     
-              
+              ## Age Sex Plot ------------------------
               fluidRow(
                 column(
                   width = 7,  
@@ -57,7 +59,7 @@ ui <- dashboardPage( skin = "blue",
                 ),
                 column(
                   width = 5,
-                  
+                  ## Age and Sex Inputs ---------------------
                   box( title = "Controls",  background = "purple",
                        column( width = 12,
                        selectInput("health_board_input_s",
@@ -73,12 +75,12 @@ ui <- dashboardPage( skin = "blue",
                        ))
                   
                 ))),
-    
+    # Length of Stay Tab ------------------
               tabItem(tabName = "length_of_stay",
                       
                       fluidRow(
                         box(width = 12, background = "navy",
-                            
+                            ## Length of stay inputs ---------------------
                             column(width = 2,
                                    actionButton("winter_shading2",
                                                 "Winter", 
@@ -105,7 +107,8 @@ ui <- dashboardPage( skin = "blue",
                         width = 2,
                         selectInput("length_age_input",
                                     "Age Group",
-                                    age_group_list)
+                                    age_group_list,
+                                    selected = "80-89 years")
                       ),
                       
                       column(
@@ -117,21 +120,22 @@ ui <- dashboardPage( skin = "blue",
                         
                       ))),
                       
+                      ## Length of stay plot -------------
                       fluidRow(
                         column(
                           width = 12,
-                          #length of stay
                           box(width = 12, plotOutput("length_of_stay_plot"))
                         )
                       ),
                       
                   
-                      
+                      ## SIMD Plot ----------------
                       fluidRow( 
                         column(
                           width = 8,
                           box(width = 12, plotOutput("simd_plot")) 
                         ),
+                        ## SIMD inputs ------------------------
                         column(
                           width = 4, 
                           box(title = "Controls",
@@ -144,17 +148,14 @@ ui <- dashboardPage( skin = "blue",
                                      selectInput("simd_level_input_s",
                                        "SIMD Level",
                                        choices = simd_level)))
-                        
-                        
-                        
-                        
                       )
                       
-                      
+                # Beds tab -----------------      
               )),
       tabItem(tabName = "beds",
               fluidRow(
                   box(width = 12, background = "navy",
+                      ## Beds input ------------------
                       column(width = 2,
                       actionButton("winter_shading3",
                                    "Winter", 
@@ -166,6 +167,7 @@ ui <- dashboardPage( skin = "blue",
                                   "Health Board",
                                    choices = hb_names)
                 ))),
+              ## Beds plot ------------------
               fluidRow(
                 column(
                   width = 12,
@@ -177,11 +179,14 @@ ui <- dashboardPage( skin = "blue",
                   width = 8,
                   box(width = 12, plotOutput("bedsPlot"))
                 ),
+                ## Beds map inputs ----------------------------
                 column(
                   width = 4,
                   box(background = "purple",
-                  selectInput("year", "Select Year:", choices = unique(joined_data$year)),
-                  selectInput("quarter", "Select Quarter:", choices = unique(joined_data$quarter)),
+                  selectInput("year", "Select Year:",
+                              choices = sort(unique(joined_data$year))),
+                  selectInput("quarter", "Select Quarter:",
+                              choices = sort(unique(joined_data$quarter))),
                   actionButton("submit", "Submit"))
                 )
               ),
