@@ -121,16 +121,21 @@ ui <- dashboardPage( skin = "blue",
                       
                       fluidRow( 
                         column(
-                          width = 9,
+                          width = 8,
                           box(width = 12, plotOutput("simd_plot")) 
                         ),
                         column(
-                          width = 3, 
-                          box(background = "purple",
-                              radioButtons("simd_level_input_s",
+                          width = 4, 
+                          box(title = "Controls",
+                              background = "purple",
+                              column(width = 12,
+                                     selectInput("health_board_input_ss",
+                                                 "Health Board",
+                                                 choices = hb_names)),
+                              column(width = 12,
+                                     selectInput("simd_level_input_s",
                                        "SIMD Level",
-                                       choices = simd_level
-                                       )))
+                                       choices = simd_level)))
                         
                         
                         
@@ -138,7 +143,7 @@ ui <- dashboardPage( skin = "blue",
                       )
                       
                       
-              ),
+              )),
       tabItem(tabName = "beds",
               fluidRow(
                   box(width = 12, background = "navy",

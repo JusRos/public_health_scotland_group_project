@@ -18,21 +18,12 @@ server <- function(input, output, session){
        0
      }
    })
-   
-   alpha_on3 <- reactive({
-     
-     if(input$winter_shading3 %% 2 != 0){
-       0.3
-     } else {
-       0
-     }
-   })
   
 
   output$pre_plot <- renderPlot({
     percentage_occupancy(data = beds(),
                          input_hb = input$hb,
-                         input_alpha = alpha_on3())
+                         input_alpha = alpha_on())
     
   })
   
@@ -50,7 +41,7 @@ server <- function(input, output, session){
   create_length_of_stay_plot(length_of_stay_data,
                              input$health_board_input,
                              input$length_admission_type_input,
-                             input$length_age_input,
+                             input$age_input,
                              input$sex_input,
                              alpha_on2())
   })
@@ -71,7 +62,7 @@ server <- function(input, output, session){
   
   output$simd_plot<- renderPlot({
     create_simd_plot(simd, 
-                     input$health_board_input_s,
+                     input$health_board_input_ss,
                      input$simd_level_input_s,
                      alpha_on2())
   })
@@ -89,15 +80,8 @@ server <- function(input, output, session){
       theme_void() +
       labs(fill = "Number of Staffed Beds") +
       scale_fill_binned(n.breaks = 6, labels = number_format()) +
-      ggtitle("Available Beds by Health Board") +
-      theme(
-        plot.title = element_text(size = 16, face = "bold"),
-        legend.text = element_text(size = 10, face = "bold"),
-        legend.title = element_text(size = 14, face = "bold"),
-        legend.key.size = unit(1, "cm")
-      )
-  })
-  
+      ggtitle("Available Beds by Health Board")
+  })  
   
   
   

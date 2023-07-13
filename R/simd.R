@@ -3,7 +3,7 @@ library(ggh4x)
 create_simd_plot <- function(data, health_board_input_s, simd_level_input_s){
   
   simd %>% 
-    filter(HBName == health_board_input_s) %>% 
+    filter(HBName == health_board_input_2) %>% 
     filter(SIMD == simd_level_input_s) %>% 
     ggplot(aes(x = interaction(Quarter_single, Year), y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
     scale_x_discrete(NULL, guide = "axis_nested")+
