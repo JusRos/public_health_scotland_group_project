@@ -57,13 +57,14 @@ ui <- dashboardPage( skin = "blue",
                 ),
                 column(
                   width = 5,
-                  box(background = "purple",
-                       # column(width = 12,
-                       # selectInput("health_board_input_s",
-                       #             "Health Board",
-                       #             choices = hb_names)),
+                  
+                  box( title = "Controls",  background = "purple",
+                       column( width = 12,
+                       selectInput("health_board_input_s",
+                                   "Health Board",
+                                   choices = hb_names)),
+
                        
-                       # br(),
                        column(width = 12,
                      selectInput("age_input",
                                      "Age",
@@ -85,7 +86,7 @@ ui <- dashboardPage( skin = "blue",
                                                             class = NULL,
                                                             lib = "font-awesome"), 
                                                 width = 150, class = "btn-info",)),
-                        column(width = 5,
+                        column(width = 4,
                         radioButtons("length_admission_type_input",
                                      "Admission Type",
                                      c("Emergency Inpatients",
@@ -95,7 +96,7 @@ ui <- dashboardPage( skin = "blue",
                       ,
                       
                       column(
-                        width = 3,
+                        width = 4,
                         selectInput("length_age_input",
                                     "Age Group",
                                     age_group_list)

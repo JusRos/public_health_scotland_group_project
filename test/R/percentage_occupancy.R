@@ -11,9 +11,8 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     aes(x = interaction(quarter, year), y = avg) +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-    theme(text =  element_text(size = 20)) +
-    scale_x_discrete(NULL, guide = "axis_nested") +
+    theme(text = element_text(size = 60), face = "bold") +
+    scale_x_discrete(guide = "axis_nested") +
     labs(x = "Year",
          y = "Bed Occupancy (%)",
          title = "Percentage Of Bed Occupancy Over Time") +
