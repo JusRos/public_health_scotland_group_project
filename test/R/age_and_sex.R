@@ -15,7 +15,7 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
     annotate("rect", xmin = 17, xmax = 19, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
     annotate("rect", xmin = 21, xmax = 22, ymin = 0, ymax = 17000, alpha = as.numeric(input_alpha), fill = "steelblue") +
     geom_line(aes(x = interaction(Quarter_single, Year), y = number_admissions, group = Sex, colour = Sex), size = 1.5)+
-    scale_x_discrete(NULL, guide = "axis_nested")+
+    scale_x_discrete(guide = "axis_nested")+
     scale_y_continuous(labels = scales::comma)+
     
     theme_light()+

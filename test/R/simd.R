@@ -4,7 +4,7 @@
     filter(HBName == health_board_input_s) %>% 
     filter(SIMD == simd_level_input_s) %>% 
     ggplot(aes(x = interaction(Quarter_single, Year), y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
-    scale_x_discrete(NULL, guide = "axis_nested")+
+    scale_x_discrete(guide = "axis_nested")+
     
     geom_vline(xintercept = 11, size = 1.5, colour = "red")+
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax =10, alpha = as.numeric(input_alpha), fill = "steelblue" ) +

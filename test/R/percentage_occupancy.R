@@ -8,12 +8,11 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     mutate(year = str_sub(year_q, 1, 4), 
            quarter = str_sub(year_q, 5)) %>% 
     ggplot() +
-    aes(x = year_q, y = avg) +
+    aes(interaction(quarter, year), y = avg) +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-    theme(text =  element_text(size = 20)) +
-    scale_x_discrete(NULL, guide = "axis_nested") +
+    theme(text = element_text(size = 60), face = "bold") +
+    scale_x_discrete(guide = "axis_nested") +
     labs(x = "Year",
          y = "Bed Occupancy (%)",
          title = "Percentage Of Bed Occupancy Over Time") +
@@ -27,7 +26,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
      fill = "steelblue") + 
     annotate("rect", xmin = 17, xmax = 19, ymin = 0, ymax = 100, alpha = as.numeric(input_alpha),
       fill = "steelblue") +
-    geom_vline(xintercept = "2020 Q2",
+    geom_vline(xintercept = 11,
                size = 1.5,
                colour = "red") +
     theme_light()+
