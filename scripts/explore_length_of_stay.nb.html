@@ -1754,9 +1754,13 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9jc3YoaGVyZShcInJhd19kYXRhL2lucGF0aWVudF9hbmRfZGF5Y2FzZV9ieV9uaHNfYm9hcmRfb2ZfdHJlYXRtZW50X2FnZV9hbmRfc2V4LmNzdlwiKSlcblxuYGBgIn0= -->
-<pre class="r"><code>read_csv(here(&quot;raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_age_and_sex.csv&quot;))
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGphbml0b3IpXG5saWJyYXJ5KGhlcmUpXG5saWJyYXJ5KGluZmVyKVxuXG5kYXRhIDwtIGNsZWFuX25hbWVzKHJlYWRfY3N2KGhlcmUoXCJyYXdfZGF0YS9pbnBhdGllbnRfYW5kX2RheWNhc2VfYnlfbmhzX2JvYXJkX29mX3RyZWF0bWVudF9hZ2VfYW5kX3NleC5jc3ZcIikpKVxuYGBgIn0= -->
+<pre class="r"><code>library(tidyverse)
+library(janitor)
+library(here)
+library(infer)
+
+data &lt;- clean_names(read_csv(here(&quot;raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_age_and_sex.csv&quot;)))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6ICdDOi9Vc2Vycy9lbW1hai9Eb2N1bWVudHMvQ29kZUNsYW4vZ3JvdXBfZGFzaGJvYXJkX3Byb2plY3QvcmF3X2RhdGEvaW5wYXRpZW50X2FuZF9kYXljYXNlX2J5X25oc19ib2FyZF9vZl90cmVhdG1lbnRfYWdlX2FuZF9zZXguY3N2JyBkb2VzIG5vdCBleGlzdC5cbiJ9 -->
 <pre><code>Error: &#39;C:/Users/emmaj/Documents/CodeClan/group_dashboard_project/raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_age_and_sex.csv&#39; does not exist.</code></pre>
