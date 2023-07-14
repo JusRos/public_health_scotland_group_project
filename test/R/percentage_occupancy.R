@@ -13,7 +13,7 @@ percentage_occupancy <- function(data, input_hb, input_alpha) {
     geom_point(size = 3) +
     theme(text = element_text(size = 60), face = "bold") +
     scale_x_discrete(guide = "axis_nested") +
-    labs(x = "Year",
+    labs(x = "Quarter",
          y = "Bed Occupancy (%)",
          title = "Percentage Of Bed Occupancy Over Time") +
     annotate("rect", xmin = 1, xmax = 3, ymin = 0, ymax = 100, alpha = as.numeric(input_alpha),
