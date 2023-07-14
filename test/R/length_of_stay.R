@@ -1,4 +1,4 @@
-create_length_of_stay_plot <- function(data, health_board, 
+create_length_of_stay_plot <- function(data, length_health_board_input, 
                                        admission_type_input, age_input,
                                        sex_input, alpha_input) {
   
@@ -6,7 +6,7 @@ create_length_of_stay_plot <- function(data, health_board,
   length_data <- length_of_stay_data %>% 
     filter(
       admission_type == admission_type_input &  
-        hb_name == health_board & 
+        hb_name == length_health_board_input & 
         age == age_input &
         sex == sex_input
     ) %>% 
@@ -20,7 +20,7 @@ create_length_of_stay_plot <- function(data, health_board,
   # Plot
   length_data %>% 
     ggplot(aes(interaction(quarter, year), avg_stay), size = 5) +
-    scale_x_discrete(NULL, guide = "axis_nested") +
+    scale_x_discrete(guide = "axis_nested") +
     geom_line(group = 1, size = 2) +
     geom_point(size = 3) +
     annotate("rect", xmin = 0, xmax = 2, ymin = -Inf, ymax = Inf,
@@ -49,7 +49,7 @@ create_length_of_stay_plot <- function(data, health_board,
     ) +
     labs(
       title = "Average Length of Stay for Inpatients by Demographic",
-      x = "Quarter",
+      x = "Year",
       y = "Average Length of Stay (days)"
     )
   
