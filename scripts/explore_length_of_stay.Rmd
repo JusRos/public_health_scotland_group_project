@@ -9,7 +9,7 @@ library(janitor)
 library(here)
 library(infer)
 
-data <- clean_names(read_csv(here("raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_age_and_sex.csv")))
+data <- clean_names(read_csv("C:/Users/emmaj/Documents/CodeClan/public_health_scotland_project/raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_age_and_sex.csv"))
 ```
 ```{r}
 data %>% 
@@ -189,11 +189,12 @@ covid_admissions %>%
 
 ```{r}
 data_by_age <- data %>% 
-  filter(admission_type == "Emergency Inpatients",
+  filter(
+    admission_type == "Emergency Inpatients",
          hb == "S92000003") %>% 
   mutate(covid = case_when(
-    str_detect(quarter, "2017|2018|2019|2020Q1") ~ "Pre (2017 Q4 - 2020 Q1)",
-    str_detect(quarter, "2020|2021") ~ "During (2020 Q2 - 2021 Q4)",
+    str_detect(quarter, "2017|2018|2019|2020Q1") ~ "Pre\n(2017 Q4 - 2020 Q1)",
+    str_detect(quarter, "2020|2021") ~ "During\n(2020 Q2 - 2021 Q4)",
     .default = "Post (2022)"
   ), 
          age_group = case_when(
@@ -203,22 +204,30 @@ data_by_age <- data %>%
     age == "60-69 years" | age == "70-79 years" ~ "60-79",
     .default = "80 and over"
   ), .after = age) %>% 
-  mutate(covid = factor(covid, levels = c("Pre (2017 Q4 - 2020 Q1)", "During (2020 Q2 - 2021 Q4)", "Post (2022)"))) %>% 
-  select(quarter, covid, age, age_group, stays, length_of_stay, average_length_of_stay)
+  mutate(covid = factor(covid, levels = c("Pre\n(2017 Q4 - 2020 Q1)", "During\n(2020 Q2 - 2021 Q4)", "Post (2022)")),
+         season = case_when(
+           str_detect(quarter, "Q2|Q3") ~ "Summer",
+           .default = "Winter"
+         )) %>% 
+  select(quarter, season, covid, age, age_group, stays, length_of_stay, average_length_of_stay, admission_type)
 
 data_by_age
 ```
 
 ```{r}
-data_by_age %>% 
+data_by_age %>%
+  #filter(admission_type %in% c("Elective Inpatients", "Emergency Inpatients")) %>% 
   # select(age, covid, average_length_of_stay) %>% 
-  group_by(age, covid) %>% 
+  group_by(age, covid, season) %>% 
   summarise(average_length_of_stay = mean(average_length_of_stay)) %>% 
   ggplot(aes(age, average_length_of_stay, fill = covid)) +
   geom_col(position = "dodge") +
+  #facet_wrap(~admission_type) +
+  facet_wrap(~season) +
   theme_light() +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1)
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    text = element_text(size = 15)
   ) +
   labs(
     title = "Average Length of Stay by Age",
@@ -227,7 +236,7 @@ data_by_age %>%
     fill = "Covid"
   )
 
-ggsave(here("plots/length_of_stay_age.png"))
+ggsave(here("plots/length_of_stay_age_facet_season.png"))
 ```
 
 
@@ -248,17 +257,21 @@ data_by_age %>%
 data_by_age %>% 
   filter(age_group == "80 and over") %>% 
   mutate(year = str_extract(quarter, "[0-9]{4}")) %>% 
-  ggplot(aes(covid, average_length_of_stay, fill = covid)) +
-  geom_boxplot(show.legend = FALSE) +
+  ggplot(aes(season, average_length_of_stay, fill = covid)) +
+  geom_boxplot() +
+  #facet_wrap(~season) +
   labs(
     title = "Average Length of Stay for over 80s",
-    x = "Covid Period",
+    x = "Season",
     y = "Average Length of Stay (days)",
     fill = "Covid"
   ) +
-  theme_light()
+  theme_light() +
+  theme(
+    text = element_text(size = 20)
+  )
 
-ggsave(here("plots/over_80_length_of_stay.png"))
+ggsave(here("plots/over_80_length_of_stay_season.png"))
 ```
 
 ```{r}
