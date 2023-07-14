@@ -1,6 +1,8 @@
-
+library(tidyverse)
+library(here)
 
 #SIMD 
+simd <- read_csv("clean_data/simd_clean.csv")
 
 simd %>% 
   mutate(Covid = case_when(
@@ -11,7 +13,9 @@ simd %>%
   mutate(Season = case_when(
     Quarter_single %in% c("Q2","Q3") ~ "Summer",
     Quarter_single %in% c("Q1","Q4") ~ "Winter"
-  )) %>% filter(AdmissionType == "Emergency Inpatients") %>% 
+  )) %>% 
+  mutate(Covid = factor(Covid, levels = c("Pre-Covid 19", "During Covid_19", "Post-Covid 19"))) %>% 
+  filter(AdmissionType == "Emergency Inpatients") %>% 
   group_by(SIMD, Season, Covid) %>% summarise(mean = mean(Stays), .groups = "drop") %>%
   ggplot(aes(x = SIMD, y = mean, fill = Covid))+
   geom_col(position = "dodge", colour = "white")+
