@@ -85,17 +85,17 @@ server <- function(input, output, session){
   
   output$bedsPlot <- renderPlot({
     ggplot(data = filtered_data(), aes(geometry = geometry, fill = all_staffed_beddays)) +
-      geom_sf() +
+      geom_sf(col = "white") +
       theme_void() +
       labs(fill = "Number of Staffed Beds") +
       scale_fill_binned(n.breaks = 6, labels = number_format()) +
       ggtitle("Available Beds by Health Board") +
       theme(
-        plot.title = element_text(size = 16, face = "bold"),
-        legend.text = element_text(size = 10, face = "bold"),
-        legend.title = element_text(size = 14, face = "bold"),
+        plot.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 15, face = "bold"),
+        legend.title = element_text(size = 15, face = "bold"),
         legend.key.size = unit(1, "cm")
-      )
+      ) 
   })
   
   observeEvent(input$year, {

@@ -49,7 +49,7 @@ create_length_of_stay_plot <- function(data, length_health_board_input,
     ) +
     labs(
       title = "Average Length of Stay for Inpatients by Demographic",
-      x = "Year",
+      x = "Quarter",
       y = "Average Length of Stay (days)"
     )
   
