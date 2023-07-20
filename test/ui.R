@@ -5,9 +5,15 @@ ui <- dashboardPage( skin = "blue",
                      dashboardHeader(title = tags$h3("PHS Dashboard ")),
                      dashboardSidebar(
                        sidebarMenu(
-                         menuItem("Admissions", tabName = "admissions", icon = icon("fa-solid fa-folder", class = NULL, lib = "font-awesome")),
-                         menuItem("Length Of Stay", tabName = "length_of_stay", icon = icon("fa-solid fa-clock", class = NULL, lib = "font-awesome")),
-                         menuItem("Beds", tabName = "beds", icon = icon("fa-duotone fa-map", class = NULL, lib = "font-awesome"))
+                         menuItem("Admissions", tabName = "admissions",
+                                  icon = icon("fa-solid fa-folder", class = NULL,
+                                              lib = "font-awesome")),
+                         menuItem("Length Of Stay", tabName = "length_of_stay",
+                                  icon = icon("fa-solid fa-clock", class = NULL,
+                                              lib = "font-awesome")),
+                         menuItem("Beds", tabName = "beds",
+                                  icon = icon("fa-duotone fa-map", class = NULL,
+                                              lib = "font-awesome"))
                        )),
                      dashboardBody(
                        tags$style(HTML("
