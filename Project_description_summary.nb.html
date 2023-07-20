@@ -1754,20 +1754,50 @@ display: none;
 <!-- rnb-text-begin -->
 <div id="names-of-group-members" class="section level1">
 <h1>Names of group members</h1>
-<p>Person 1, Person 2, Person 3</p>
+<p>Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom D</p>
 </div>
 <div id="roles-responsibilities-of-each-member" class="section level1">
 <h1>Roles &amp; responsibilities of each member</h1>
-<p>Person 1 worked on …</p>
-<p>Person 2 worked on …</p>
-<p>Person 3 worked on …</p>
-<p>Everyone worked on …</p>
+<p>Justyna worked on analysing and presenting data on demographics
+including the “Hospital Admissions by Age and Gender” plot, and “Average
+Length of Stay by Health Board, Admission Type and SIMD”. Justyna also
+played a key role in designing and preparing the final presentation, and
+introduced the project during this presentation.</p>
+<p>Emma worked on analysing and presenting the number of admissions and
+the length of hospital stays. This included the preparation of the
+“Weekly Hospital Admissions” plot and “Average Length of Stay for
+Inpatients by Demographic”. She presented the conclusions of this and
+the SIMD analysis in the final presentation.</p>
+<p>Louise worked on analysing and presenting hospital activity,
+specialisations, and bed occupancy, this included preparing “Percentage
+Of Bed Occupancy Over Time”. Louise also played a key role in the design
+of the dashboard and implementation of the winter button to highlight
+the winter time periods in each plot. She further presented the
+dashboard at the final presentation.</p>
+<p>Tom worked on analysing and presenting geographical data,
+particularly relating to bed occupncy and availability. He was
+responsible for preparing the map of number of staffed beds across
+Scotland. Tom also presented the conclusions on bed occupancy and
+staffed bed levels in the final presentation.</p>
+<p>Everyone worked on communication and collaboration as a team, sharing
+ideas and shaping the direction of the project. We discussed and agreed
+roles, plot themes, text sizes, and key ideas and conclusions to
+pursue.</p>
 </div>
 <div id="brief-description-of-dashboard-topic" class="section level1">
 <h1>Brief description of dashboard topic</h1>
-<p>Our dashboard contains …</p>
-<p>Our topic is …</p>
-<p>The dashboard outlines our topic in terms of …</p>
+<p>Our dashboard contains data visualisations and insights relating to
+the impact of the Covid pandemic on provision of acute care in Scotland,
+as well as an option to highlight winter periods to assess to what
+extent the winter crises reported in the media are accurate based the
+data analysed.</p>
+<p>The dashboard outlines our topic in terms of three main KPIs, which
+have been split over three tabs:</p>
+<ul>
+<li>Admissions</li>
+<li>Length of Stay</li>
+<li>Beds</li>
+</ul>
 </div>
 <div id="stages-of-the-project" class="section level1">
 <h1>Stages of the project</h1>
@@ -1776,14 +1806,86 @@ control Choosing datasets and so on …</p>
 </div>
 <div id="which-tools-were-used-in-the-project" class="section level1">
 <h1>Which tools were used in the project</h1>
-<p>Zoom (daily stand-ups and occasional mob programming) Trello
-(planning &amp; task allocation) Git/GitHub (collaboration &amp; version
-control) and so on …</p>
+<p>Trello: Allowed us to map our entire workflow from start to finish
+and to assign different tasks to each member. It helped us to fairly
+distribute tasks and ensured that everything would be done in an order
+that wouldn’t disrupt our workflow and within a reasonable time
+frame.</p>
+<p>Git/GitHub: Used to allow us to work simultaneously and to keep
+different versions of our work should anything break or not function how
+we would have liked after making changes.</p>
+<p>R Studio: We used R Studio to do all our data manipulation and
+analysis from cleaning to visualisation and it was used to create the
+dashboard with the Shiny package.</p>
+<p>Slack: We used slack to communicate while working from home and it
+was also used to share small code snippets that would be useful to other
+members of the team.</p>
+<p>One Note: We used one note to share documents that were not code
+related.</p>
+<p>Powerpoint: Our final presentation was delivered as a power point
+presentation which allowed us to accurately and concisely share our
+findings.</p>
 </div>
 <div id="how-did-you-gather-and-synthesise-requirements-for-the-project" class="section level1">
 <h1>How did you gather and synthesise requirements for the project?</h1>
-<p>We synthesised the information given in the brief by …</p>
-<p>We prioritised …</p>
+<p>When deciding which data and sources we would use to answer the brief
+we initially sorted the data to meet broader requirements, considering a
+number of factors, before further refining our choices to ones we felt
+would accurately show if the NHS experienced a winter crisis, and the
+effect Covid had on the normal operation of the health service. (maybe
+include a bit about the kpis)</p>
+<p>Initial considerations included:</p>
+<p>Relevance and applicability: How confident were we the data would
+answer the brief requirements? We considered the subject matter and the
+scope of the project making sure that we could not only provide answers
+that met the questions in the brief but allowed us to also provide
+actionable insights from our analysis.</p>
+<p>Quality and reliability: We assessed the quality of the data ensuring
+that they were from reputable sources and that their collection was not
+only thorough but ethical. This included considerations like sample
+size, data integrity to prioritise analysis over cleaning, and the
+collection methods. We only used data that we were confident was
+collected ethically, respecting privacy, consent, and legal regulations.
+We also had no interest in using data that would perpetuate bias or
+discrimination. More on this is included at the end of the report.</p>
+<p>Compatibility of the data sets: It quickly became apparent that a
+single data set would not contain enough information to answer the
+brief. We spent time to consider how data sets could be combined or used
+in tandem to further enhance our analysis. Some data sets divided the
+dates differently, some had information on gender, regional and social
+factors while other didn’t. We spent time on Monday eliminating those
+that had overlaps and finding ways to combine what we had with the goal
+of prioritising data quality rather than quantity which was important
+given the time constraints.</p>
+<p>Other considerations included availability and the time frame of the
+data sets. Was it free to access and use? Did the data expand forward
+and backward far enough from the start of the pandemic that we could
+confidently measure the impact it had?</p>
+<p>The data sets used were the following:</p>
+<p>Activity by Board of Treatment, Age and Sex</p>
+<p>License: UK Open Government Licence (OGL) Format: Text/CSV Date
+Created: November 14, 2019 Last Update: May 30, 2023</p>
+<p>Beds Information in Scotland License: UK Open Government Licence
+(OGL) Format: Text/CSV Date Created: November 7, 2019 Last Update: May
+30, 2023</p>
+<p>Admissions By Health Board, Age and Sex / Admissions By Health Board
+and Deprivation</p>
+<p>Age and Sex</p>
+<p>License: UK Open Government Licence (OGL) Format: Text/CSV Date
+Created: November 7, 2019 Last Update: July 6, 2023</p>
+<p>Deprivation</p>
+<p>License: UK Open Government Licence (OGL) Format: Text/CSV Date
+Created: May 21, 2020 Last Update: July 6, 2023</p>
+<p>Activity by Board of Treatment and Specialty License: UK Open
+Government Licence (OGL) Format: Text/CSV Date Created: November 14,
+2019 Last Update: May 30, 2023</p>
+<p>Hospital Codes License: UK Open Government Licence (OGL) Format:
+Text/CSV Date Created: 27 March 2018 Last Update: 10 January 2022</p>
+<p>Health Board Labels License: UK Open Government Licence (OGL) Format:
+Text/CSV Date Created: December 22, 2017 Last Update: June 17, 2020</p>
+<p>Special Health Boards and National Facilities License: UK Open
+Government Licence (OGL) Format: Text/CSV Date Created: March 21, 2018
+Last Update: February 23, 2021</p>
 </div>
 <div id="motivations-for-using-the-data-you-have-chosen" class="section level1">
 <h1>Motivations for using the data you have chosen</h1>
@@ -1792,30 +1894,65 @@ control) and so on …</p>
 <div id="data-quality-and-potential-bias-including-a-brief-summary-of-data-cleaning-and-transformations" class="section level1">
 <h1>Data quality and potential bias, including a brief summary of data
 cleaning and transformations</h1>
-<p>According to the About tab on the dataset page/dedicated page online,
-the data quality …</p>
-<p>The dataset may/may not be biased because …</p>
-<p>To clean the datasets we …</p>
+<p>All the data sets used were in text/CVS format. When provided, all
+data sets used scored 100% for accuracy and were complete aside from
+ongoing updates. In measuring the data quality we made considerations
+for the following:</p>
+<p>Accuracy: All the data came from trusted sources and was manually
+verifiable by comparing it with data from different sources. We found
+consistency within the sets we used which made us confident in the
+overall quality. We checked for contradicting data, duplicate entries,
+and other data quality issues that may arise from data entry errors.
+Completeness: We assessed the data for completeness looking to find any
+missing values or gaps within the data sets that may impact our
+analysis. Validity: We verified the data fell within logical or expected
+ranges and maintained a consistent format. Relevance: All data used
+contributed to the objectives of our analysis and improved our ability
+to answer the brief. Documentation: All the data sets included
+documentation on the structure and context of the data. They also
+included data dictionaries which improved our teams understanding of the
+variables and terminology used within.</p>
+<p>While impossible to eliminate bias from the data we feel the data is
+as low in bias as possible. Sampling and selection biases were largely
+eliminated by the size and scope of the data used. For example, data
+included all admissions meaning the sample was representative of health
+service users on the whole not discriminating for regional or
+socio-economic factors. There is the potential for reporting bias as the
+collection of data was restricted to certain categories or variables.
+Intentionally or otherwise, there is the potential for including or
+excluding certain variables that may alter or favour certain
+findings.</p>
+<p>Our analysis also introduced the potential for confirmation bias
+specifically when looking for the presence of a winter crisis. Our
+preconceived notions and beliefs around the crisis had the potential to
+shape our enquiries however we made sure in our cleaning process to
+include data as completely as possible. This allowed us to minimize the
+impact our previous beliefs may have on our results and ensured we
+reached accurate conclusions.</p>
 </div>
 <div id="how-is-the-data-stored-and-structured" class="section level1">
 <h1>How is the data stored and structured</h1>
-<p>[Hint: This page offers a good starting point for understanding the
-data structure: <a href="https://guides.statistics.gov.scot/article/34-understanding-the-data-structure" class="uri">https://guides.statistics.gov.scot/article/34-understanding-the-data-structure</a>]</p>
-<p>The data is in the form of …</p>
-<p>This means …</p>
-<p>Benefits of storing the data like this are …</p>
+<p>The data is in the form of linked data with the entirety of the data
+store making up millions of statements of information that form a
+subject - predicate - object arrangement or “triples.” This means that
+the structure of the database is contained within the data eliminating
+the need for a complex database schema.</p>
+<p>Benefits of storing the data like this include ease of access,
+integration, reusability, and collaboration.</p>
 </div>
 <div id="ethical-and-legal-considerations-of-the-data" class="section level1">
 <h1>Ethical and legal considerations of the data</h1>
-<p>[Hint: this page contains information on the Open Government License
-which covers most datasets on statistics.gov.scot: <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="uri">http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</a>]</p>
-<p>There are no/There may be ethical considerations, because …</p>
 <p>The datasets are covered by the Open Government License, which means
-…</p>
+anyone is able to copy, publish, distribute, transmit and adapt the
+licensed work, and to exploit it both commercially and non-commercially
+as long as they acknowledge the source of the work and (if possible)
+provide a link to the OGL. The OGL does not cover information that is
+more intrusive to the user it was collected from, for example, personal
+identifiable information or any identity documents.</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KIyBOYW1lcyBvZiBncm91cCBtZW1iZXJzDQpQZXJzb24gMSwgUGVyc29uIDIsIFBlcnNvbiAzDQoNCiMgUm9sZXMgJiByZXNwb25zaWJpbGl0aWVzIG9mIGVhY2ggbWVtYmVyDQpQZXJzb24gMSB3b3JrZWQgb24g4oCmDQoNClBlcnNvbiAyIHdvcmtlZCBvbiDigKYNCg0KUGVyc29uIDMgd29ya2VkIG9uIOKApg0KDQpFdmVyeW9uZSB3b3JrZWQgb24g4oCmDQoNCiMgQnJpZWYgZGVzY3JpcHRpb24gb2YgZGFzaGJvYXJkIHRvcGljDQpPdXIgZGFzaGJvYXJkIGNvbnRhaW5zIOKApg0KDQpPdXIgdG9waWMgaXMg4oCmDQoNClRoZSBkYXNoYm9hcmQgb3V0bGluZXMgb3VyIHRvcGljIGluIHRlcm1zIG9mIOKApg0KDQojIFN0YWdlcyBvZiB0aGUgcHJvamVjdA0KUGxhbm5pbmcgJiBkYXNoYm9hcmQgd2lyZWZyYW1lDQpHaXQgYnJhbmNoaW5nICYgdmVyc2lvbiBjb250cm9sDQpDaG9vc2luZyBkYXRhc2V0cw0KYW5kIHNvIG9uIOKApg0KDQojIFdoaWNoIHRvb2xzIHdlcmUgdXNlZCBpbiB0aGUgcHJvamVjdA0KWm9vbSAoZGFpbHkgc3RhbmQtdXBzIGFuZCBvY2Nhc2lvbmFsIG1vYiBwcm9ncmFtbWluZykNClRyZWxsbyAocGxhbm5pbmcgJiB0YXNrIGFsbG9jYXRpb24pDQpHaXQvR2l0SHViIChjb2xsYWJvcmF0aW9uICYgdmVyc2lvbiBjb250cm9sKQ0KYW5kIHNvIG9uIOKApg0KDQojIEhvdyBkaWQgeW91IGdhdGhlciBhbmQgc3ludGhlc2lzZSByZXF1aXJlbWVudHMgZm9yIHRoZSBwcm9qZWN0Pw0KV2Ugc3ludGhlc2lzZWQgdGhlIGluZm9ybWF0aW9uIGdpdmVuIGluIHRoZSBicmllZiBieSDigKYNCg0KV2UgcHJpb3JpdGlzZWQg4oCmDQoNCiMgTW90aXZhdGlvbnMgZm9yIHVzaW5nIHRoZSBkYXRhIHlvdSBoYXZlIGNob3Nlbg0KV2UgdXNlZCB0aGUgZGF0YXNldCBvbiDigKYgdG8gYW5zd2VyIOKApiBhbmQgYmVjYXVzZSBpdCB3YXMg4oCmDQoNCiMgRGF0YSBxdWFsaXR5IGFuZCBwb3RlbnRpYWwgYmlhcywgaW5jbHVkaW5nIGEgYnJpZWYgc3VtbWFyeSBvZiBkYXRhIGNsZWFuaW5nIGFuZCB0cmFuc2Zvcm1hdGlvbnMNCkFjY29yZGluZyB0byB0aGUgQWJvdXQgdGFiIG9uIHRoZSBkYXRhc2V0IHBhZ2UvZGVkaWNhdGVkIHBhZ2Ugb25saW5lLCB0aGUgZGF0YSBxdWFsaXR5IOKApg0KDQpUaGUgZGF0YXNldCBtYXkvbWF5IG5vdCBiZSBiaWFzZWQgYmVjYXVzZSDigKYNCg0KVG8gY2xlYW4gdGhlIGRhdGFzZXRzIHdlIOKApg0KDQojIEhvdyBpcyB0aGUgZGF0YSBzdG9yZWQgYW5kIHN0cnVjdHVyZWQNCltIaW50OiBUaGlzIHBhZ2Ugb2ZmZXJzIGEgZ29vZCBzdGFydGluZyBwb2ludCBmb3IgdW5kZXJzdGFuZGluZyB0aGUgZGF0YSBzdHJ1Y3R1cmU6IGh0dHBzOi8vZ3VpZGVzLnN0YXRpc3RpY3MuZ292LnNjb3QvYXJ0aWNsZS8zNC11bmRlcnN0YW5kaW5nLXRoZS1kYXRhLXN0cnVjdHVyZV0NCg0KVGhlIGRhdGEgaXMgaW4gdGhlIGZvcm0gb2Yg4oCmDQoNClRoaXMgbWVhbnMg4oCmDQoNCkJlbmVmaXRzIG9mIHN0b3JpbmcgdGhlIGRhdGEgbGlrZSB0aGlzIGFyZSDigKYNCg0KIyBFdGhpY2FsIGFuZCBsZWdhbCBjb25zaWRlcmF0aW9ucyBvZiB0aGUgZGF0YQ0KW0hpbnQ6IHRoaXMgcGFnZSBjb250YWlucyBpbmZvcm1hdGlvbiBvbiB0aGUgT3BlbiBHb3Zlcm5tZW50IExpY2Vuc2Ugd2hpY2ggY292ZXJzIG1vc3QgZGF0YXNldHMgb24gc3RhdGlzdGljcy5nb3Yuc2NvdDogaHR0cDovL3d3dy5uYXRpb25hbGFyY2hpdmVzLmdvdi51ay9kb2Mvb3Blbi1nb3Zlcm5tZW50LWxpY2VuY2UvdmVyc2lvbi8zL10NCg0KVGhlcmUgYXJlIG5vL1RoZXJlIG1heSBiZSBldGhpY2FsIGNvbnNpZGVyYXRpb25zLCBiZWNhdXNlIOKApg0KDQpUaGUgZGF0YXNldHMgYXJlIGNvdmVyZWQgYnkgdGhlIE9wZW4gR292ZXJubWVudCBMaWNlbnNlLCB3aGljaCBtZWFucyDigKY=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KIyBOYW1lcyBvZiBncm91cCBtZW1iZXJzDQpKdXN0eW5hIFJvc2lhaywgRW1tYSBNZW56aWVzLCBMb3Vpc2UgKFdlZXpheSkgTGF1cmVuc29uLCBUb20gRA0KDQojIFJvbGVzICYgcmVzcG9uc2liaWxpdGllcyBvZiBlYWNoIG1lbWJlcg0KSnVzdHluYSB3b3JrZWQgb24gYW5hbHlzaW5nIGFuZCBwcmVzZW50aW5nIGRhdGEgb24gZGVtb2dyYXBoaWNzIGluY2x1ZGluZyB0aGUgIkhvc3BpdGFsIEFkbWlzc2lvbnMgYnkgQWdlIGFuZCBHZW5kZXIiIHBsb3QsIGFuZCAiQXZlcmFnZSBMZW5ndGggb2YgU3RheSBieSBIZWFsdGggQm9hcmQsIEFkbWlzc2lvbiBUeXBlIGFuZCBTSU1EIi4gSnVzdHluYSBhbHNvIHBsYXllZCBhIGtleSByb2xlIGluIGRlc2lnbmluZyBhbmQgcHJlcGFyaW5nIHRoZSBmaW5hbCBwcmVzZW50YXRpb24sIGFuZCBpbnRyb2R1Y2VkIHRoZSBwcm9qZWN0IGR1cmluZyB0aGlzIHByZXNlbnRhdGlvbi4NCg0KRW1tYSB3b3JrZWQgb24gYW5hbHlzaW5nIGFuZCBwcmVzZW50aW5nIHRoZSBudW1iZXIgb2YgYWRtaXNzaW9ucyBhbmQgdGhlIGxlbmd0aCBvZiBob3NwaXRhbCBzdGF5cy4gVGhpcyBpbmNsdWRlZCB0aGUgcHJlcGFyYXRpb24gb2YgdGhlICJXZWVrbHkgSG9zcGl0YWwgQWRtaXNzaW9ucyIgcGxvdCBhbmQgIkF2ZXJhZ2UgTGVuZ3RoIG9mIFN0YXkgZm9yIElucGF0aWVudHMgYnkgRGVtb2dyYXBoaWMiLiBTaGUgcHJlc2VudGVkIHRoZSBjb25jbHVzaW9ucyBvZiB0aGlzIGFuZCB0aGUgU0lNRCBhbmFseXNpcyBpbiB0aGUgZmluYWwgcHJlc2VudGF0aW9uLg0KDQpMb3Vpc2Ugd29ya2VkIG9uIGFuYWx5c2luZyBhbmQgcHJlc2VudGluZyBob3NwaXRhbCBhY3Rpdml0eSwgc3BlY2lhbGlzYXRpb25zLCBhbmQgYmVkIG9jY3VwYW5jeSwgdGhpcyBpbmNsdWRlZCBwcmVwYXJpbmcgIlBlcmNlbnRhZ2UgT2YgQmVkIE9jY3VwYW5jeSBPdmVyIFRpbWUiLiBMb3Vpc2UgYWxzbyBwbGF5ZWQgYSBrZXkgcm9sZSBpbiB0aGUgZGVzaWduIG9mIHRoZSBkYXNoYm9hcmQgYW5kIGltcGxlbWVudGF0aW9uIG9mIHRoZSB3aW50ZXIgYnV0dG9uIHRvIGhpZ2hsaWdodCB0aGUgd2ludGVyIHRpbWUgcGVyaW9kcyBpbiBlYWNoIHBsb3QuIFNoZSBmdXJ0aGVyIHByZXNlbnRlZCB0aGUgZGFzaGJvYXJkIGF0IHRoZSBmaW5hbCBwcmVzZW50YXRpb24uDQoNClRvbSB3b3JrZWQgb24gYW5hbHlzaW5nIGFuZCBwcmVzZW50aW5nIGdlb2dyYXBoaWNhbCBkYXRhLCBwYXJ0aWN1bGFybHkgcmVsYXRpbmcgdG8gYmVkIG9jY3VwbmN5IGFuZCBhdmFpbGFiaWxpdHkuIEhlIHdhcyByZXNwb25zaWJsZSBmb3IgcHJlcGFyaW5nIHRoZSBtYXAgb2YgbnVtYmVyIG9mIHN0YWZmZWQgYmVkcyBhY3Jvc3MgU2NvdGxhbmQuIFRvbSBhbHNvIHByZXNlbnRlZCB0aGUgY29uY2x1c2lvbnMgb24gYmVkIG9jY3VwYW5jeSBhbmQgc3RhZmZlZCBiZWQgbGV2ZWxzIGluIHRoZSBmaW5hbCBwcmVzZW50YXRpb24uDQoNCkV2ZXJ5b25lIHdvcmtlZCBvbiBjb21tdW5pY2F0aW9uIGFuZCBjb2xsYWJvcmF0aW9uIGFzIGEgdGVhbSwgc2hhcmluZyBpZGVhcyBhbmQgc2hhcGluZyB0aGUgZGlyZWN0aW9uIG9mIHRoZSBwcm9qZWN0LiBXZSBkaXNjdXNzZWQgYW5kIGFncmVlZCByb2xlcywgcGxvdCB0aGVtZXMsIHRleHQgc2l6ZXMsIGFuZCBrZXkgaWRlYXMgYW5kIGNvbmNsdXNpb25zIHRvIHB1cnN1ZS4gDQoNCiMgQnJpZWYgZGVzY3JpcHRpb24gb2YgZGFzaGJvYXJkIHRvcGljDQpPdXIgZGFzaGJvYXJkIGNvbnRhaW5zIGRhdGEgdmlzdWFsaXNhdGlvbnMgYW5kIGluc2lnaHRzIHJlbGF0aW5nIHRvIHRoZSBpbXBhY3Qgb2YgdGhlIENvdmlkIHBhbmRlbWljIG9uIHByb3Zpc2lvbiBvZiBhY3V0ZSBjYXJlIGluIFNjb3RsYW5kLCBhcyB3ZWxsIGFzIGFuIG9wdGlvbiB0byBoaWdobGlnaHQgd2ludGVyIHBlcmlvZHMgdG8gYXNzZXNzIHRvIHdoYXQgZXh0ZW50IHRoZSB3aW50ZXIgY3Jpc2VzIHJlcG9ydGVkIGluIHRoZSBtZWRpYSBhcmUgYWNjdXJhdGUgYmFzZWQgdGhlIGRhdGEgYW5hbHlzZWQuDQoNClRoZSBkYXNoYm9hcmQgb3V0bGluZXMgb3VyIHRvcGljIGluIHRlcm1zIG9mIHRocmVlIG1haW4gS1BJcywgd2hpY2ggaGF2ZSBiZWVuIHNwbGl0IG92ZXIgdGhyZWUgdGFiczoNCg0KKiBBZG1pc3Npb25zDQoqIExlbmd0aCBvZiBTdGF5DQoqIEJlZHMNCg0KIyBTdGFnZXMgb2YgdGhlIHByb2plY3QNClBsYW5uaW5nICYgZGFzaGJvYXJkIHdpcmVmcmFtZQ0KR2l0IGJyYW5jaGluZyAmIHZlcnNpb24gY29udHJvbA0KQ2hvb3NpbmcgZGF0YXNldHMNCmFuZCBzbyBvbiDigKYNCg0KIyBXaGljaCB0b29scyB3ZXJlIHVzZWQgaW4gdGhlIHByb2plY3QNClRyZWxsbzogQWxsb3dlZCB1cyB0byBtYXAgb3VyIGVudGlyZSB3b3JrZmxvdyBmcm9tIHN0YXJ0IHRvIGZpbmlzaCBhbmQgdG8gYXNzaWduIGRpZmZlcmVudCB0YXNrcyB0byBlYWNoIG1lbWJlci4gSXQgaGVscGVkIHVzIHRvIGZhaXJseSBkaXN0cmlidXRlIHRhc2tzIGFuZCBlbnN1cmVkIHRoYXQgZXZlcnl0aGluZyB3b3VsZCBiZSBkb25lIGluIGFuIG9yZGVyIHRoYXQgd291bGRu4oCZdCBkaXNydXB0IG91ciB3b3JrZmxvdyBhbmQgd2l0aGluIGEgcmVhc29uYWJsZSB0aW1lIGZyYW1lLg0KDQpHaXQvR2l0SHViOiBVc2VkIHRvIGFsbG93IHVzIHRvIHdvcmsgc2ltdWx0YW5lb3VzbHkgYW5kIHRvIGtlZXAgZGlmZmVyZW50IHZlcnNpb25zIG9mIG91ciB3b3JrIHNob3VsZCBhbnl0aGluZyBicmVhayBvciBub3QgZnVuY3Rpb24gaG93IHdlIHdvdWxkIGhhdmUgbGlrZWQgYWZ0ZXIgbWFraW5nIGNoYW5nZXMuICANCg0KUiBTdHVkaW86IFdlIHVzZWQgUiBTdHVkaW8gdG8gZG8gYWxsIG91ciBkYXRhIG1hbmlwdWxhdGlvbiBhbmQgYW5hbHlzaXMgZnJvbSBjbGVhbmluZyB0byB2aXN1YWxpc2F0aW9uIGFuZCBpdCB3YXMgdXNlZCB0byBjcmVhdGUgdGhlIGRhc2hib2FyZCB3aXRoIHRoZSBTaGlueSBwYWNrYWdlLg0KCQ0KU2xhY2s6IFdlIHVzZWQgc2xhY2sgdG8gY29tbXVuaWNhdGUgd2hpbGUgd29ya2luZyBmcm9tIGhvbWUgYW5kIGl0IHdhcyBhbHNvIHVzZWQgdG8gc2hhcmUgc21hbGwgY29kZSBzbmlwcGV0cyB0aGF0IHdvdWxkIGJlIHVzZWZ1bCB0byBvdGhlciBtZW1iZXJzIG9mIHRoZSB0ZWFtLg0KDQpPbmUgTm90ZTogV2UgdXNlZCBvbmUgbm90ZSB0byBzaGFyZSBkb2N1bWVudHMgdGhhdCB3ZXJlIG5vdCBjb2RlIHJlbGF0ZWQuDQoNClBvd2VycG9pbnQ6IE91ciBmaW5hbCBwcmVzZW50YXRpb24gd2FzIGRlbGl2ZXJlZCBhcyBhIHBvd2VyIHBvaW50IHByZXNlbnRhdGlvbiB3aGljaCBhbGxvd2VkIHVzIHRvIGFjY3VyYXRlbHkgYW5kIGNvbmNpc2VseSBzaGFyZSBvdXIgZmluZGluZ3MuDQoNCiMgSG93IGRpZCB5b3UgZ2F0aGVyIGFuZCBzeW50aGVzaXNlIHJlcXVpcmVtZW50cyBmb3IgdGhlIHByb2plY3Q/DQpXaGVuIGRlY2lkaW5nIHdoaWNoIGRhdGEgYW5kIHNvdXJjZXMgd2Ugd291bGQgdXNlIHRvIGFuc3dlciB0aGUgYnJpZWYgd2UgaW5pdGlhbGx5IHNvcnRlZCB0aGUgZGF0YSB0byBtZWV0IGJyb2FkZXIgcmVxdWlyZW1lbnRzLCBjb25zaWRlcmluZyBhIG51bWJlciBvZiBmYWN0b3JzLCBiZWZvcmUgZnVydGhlciByZWZpbmluZyBvdXIgY2hvaWNlcyB0byBvbmVzIHdlIGZlbHQgd291bGQgYWNjdXJhdGVseSBzaG93IGlmIHRoZSBOSFMgZXhwZXJpZW5jZWQgYSB3aW50ZXIgY3Jpc2lzLCBhbmQgdGhlIGVmZmVjdCBDb3ZpZCBoYWQgb24gdGhlIG5vcm1hbCBvcGVyYXRpb24gb2YgdGhlIGhlYWx0aCBzZXJ2aWNlLiAobWF5YmUgaW5jbHVkZSBhIGJpdCBhYm91dCB0aGUga3BpcykNCg0KSW5pdGlhbCBjb25zaWRlcmF0aW9ucyBpbmNsdWRlZDoNCg0KUmVsZXZhbmNlIGFuZCBhcHBsaWNhYmlsaXR5OiBIb3cgY29uZmlkZW50IHdlcmUgd2UgdGhlIGRhdGEgd291bGQgYW5zd2VyIHRoZSBicmllZiByZXF1aXJlbWVudHM/IFdlIGNvbnNpZGVyZWQgdGhlIHN1YmplY3QgbWF0dGVyIGFuZCB0aGUgc2NvcGUgb2YgdGhlIHByb2plY3QgbWFraW5nIHN1cmUgdGhhdCB3ZSBjb3VsZCBub3Qgb25seSBwcm92aWRlIGFuc3dlcnMgdGhhdCBtZXQgdGhlIHF1ZXN0aW9ucyBpbiB0aGUgYnJpZWYgYnV0IGFsbG93ZWQgdXMgdG8gYWxzbyBwcm92aWRlIGFjdGlvbmFibGUgaW5zaWdodHMgZnJvbSBvdXIgYW5hbHlzaXMuDQoNClF1YWxpdHkgYW5kIHJlbGlhYmlsaXR5OiBXZSBhc3Nlc3NlZCB0aGUgcXVhbGl0eSBvZiB0aGUgZGF0YSBlbnN1cmluZyB0aGF0IHRoZXkgd2VyZSBmcm9tIHJlcHV0YWJsZSBzb3VyY2VzIGFuZCB0aGF0IHRoZWlyIGNvbGxlY3Rpb24gd2FzIG5vdCBvbmx5IHRob3JvdWdoIGJ1dCBldGhpY2FsLiBUaGlzIGluY2x1ZGVkIGNvbnNpZGVyYXRpb25zIGxpa2Ugc2FtcGxlIHNpemUsIGRhdGEgaW50ZWdyaXR5IHRvIHByaW9yaXRpc2UgYW5hbHlzaXMgb3ZlciBjbGVhbmluZywgYW5kIHRoZSBjb2xsZWN0aW9uIG1ldGhvZHMuIFdlIG9ubHkgdXNlZCBkYXRhIHRoYXQgd2Ugd2VyZSBjb25maWRlbnQgd2FzIGNvbGxlY3RlZCBldGhpY2FsbHksIHJlc3BlY3RpbmcgcHJpdmFjeSwgY29uc2VudCwgYW5kIGxlZ2FsIHJlZ3VsYXRpb25zLiBXZSBhbHNvIGhhZCBubyBpbnRlcmVzdCBpbiB1c2luZyBkYXRhIHRoYXQgd291bGQgcGVycGV0dWF0ZSBiaWFzIG9yIGRpc2NyaW1pbmF0aW9uLiBNb3JlIG9uIHRoaXMgaXMgaW5jbHVkZWQgYXQgdGhlIGVuZCBvZiB0aGUgcmVwb3J0Lg0KDQpDb21wYXRpYmlsaXR5IG9mIHRoZSBkYXRhIHNldHM6IEl0IHF1aWNrbHkgYmVjYW1lIGFwcGFyZW50IHRoYXQgYSBzaW5nbGUgZGF0YSBzZXQgd291bGQgbm90IGNvbnRhaW4gZW5vdWdoIGluZm9ybWF0aW9uIHRvIGFuc3dlciB0aGUgYnJpZWYuIFdlIHNwZW50IHRpbWUgdG8gY29uc2lkZXIgaG93IGRhdGEgc2V0cyBjb3VsZCBiZSBjb21iaW5lZCBvciB1c2VkIGluIHRhbmRlbSB0byBmdXJ0aGVyIGVuaGFuY2Ugb3VyIGFuYWx5c2lzLiBTb21lIGRhdGEgc2V0cyBkaXZpZGVkIHRoZSBkYXRlcyBkaWZmZXJlbnRseSwgc29tZSBoYWQgaW5mb3JtYXRpb24gb24gZ2VuZGVyLCByZWdpb25hbCBhbmQgc29jaWFsIGZhY3RvcnMgd2hpbGUgb3RoZXIgZGlkbuKAmXQuIFdlIHNwZW50IHRpbWUgb24gTW9uZGF5IGVsaW1pbmF0aW5nIHRob3NlIHRoYXQgaGFkIG92ZXJsYXBzIGFuZCBmaW5kaW5nIHdheXMgdG8gY29tYmluZSB3aGF0IHdlIGhhZCB3aXRoIHRoZSBnb2FsIG9mIHByaW9yaXRpc2luZyBkYXRhIHF1YWxpdHkgcmF0aGVyIHRoYW4gcXVhbnRpdHkgd2hpY2ggd2FzIGltcG9ydGFudCBnaXZlbiB0aGUgdGltZSBjb25zdHJhaW50cy4NCg0KT3RoZXIgY29uc2lkZXJhdGlvbnMgaW5jbHVkZWQgYXZhaWxhYmlsaXR5IGFuZCB0aGUgdGltZSBmcmFtZSBvZiB0aGUgZGF0YSBzZXRzLiBXYXMgaXQgZnJlZSB0byBhY2Nlc3MgYW5kIHVzZT8gRGlkIHRoZSBkYXRhIGV4cGFuZCBmb3J3YXJkIGFuZCBiYWNrd2FyZCBmYXIgZW5vdWdoIGZyb20gdGhlIHN0YXJ0IG9mIHRoZSBwYW5kZW1pYyB0aGF0IHdlIGNvdWxkIGNvbmZpZGVudGx5IG1lYXN1cmUgdGhlIGltcGFjdCBpdCBoYWQ/DQoNClRoZSBkYXRhIHNldHMgdXNlZCB3ZXJlIHRoZSBmb2xsb3dpbmc6DQoNCkFjdGl2aXR5IGJ5IEJvYXJkIG9mIFRyZWF0bWVudCwgQWdlIGFuZCBTZXgNCg0KTGljZW5zZTogVUsgT3BlbiBHb3Zlcm5tZW50IExpY2VuY2UgKE9HTCkNCkZvcm1hdDogVGV4dC9DU1YNCkRhdGUgQ3JlYXRlZDogTm92ZW1iZXIgMTQsIDIwMTkNCkxhc3QgVXBkYXRlOiBNYXkgMzAsIDIwMjMNCg0KQmVkcyBJbmZvcm1hdGlvbiBpbiBTY290bGFuZCANCkxpY2Vuc2U6IFVLIE9wZW4gR292ZXJubWVudCBMaWNlbmNlIChPR0wpDQpGb3JtYXQ6IFRleHQvQ1NWDQpEYXRlIENyZWF0ZWQ6IE5vdmVtYmVyIDcsIDIwMTkNCkxhc3QgVXBkYXRlOiBNYXkgMzAsIDIwMjMNCg0KQWRtaXNzaW9ucyBCeSBIZWFsdGggQm9hcmQsIEFnZSBhbmQgU2V4IC8gQWRtaXNzaW9ucyBCeSBIZWFsdGggQm9hcmQgYW5kIERlcHJpdmF0aW9uDQoNCkFnZSBhbmQgU2V4DQoNCkxpY2Vuc2U6IFVLIE9wZW4gR292ZXJubWVudCBMaWNlbmNlIChPR0wpDQpGb3JtYXQ6IFRleHQvQ1NWDQpEYXRlIENyZWF0ZWQ6IE5vdmVtYmVyIDcsIDIwMTkNCkxhc3QgVXBkYXRlOiBKdWx5IDYsIDIwMjMNCg0KRGVwcml2YXRpb24NCg0KTGljZW5zZTogVUsgT3BlbiBHb3Zlcm5tZW50IExpY2VuY2UgKE9HTCkNCkZvcm1hdDogVGV4dC9DU1YNCkRhdGUgQ3JlYXRlZDogTWF5IDIxLCAyMDIwDQpMYXN0IFVwZGF0ZTogSnVseSA2LCAyMDIzDQoNCkFjdGl2aXR5IGJ5IEJvYXJkIG9mIFRyZWF0bWVudCBhbmQgU3BlY2lhbHR5DQpMaWNlbnNlOiBVSyBPcGVuIEdvdmVybm1lbnQgTGljZW5jZSAoT0dMKQ0KRm9ybWF0OiBUZXh0L0NTVg0KRGF0ZSBDcmVhdGVkOiBOb3ZlbWJlciAxNCwgMjAxOQ0KTGFzdCBVcGRhdGU6IE1heSAzMCwgMjAyMw0KDQpIb3NwaXRhbCBDb2Rlcw0KTGljZW5zZTogVUsgT3BlbiBHb3Zlcm5tZW50IExpY2VuY2UgKE9HTCkNCkZvcm1hdDogVGV4dC9DU1YNCkRhdGUgQ3JlYXRlZDogMjcgTWFyY2ggMjAxOA0KTGFzdCBVcGRhdGU6IDEwIEphbnVhcnkgMjAyMg0KDQpIZWFsdGggQm9hcmQgTGFiZWxzDQpMaWNlbnNlOiBVSyBPcGVuIEdvdmVybm1lbnQgTGljZW5jZSAoT0dMKQ0KRm9ybWF0OiBUZXh0L0NTVg0KRGF0ZSBDcmVhdGVkOiBEZWNlbWJlciAyMiwgMjAxNw0KTGFzdCBVcGRhdGU6IEp1bmUgMTcsIDIwMjANCg0KU3BlY2lhbCBIZWFsdGggQm9hcmRzIGFuZCBOYXRpb25hbCBGYWNpbGl0aWVzDQpMaWNlbnNlOiBVSyBPcGVuIEdvdmVybm1lbnQgTGljZW5jZSAoT0dMKQ0KRm9ybWF0OiBUZXh0L0NTVg0KRGF0ZSBDcmVhdGVkOiBNYXJjaCAyMSwgMjAxOA0KTGFzdCBVcGRhdGU6IEZlYnJ1YXJ5IDIzLCAyMDIxDQoNCg0KIyBNb3RpdmF0aW9ucyBmb3IgdXNpbmcgdGhlIGRhdGEgeW91IGhhdmUgY2hvc2VuDQpXZSB1c2VkIHRoZSBkYXRhc2V0IG9uIOKApiB0byBhbnN3ZXIg4oCmIGFuZCBiZWNhdXNlIGl0IHdhcyDigKYNCg0KIyBEYXRhIHF1YWxpdHkgYW5kIHBvdGVudGlhbCBiaWFzLCBpbmNsdWRpbmcgYSBicmllZiBzdW1tYXJ5IG9mIGRhdGEgY2xlYW5pbmcgYW5kIHRyYW5zZm9ybWF0aW9ucw0KQWxsIHRoZSBkYXRhIHNldHMgdXNlZCB3ZXJlIGluIHRleHQvQ1ZTIGZvcm1hdC4gV2hlbiBwcm92aWRlZCwgYWxsIGRhdGEgc2V0cyB1c2VkIHNjb3JlZCAxMDAlIGZvciBhY2N1cmFjeSBhbmQgd2VyZSBjb21wbGV0ZSBhc2lkZSBmcm9tIG9uZ29pbmcgdXBkYXRlcy4gSW4gbWVhc3VyaW5nIHRoZSBkYXRhIHF1YWxpdHkgd2UgbWFkZSBjb25zaWRlcmF0aW9ucyBmb3IgdGhlIGZvbGxvd2luZzoNCg0KQWNjdXJhY3k6IEFsbCB0aGUgZGF0YSBjYW1lIGZyb20gdHJ1c3RlZCBzb3VyY2VzIGFuZCB3YXMgbWFudWFsbHkgdmVyaWZpYWJsZSBieSBjb21wYXJpbmcgaXQgd2l0aCBkYXRhIGZyb20gZGlmZmVyZW50IHNvdXJjZXMuIFdlIGZvdW5kIGNvbnNpc3RlbmN5IHdpdGhpbiB0aGUgc2V0cyB3ZSB1c2VkIHdoaWNoIG1hZGUgdXMgY29uZmlkZW50IGluIHRoZSBvdmVyYWxsIHF1YWxpdHkuIFdlIGNoZWNrZWQgZm9yIGNvbnRyYWRpY3RpbmcgZGF0YSwgZHVwbGljYXRlIGVudHJpZXMsIGFuZCBvdGhlciBkYXRhIHF1YWxpdHkgaXNzdWVzIHRoYXQgbWF5IGFyaXNlIGZyb20gZGF0YSBlbnRyeSBlcnJvcnMuDQpDb21wbGV0ZW5lc3M6IFdlIGFzc2Vzc2VkIHRoZSBkYXRhIGZvciBjb21wbGV0ZW5lc3MgbG9va2luZyB0byBmaW5kIGFueSBtaXNzaW5nIHZhbHVlcyBvciBnYXBzIHdpdGhpbiB0aGUgZGF0YSBzZXRzIHRoYXQgbWF5IGltcGFjdCBvdXIgYW5hbHlzaXMuDQpWYWxpZGl0eTogV2UgdmVyaWZpZWQgdGhlIGRhdGEgZmVsbCB3aXRoaW4gbG9naWNhbCBvciBleHBlY3RlZCByYW5nZXMgYW5kIG1haW50YWluZWQgYSBjb25zaXN0ZW50IGZvcm1hdC4NClJlbGV2YW5jZTogQWxsIGRhdGEgdXNlZCBjb250cmlidXRlZCB0byB0aGUgb2JqZWN0aXZlcyBvZiBvdXIgYW5hbHlzaXMgYW5kIGltcHJvdmVkIG91ciBhYmlsaXR5IHRvIGFuc3dlciB0aGUgYnJpZWYuDQpEb2N1bWVudGF0aW9uOiBBbGwgdGhlIGRhdGEgc2V0cyBpbmNsdWRlZCBkb2N1bWVudGF0aW9uIG9uIHRoZSBzdHJ1Y3R1cmUgYW5kIGNvbnRleHQgb2YgdGhlIGRhdGEuIFRoZXkgYWxzbyBpbmNsdWRlZCBkYXRhIGRpY3Rpb25hcmllcyB3aGljaCBpbXByb3ZlZCBvdXIgdGVhbXMgdW5kZXJzdGFuZGluZyBvZiB0aGUgdmFyaWFibGVzIGFuZCB0ZXJtaW5vbG9neSB1c2VkIHdpdGhpbi4NCg0KV2hpbGUgaW1wb3NzaWJsZSB0byBlbGltaW5hdGUgYmlhcyBmcm9tIHRoZSBkYXRhIHdlIGZlZWwgdGhlIGRhdGEgaXMgYXMgbG93IGluIGJpYXMgYXMgcG9zc2libGUuIFNhbXBsaW5nIGFuZCBzZWxlY3Rpb24gYmlhc2VzIHdlcmUgbGFyZ2VseSBlbGltaW5hdGVkIGJ5IHRoZSBzaXplIGFuZCBzY29wZSBvZiB0aGUgZGF0YSB1c2VkLiBGb3IgZXhhbXBsZSwgZGF0YSBpbmNsdWRlZCBhbGwgYWRtaXNzaW9ucyBtZWFuaW5nIHRoZSBzYW1wbGUgd2FzIHJlcHJlc2VudGF0aXZlIG9mIGhlYWx0aCBzZXJ2aWNlIHVzZXJzIG9uIHRoZSB3aG9sZSBub3QgZGlzY3JpbWluYXRpbmcgZm9yIHJlZ2lvbmFsIG9yIHNvY2lvLWVjb25vbWljIGZhY3RvcnMuIFRoZXJlIGlzIHRoZSBwb3RlbnRpYWwgZm9yIHJlcG9ydGluZyBiaWFzIGFzIHRoZSBjb2xsZWN0aW9uIG9mIGRhdGEgd2FzIHJlc3RyaWN0ZWQgdG8gY2VydGFpbiBjYXRlZ29yaWVzIG9yIHZhcmlhYmxlcy4gSW50ZW50aW9uYWxseSBvciBvdGhlcndpc2UsIHRoZXJlIGlzIHRoZSBwb3RlbnRpYWwgZm9yIGluY2x1ZGluZyBvciBleGNsdWRpbmcgY2VydGFpbiB2YXJpYWJsZXMgdGhhdCBtYXkgYWx0ZXIgb3IgZmF2b3VyIGNlcnRhaW4gZmluZGluZ3MuDQoNCk91ciBhbmFseXNpcyBhbHNvIGludHJvZHVjZWQgdGhlIHBvdGVudGlhbCBmb3IgY29uZmlybWF0aW9uIGJpYXMgc3BlY2lmaWNhbGx5IHdoZW4gbG9va2luZyBmb3IgdGhlIHByZXNlbmNlIG9mIGEgd2ludGVyIGNyaXNpcy4gT3VyIHByZWNvbmNlaXZlZCBub3Rpb25zIGFuZCBiZWxpZWZzIGFyb3VuZCB0aGUgY3Jpc2lzIGhhZCB0aGUgcG90ZW50aWFsIHRvIHNoYXBlIG91ciBlbnF1aXJpZXMgaG93ZXZlciB3ZSBtYWRlIHN1cmUgaW4gb3VyIGNsZWFuaW5nIHByb2Nlc3MgdG8gaW5jbHVkZSBkYXRhIGFzIGNvbXBsZXRlbHkgYXMgcG9zc2libGUuIFRoaXMgYWxsb3dlZCB1cyB0byBtaW5pbWl6ZSB0aGUgaW1wYWN0IG91ciBwcmV2aW91cyBiZWxpZWZzIG1heSBoYXZlIG9uIG91ciByZXN1bHRzIGFuZCBlbnN1cmVkIHdlIHJlYWNoZWQgYWNjdXJhdGUgY29uY2x1c2lvbnMuDQoNCg0KIyBIb3cgaXMgdGhlIGRhdGEgc3RvcmVkIGFuZCBzdHJ1Y3R1cmVkDQpUaGUgZGF0YSBpcyBpbiB0aGUgZm9ybSBvZiBsaW5rZWQgZGF0YSB3aXRoIHRoZSBlbnRpcmV0eSBvZiB0aGUgZGF0YSBzdG9yZSBtYWtpbmcgdXAgbWlsbGlvbnMgb2Ygc3RhdGVtZW50cyBvZiBpbmZvcm1hdGlvbiB0aGF0IGZvcm0gYSBzdWJqZWN0IC0gcHJlZGljYXRlIC0gb2JqZWN0IGFycmFuZ2VtZW50IG9yIOKAnHRyaXBsZXMu4oCdIFRoaXMgbWVhbnMgdGhhdCB0aGUgc3RydWN0dXJlIG9mIHRoZSBkYXRhYmFzZSBpcyBjb250YWluZWQgd2l0aGluIHRoZSBkYXRhIGVsaW1pbmF0aW5nIHRoZSBuZWVkIGZvciBhIGNvbXBsZXggZGF0YWJhc2Ugc2NoZW1hLg0KDQpCZW5lZml0cyBvZiBzdG9yaW5nIHRoZSBkYXRhIGxpa2UgdGhpcyBpbmNsdWRlIGVhc2Ugb2YgYWNjZXNzLCBpbnRlZ3JhdGlvbiwgcmV1c2FiaWxpdHksIGFuZCBjb2xsYWJvcmF0aW9uLg0KDQoNCiMgRXRoaWNhbCBhbmQgbGVnYWwgY29uc2lkZXJhdGlvbnMgb2YgdGhlIGRhdGENClRoZSBkYXRhc2V0cyBhcmUgY292ZXJlZCBieSB0aGUgT3BlbiBHb3Zlcm5tZW50IExpY2Vuc2UsIHdoaWNoIG1lYW5zIGFueW9uZSBpcyBhYmxlIHRvIGNvcHksIHB1Ymxpc2gsIGRpc3RyaWJ1dGUsIHRyYW5zbWl0IGFuZCBhZGFwdCB0aGUgbGljZW5zZWQgd29yaywgYW5kIHRvIGV4cGxvaXQgaXQgYm90aCBjb21tZXJjaWFsbHkgYW5kIG5vbi1jb21tZXJjaWFsbHkgYXMgbG9uZyBhcyB0aGV5IGFja25vd2xlZGdlIHRoZSBzb3VyY2Ugb2YgdGhlIHdvcmsgYW5kIChpZiBwb3NzaWJsZSkgcHJvdmlkZSBhIGxpbmsgdG8gdGhlIE9HTC4gVGhlIE9HTCBkb2VzIG5vdCBjb3ZlciBpbmZvcm1hdGlvbiB0aGF0IGlzIG1vcmUgaW50cnVzaXZlIHRvIHRoZSB1c2VyIGl0IHdhcyBjb2xsZWN0ZWQgZnJvbSwgZm9yIGV4YW1wbGUsIHBlcnNvbmFsIGlkZW50aWZpYWJsZSBpbmZvcm1hdGlvbiBvciBhbnkgaWRlbnRpdHkgZG9jdW1lbnRzLiAg</div>
 
 
 

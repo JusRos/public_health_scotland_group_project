@@ -3,23 +3,27 @@ title: "R Notebook"
 output: html_notebook
 ---
 # Names of group members
-Person 1, Person 2, Person 3
+Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom D
 
 # Roles & responsibilities of each member
-Person 1 worked on …
+Justyna worked on analysing and presenting data on demographics including the "Hospital Admissions by Age and Gender" plot, and "Average Length of Stay by Health Board, Admission Type and SIMD". Justyna also played a key role in designing and preparing the final presentation, and introduced the project during this presentation.
 
-Person 2 worked on …
+Emma worked on analysing and presenting the number of admissions and the length of hospital stays. This included the preparation of the "Weekly Hospital Admissions" plot and "Average Length of Stay for Inpatients by Demographic". She presented the conclusions of this and the SIMD analysis in the final presentation.
 
-Person 3 worked on …
+Louise worked on analysing and presenting hospital activity, specialisations, and bed occupancy, this included preparing "Percentage Of Bed Occupancy Over Time". Louise also played a key role in the design of the dashboard and implementation of the winter button to highlight the winter time periods in each plot. She further presented the dashboard at the final presentation.
 
-Everyone worked on …
+Tom worked on analysing and presenting geographical data, particularly relating to bed occupncy and availability. He was responsible for preparing the map of number of staffed beds across Scotland. Tom also presented the conclusions on bed occupancy and staffed bed levels in the final presentation.
+
+Everyone worked on communication and collaboration as a team, sharing ideas and shaping the direction of the project. We discussed and agreed roles, plot themes, text sizes, and key ideas and conclusions to pursue. 
 
 # Brief description of dashboard topic
-Our dashboard contains …
+Our dashboard contains data visualisations and insights relating to the impact of the Covid pandemic on provision of acute care in Scotland, as well as an option to highlight winter periods to assess to what extent the winter crises reported in the media are accurate based the data analysed.
 
-Our topic is …
+The dashboard outlines our topic in terms of three main KPIs, which have been split over three tabs:
 
-The dashboard outlines our topic in terms of …
+* Admissions
+* Length of Stay
+* Beds
 
 # Stages of the project
 Planning & dashboard wireframe
@@ -28,38 +32,109 @@ Choosing datasets
 and so on …
 
 # Which tools were used in the project
-Zoom (daily stand-ups and occasional mob programming)
-Trello (planning & task allocation)
-Git/GitHub (collaboration & version control)
-and so on …
+Trello: Allowed us to map our entire workflow from start to finish and to assign different tasks to each member. It helped us to fairly distribute tasks and ensured that everything would be done in an order that wouldn’t disrupt our workflow and within a reasonable time frame.
+
+Git/GitHub: Used to allow us to work simultaneously and to keep different versions of our work should anything break or not function how we would have liked after making changes.  
+
+R Studio: We used R Studio to do all our data manipulation and analysis from cleaning to visualisation and it was used to create the dashboard with the Shiny package.
+	
+Slack: We used slack to communicate while working from home and it was also used to share small code snippets that would be useful to other members of the team.
+
+One Note: We used one note to share documents that were not code related.
+
+Powerpoint: Our final presentation was delivered as a power point presentation which allowed us to accurately and concisely share our findings.
 
 # How did you gather and synthesise requirements for the project?
-We synthesised the information given in the brief by …
+When deciding which data and sources we would use to answer the brief we initially sorted the data to meet broader requirements, considering a number of factors, before further refining our choices to ones we felt would accurately show if the NHS experienced a winter crisis, and the effect Covid had on the normal operation of the health service. (maybe include a bit about the kpis)
 
-We prioritised …
+Initial considerations included:
+
+Relevance and applicability: How confident were we the data would answer the brief requirements? We considered the subject matter and the scope of the project making sure that we could not only provide answers that met the questions in the brief but allowed us to also provide actionable insights from our analysis.
+
+Quality and reliability: We assessed the quality of the data ensuring that they were from reputable sources and that their collection was not only thorough but ethical. This included considerations like sample size, data integrity to prioritise analysis over cleaning, and the collection methods. We only used data that we were confident was collected ethically, respecting privacy, consent, and legal regulations. We also had no interest in using data that would perpetuate bias or discrimination. More on this is included at the end of the report.
+
+Compatibility of the data sets: It quickly became apparent that a single data set would not contain enough information to answer the brief. We spent time to consider how data sets could be combined or used in tandem to further enhance our analysis. Some data sets divided the dates differently, some had information on gender, regional and social factors while other didn’t. We spent time on Monday eliminating those that had overlaps and finding ways to combine what we had with the goal of prioritising data quality rather than quantity which was important given the time constraints.
+
+Other considerations included availability and the time frame of the data sets. Was it free to access and use? Did the data expand forward and backward far enough from the start of the pandemic that we could confidently measure the impact it had?
+
+The data sets used were the following:
+
+Activity by Board of Treatment, Age and Sex
+
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: November 14, 2019
+Last Update: May 30, 2023
+
+Beds Information in Scotland 
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: November 7, 2019
+Last Update: May 30, 2023
+
+Admissions By Health Board, Age and Sex / Admissions By Health Board and Deprivation
+
+Age and Sex
+
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: November 7, 2019
+Last Update: July 6, 2023
+
+Deprivation
+
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: May 21, 2020
+Last Update: July 6, 2023
+
+Activity by Board of Treatment and Specialty
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: November 14, 2019
+Last Update: May 30, 2023
+
+Hospital Codes
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: 27 March 2018
+Last Update: 10 January 2022
+
+Health Board Labels
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: December 22, 2017
+Last Update: June 17, 2020
+
+Special Health Boards and National Facilities
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: March 21, 2018
+Last Update: February 23, 2021
+
 
 # Motivations for using the data you have chosen
 We used the dataset on … to answer … and because it was …
 
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
-According to the About tab on the dataset page/dedicated page online, the data quality …
+All the data sets used were in text/CVS format. When provided, all data sets used scored 100% for accuracy and were complete aside from ongoing updates. In measuring the data quality we made considerations for the following:
 
-The dataset may/may not be biased because …
+Accuracy: All the data came from trusted sources and was manually verifiable by comparing it with data from different sources. We found consistency within the sets we used which made us confident in the overall quality. We checked for contradicting data, duplicate entries, and other data quality issues that may arise from data entry errors.
+Completeness: We assessed the data for completeness looking to find any missing values or gaps within the data sets that may impact our analysis.
+Validity: We verified the data fell within logical or expected ranges and maintained a consistent format.
+Relevance: All data used contributed to the objectives of our analysis and improved our ability to answer the brief.
+Documentation: All the data sets included documentation on the structure and context of the data. They also included data dictionaries which improved our teams understanding of the variables and terminology used within.
 
-To clean the datasets we …
+While impossible to eliminate bias from the data we feel the data is as low in bias as possible. Sampling and selection biases were largely eliminated by the size and scope of the data used. For example, data included all admissions meaning the sample was representative of health service users on the whole not discriminating for regional or socio-economic factors. There is the potential for reporting bias as the collection of data was restricted to certain categories or variables. Intentionally or otherwise, there is the potential for including or excluding certain variables that may alter or favour certain findings.
+
+Our analysis also introduced the potential for confirmation bias specifically when looking for the presence of a winter crisis. Our preconceived notions and beliefs around the crisis had the potential to shape our enquiries however we made sure in our cleaning process to include data as completely as possible. This allowed us to minimize the impact our previous beliefs may have on our results and ensured we reached accurate conclusions.
+
 
 # How is the data stored and structured
-[Hint: This page offers a good starting point for understanding the data structure: https://guides.statistics.gov.scot/article/34-understanding-the-data-structure]
+The data is in the form of linked data with the entirety of the data store making up millions of statements of information that form a subject - predicate - object arrangement or “triples.” This means that the structure of the database is contained within the data eliminating the need for a complex database schema.
 
-The data is in the form of …
+Benefits of storing the data like this include ease of access, integration, reusability, and collaboration.
 
-This means …
-
-Benefits of storing the data like this are …
 
 # Ethical and legal considerations of the data
-[Hint: this page contains information on the Open Government License which covers most datasets on statistics.gov.scot: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/]
-
-There are no/There may be ethical considerations, because …
-
-The datasets are covered by the Open Government License, which means …
+The datasets are covered by the Open Government License, which means anyone is able to copy, publish, distribute, transmit and adapt the licensed work, and to exploit it both commercially and non-commercially as long as they acknowledge the source of the work and (if possible) provide a link to the OGL. The OGL does not cover information that is more intrusive to the user it was collected from, for example, personal identifiable information or any identity documents.  
