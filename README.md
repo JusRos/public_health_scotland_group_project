@@ -1,6 +1,7 @@
 # Public Health Scotland Interactive Dashboard
 
-This dashboard was created as a group during the CodeClan Professional Data Analysis course using R Shiny.
+This dashboard was created as a group during the CodeClan Professional Data Analysis course using R Shiny.  
+Data was taken from Public Health Scotland.
 
 **Collaborators:** Justyna Rosiak, Emma Menzies, Louise Laurenson, Tom D
 
