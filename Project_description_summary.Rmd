@@ -3,20 +3,23 @@ title: "R Notebook"
 output: html_notebook
 ---
 # Names of group members
+
 Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom D
 
 # Roles & responsibilities of each member
+
 Justyna worked on analysing and presenting data on demographics including the "Hospital Admissions by Age and Gender" plot, and "Average Length of Stay by Health Board, Admission Type and SIMD". Justyna also played a key role in designing and preparing the final presentation, and introduced the project during this presentation.
 
 Emma worked on analysing and presenting the number of admissions and the length of hospital stays. This included the preparation of the "Weekly Hospital Admissions" plot and "Average Length of Stay for Inpatients by Demographic". She presented the conclusions of this and the SIMD analysis in the final presentation.
 
 Louise worked on analysing and presenting hospital activity, specialisations, and bed occupancy, this included preparing "Percentage Of Bed Occupancy Over Time". Louise also played a key role in the design of the dashboard and implementation of the winter button to highlight the winter time periods in each plot. She further presented the dashboard at the final presentation.
 
-Tom worked on analysing and presenting geographical data, particularly relating to bed occupncy and availability. He was responsible for preparing the map of number of staffed beds across Scotland. Tom also presented the conclusions on bed occupancy and staffed bed levels in the final presentation.
+Tom worked on analysing and presenting geographical data, particularly relating to bed occupancy and availability. He was responsible for preparing the map of number of staffed beds across Scotland. Tom also presented the conclusions on bed occupancy and staffed bed levels in the final presentation.
 
 Everyone worked on communication and collaboration as a team, sharing ideas and shaping the direction of the project. We discussed and agreed roles, plot themes, text sizes, and key ideas and conclusions to pursue. 
 
 # Brief description of dashboard topic
+
 Our dashboard contains data visualisations and insights relating to the impact of the Covid pandemic on provision of acute care in Scotland, as well as an option to highlight winter periods to assess to what extent the winter crises reported in the media are accurate based the data analysed.
 
 The dashboard outlines our topic in terms of three main KPIs, which have been split over three tabs:
@@ -26,12 +29,14 @@ The dashboard outlines our topic in terms of three main KPIs, which have been sp
 * Beds
 
 # Stages of the project
+
 Planning & dashboard wireframe
 Git branching & version control
 Choosing datasets
 and so on …
 
 # Which tools were used in the project
+
 Trello: Allowed us to map our entire workflow from start to finish and to assign different tasks to each member. It helped us to fairly distribute tasks and ensured that everything would be done in an order that wouldn’t disrupt our workflow and within a reasonable time frame.
 
 Git/GitHub: Used to allow us to work simultaneously and to keep different versions of our work should anything break or not function how we would have liked after making changes.  
@@ -45,6 +50,7 @@ One Note: We used one note to share documents that were not code related.
 Powerpoint: Our final presentation was delivered as a power point presentation which allowed us to accurately and concisely share our findings.
 
 # How did you gather and synthesise requirements for the project?
+
 When deciding which data and sources we would use to answer the brief we initially sorted the data to meet broader requirements, considering a number of factors, before further refining our choices to ones we felt would accurately show if the NHS experienced a winter crisis, and the effect Covid had on the normal operation of the health service. (maybe include a bit about the kpis)
 
 Initial considerations included:
@@ -114,9 +120,11 @@ Last Update: February 23, 2021
 
 
 # Motivations for using the data you have chosen
+
 We used the dataset on … to answer … and because it was …
 
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
+
 All the data sets used were in text/CVS format. When provided, all data sets used scored 100% for accuracy and were complete aside from ongoing updates. In measuring the data quality we made considerations for the following:
 
 Accuracy: All the data came from trusted sources and was manually verifiable by comparing it with data from different sources. We found consistency within the sets we used which made us confident in the overall quality. We checked for contradicting data, duplicate entries, and other data quality issues that may arise from data entry errors.
@@ -131,10 +139,13 @@ Our analysis also introduced the potential for confirmation bias specifically wh
 
 
 # How is the data stored and structured
+
 The data is in the form of linked data with the entirety of the data store making up millions of statements of information that form a subject - predicate - object arrangement or “triples.” This means that the structure of the database is contained within the data eliminating the need for a complex database schema.
 
 Benefits of storing the data like this include ease of access, integration, reusability, and collaboration.
 
 
 # Ethical and legal considerations of the data
+
 The datasets are covered by the Open Government License, which means anyone is able to copy, publish, distribute, transmit and adapt the licensed work, and to exploit it both commercially and non-commercially as long as they acknowledge the source of the work and (if possible) provide a link to the OGL. The OGL does not cover information that is more intrusive to the user it was collected from, for example, personal identifiable information or any identity documents.  
+
