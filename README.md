@@ -1,7 +1,7 @@
 # Public Health Scotland Interactive Dashboard
 
 This dashboard was created as a group during the CodeClan Professional Data Analysis course using R Shiny.  
-Data was taken from Public Health Scotland.
+[Data was taken from Public Health Scotland](https://www.opendata.nhs.scot/dataset/annual-cancer-incidence).
 
 **Collaborators:** Justyna Rosiak, Emma Menzies, Louise Laurenson, Tom D
 
