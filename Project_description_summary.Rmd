@@ -31,28 +31,27 @@ The dashboard outlines our topic in terms of three main KPIs, which have been sp
 # Stages of the project
 
 * Familiarisation 
-On Friday when the project was given out we decided as a team to split the given data sets up and each look over them and summaries our findings. 
-The meant on Monday we could plan out the week.
+On Friday when the project was given out we decided as a team to split the given data sets up and each look over them and summarise our findings.  
+This meant on Monday we could plan out the week.
 
 * Planning 
 On Monday we planned out what we wanted the week to look like,
-We updated our Trello bored with things we wanted to be on each day.
-At this point we also made our GIT Repo and decided what datasetes we would be using. 
-We also made our first draft wireframe for what we wanted the dashbord to look like.
+We updated our Trello board with things we wanted to achieve by each day.  
+At this point we also made our GIT Repo and decided what datasets we would be using.  
+We also made our first draft wireframe for what we wanted the dashboard to look like.
 
 * Action
 
-On Tuesday and Wednesday we worked individually on our own plots for the dashbord. 
-When the plots where complete we then started to create the dashbord and deciding on the final look.
+On Tuesday and Wednesday we worked individually on our own plots for the dashboard.   
+When the plots where complete we then started to create the dashboard and decide on the final look.
 
 * Tidying 
 
-On Thursday we made sure everyone was happy with the graphs and the story we had to tell with the dashbord. We made sure all action buttons worked and the dashbord was running the way we wanted.
+On Thursday we made sure everyone was happy with the graphs and the story we had to tell with the dashboard. We made sure all action buttons worked and the dashboard was running the way we wanted.
 
 * Presentation planing
 
-After eveyone was happy with the dashbord we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
-
+After everyone was happy with the dashboard we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
 
 
 # Which tools were used in the project
