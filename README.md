@@ -1,10 +1,10 @@
-Public Health Scotland Interactive Dashboard
+# Public Health Scotland Interactive Dashboard
 
 This dashboard was created as a group during the CodeClan Professional Data Analysis course using R Shiny.
 
 **Collaborators:** Justyna Rosiak, Emma Menzies, Louise Laurenson, Tom D
 
-**Purpose**
+# Purpose
 
 The key questions explored in this dashboard are:
 
@@ -13,7 +13,7 @@ The key questions explored in this dashboard are:
 
 These questions were explored from three different angles: temporal, geographic, demographic
 
-**Structure and Dashboard**
+# Structure and Dashboard
 
 The final version of the dashboard is within the `test` folder of the repo.
 
