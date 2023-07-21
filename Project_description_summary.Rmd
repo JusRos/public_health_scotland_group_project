@@ -41,6 +41,7 @@ At this point we also made our GIT Repo and decided what datasets we would be us
 We also made our first draft wireframe for what we wanted the dashboard to look like.
 
 * Action
+<<<<<<< Updated upstream
 
 On Tuesday and Wednesday we worked individually on our own plots for the dashboard.   
 When the plots where complete we then started to create the dashboard and decide on the final look.
@@ -52,6 +53,17 @@ On Thursday we made sure everyone was happy with the graphs and the story we had
 * Presentation planing
 
 After everyone was happy with the dashboard we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
+=======
+On Tuesday and Wednesday we worked individually on our own plots for the dashbord. 
+When the plots where complete we then started to create the dashbord and deciding on the final look.
+
+* Tidying 
+On Thursday we made sure everyone was happy with the graphs and the story we had to tell with the dashbord. We made sure all action buttons worked and the dashbord was running the way we wanted.
+
+* Presentation planing
+After everyone yone was happy with the dashbord we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
+
+>>>>>>> Stashed changes
 
 
 # Which tools were used in the project
