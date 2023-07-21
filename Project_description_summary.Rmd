@@ -155,6 +155,10 @@ We used the dataset on … to answer … and because it was …
 
 Beds by Board of Treatment and Specialty, We used this dataset on both plot in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health bored.
 
+Health Board Labels, We used this dataset on all cleaning scripts to help answer all KPI's we used this because our other datasets only gave us the health board code so this allowed us to plot everything with a Health board name which is understood by non-specialist audience.
+
+Hospital Codes, We used this dataset on our available beds by health bored graph this helped us answer our KPI (Hospital beds availability) we used this because it gave us the latitude and longitude of each health borad so we could plot our graph accurately.
+
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
 
 All the data sets used were in text/CVS format. When provided, all data sets used scored 100% for accuracy and were complete aside from ongoing updates. In measuring the data quality we made considerations for the following:
