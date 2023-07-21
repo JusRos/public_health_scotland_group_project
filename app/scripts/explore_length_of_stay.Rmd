@@ -147,7 +147,7 @@ length_data %>%
            label = years) +
   coord_cartesian(ylim = c(min(length_data$avg_stay), 7.5),
                   clip = "off") +
-  geom_vline(xintercept = 9, size = 1.5, colour = "red") +
+  geom_vline(xintercept = 10, linewidth = 1.5, colour = "red") +
   
   scale_colour_manual(name = "", # Add legend
                       breaks = "Pre-covid 2018-2019 Average",
