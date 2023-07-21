@@ -28,7 +28,8 @@
           legend.title = element_blank()
     )+
     labs(
-      title = "\nAverage length of stay by Health Board,\nAdmission Type and SIMD\n",
+      title = "\nAverage length of stay by Health Board, Admission Type and SIMD\n",
+      subtitle = "SIMD = Scottish Index of Multiple Depravation",
       x = "\nQuarter\n",
       y = "\nAverage length of stay (days)\n"
     )

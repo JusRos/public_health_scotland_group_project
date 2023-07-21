@@ -32,7 +32,7 @@ create_age_and_sex_plot <- function(data, age_input, input_alpha){
           
     )+
     labs(
-      title = "\nHospital Admissions by\nAge and Gender\n", 
+      title = "\nHospital Admissions by Age and Gender\n", 
       x = "\nQuarter\n", 
       y = "\nNumber of Admissions\n"
     )}
