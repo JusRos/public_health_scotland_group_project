@@ -20,3 +20,9 @@ The final version of the dashboard is within the `test` folder of the repo.
 
 The dashboard has three tabs: Admissions, Length of Stay, and Beds.   
 These tabs contain interactive data visualisations where demographics, health boards, and type of admissions can be explored by the user.
+
+![](https://github.com/LouiseLaurenson/public_health_scotland_project/blob/main/app/screenshots/Screenshot%202023-07-21%20at%2010.59.58.png)
+![](https://github.com/LouiseLaurenson/public_health_scotland_project/blob/main/app/screenshots/Screenshot%202023-07-21%20at%2011.00.11.png)
+![](https://github.com/LouiseLaurenson/public_health_scotland_project/blob/main/app/screenshots/Screenshot%202023-07-21%20at%2011.00.46.png)
+
+
