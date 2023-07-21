@@ -111,13 +111,7 @@ Format: Text/CSV
 Date Created: May 21, 2020
 Last Update: July 6, 2023
 
-**Age and Sex**
-License: UK Open Government Licence (OGL)
-Format: Text/CSV
-Date Created: November 7, 2019
-Last Update: July 6, 2023
-
-**Deprivation**
+**Activity by Board of Treatment and Deprivation**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: May 21, 2020
@@ -135,18 +129,14 @@ Format: Text/CSV
 Date Created: December 22, 2017
 Last Update: June 17, 2020
 
-**Special Health Boards and National Facilities**
-License: UK Open Government Licence (OGL)
-Format: Text/CSV
-Date Created: March 21, 2018
-Last Update: February 23, 2021
-
 
 # Motivations for using the data you have chosen
 
 Admissions By Health Board, Age and Sex: We used this dataset to answer questions on the impact of Covid on provision of acute care relating to the number of admissions (one of our KPIs), as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also gave weekly statistics allowing us to look at the change over time, and impact of winter.
 
-Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on length of stay for different demographics as it contained information on the length of stay on different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
+Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on length of stay and number of admissions for different demographics as it contained information on hospital stays for different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
+
+Activity by Board of Treatment and Deprivation: We used this dataset to look at the impact of Covid on different demographics in terms of SIMD level.
 
 Beds by Board of Treatment and Specialty: We used this dataset on both plots in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health board.
 
