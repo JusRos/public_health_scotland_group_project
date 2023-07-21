@@ -4,7 +4,7 @@ output: html_notebook
 ---
 # Names of group members
 
-Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom D
+Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom Doyle
 
 # Roles & responsibilities of each member
 
@@ -24,9 +24,9 @@ Our dashboard contains data visualisations and insights relating to the impact o
 
 The dashboard outlines our topic in terms of three main KPIs, which have been split over three tabs:
 
-* Admissions
+* Number of admissions
 * Length of Stay
-* Beds
+* Bed occupancy and availability
 
 # Stages of the project
 
@@ -79,7 +79,7 @@ Powerpoint: Our final presentation was delivered as a power point presentation w
 
 # How did you gather and synthesise requirements for the project?
 
-When deciding which data and sources we would use to answer the brief we initially sorted the data to meet broader requirements, considering a number of factors, before further refining our choices to ones we felt would accurately show if the NHS experienced a winter crisis, and the effect Covid had on the normal operation of the health service. (maybe include a bit about the kpis)
+When deciding which data and sources we would use to answer the brief we initially sorted the data to meet broader requirements, considering a number of factors, before further refining our choices to ones we felt would accurately show if the NHS experienced a winter crisis, and the effect Covid had on the normal operation of the health service.
 
 Initial considerations included:
 
@@ -93,54 +93,49 @@ Other considerations included availability and the time frame of the data sets. 
 
 The data sets used were the following:
 
-Activity by Board of Treatment, Age and Sex
-
+**Activity by Board of Treatment, Age and Sex**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: November 14, 2019
 Last Update: May 30, 2023
 
-Beds by Board of Treatment and Specialty
+**Beds by Board of Treatment and Specialty**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: November 7, 2019
 Last Update: May 30, 2023
 
-Admissions By Health Board, Age and Sex / Admissions By Health Board and Deprivation
-
-Age and Sex
-
-License: UK Open Government Licence (OGL)
-Format: Text/CSV
-Date Created: November 7, 2019
-Last Update: July 6, 2023
-
-Deprivation
-
+**Admissions By Health Board, Age and Sex**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: May 21, 2020
 Last Update: July 6, 2023
 
-Activity by Board of Treatment and Specialty
+**Age and Sex**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
-Date Created: November 14, 2019
-Last Update: May 30, 2023
+Date Created: November 7, 2019
+Last Update: July 6, 2023
 
-Hospital Codes
+**Deprivation**
+License: UK Open Government Licence (OGL)
+Format: Text/CSV
+Date Created: May 21, 2020
+Last Update: July 6, 2023
+
+**Hospital Codes**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: 27 March 2018
 Last Update: 10 January 2022
 
-Health Board Labels
+**Health Board Labels**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: December 22, 2017
 Last Update: June 17, 2020
 
-Special Health Boards and National Facilities
+**Special Health Boards and National Facilities**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: March 21, 2018
@@ -149,11 +144,11 @@ Last Update: February 23, 2021
 
 # Motivations for using the data you have chosen
 
-We used the dataset on … to answer … and because it was …
+Admissions By Health Board, Age and Sex: We used this dataset to answer questions on the impact of Covid on provision of acute care relating to the number of admissions (one of our KPIs), as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also gave weekly statistics allowing us to look at the change over time, and impact of winter.
 
+Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on length of stay for different demographics as it contained information on the length of stay on different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
 
-
-Beds by Board of Treatment and Specialty, We used this dataset on both plot in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health bored.
+Beds by Board of Treatment and Specialty: We used this dataset on both plots in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health board.
 
 Health Board Labels, We used this dataset on all cleaning scripts to help answer all KPI's we used this because our other datasets only gave us the health board code so this allowed us to plot everything with a Health board name which is understood by non-specialist audience.
 
@@ -163,11 +158,11 @@ Hospital Codes, We used this dataset on our available beds by health bored graph
 
 All the data sets used were in text/CVS format. When provided, all data sets used scored 100% for accuracy and were complete aside from ongoing updates. In measuring the data quality we made considerations for the following:
 
-Accuracy: All the data came from trusted sources and was manually verifiable by comparing it with data from different sources. We found consistency within the sets we used which made us confident in the overall quality. We checked for contradicting data, duplicate entries, and other data quality issues that may arise from data entry errors.
-Completeness: We assessed the data for completeness looking to find any missing values or gaps within the data sets that may impact our analysis.
-Validity: We verified the data fell within logical or expected ranges and maintained a consistent format.
-Relevance: All data used contributed to the objectives of our analysis and improved our ability to answer the brief.
-Documentation: All the data sets included documentation on the structure and context of the data. They also included data dictionaries which improved our teams understanding of the variables and terminology used within.
+**Accuracy:** All the data came from trusted sources and was manually verifiable by comparing it with data from different sources. We found consistency within the sets we used which made us confident in the overall quality. We checked for contradicting data, duplicate entries, and other data quality issues that may arise from data entry errors.  
+**Completeness:** We assessed the data for completeness looking to find any missing values or gaps within the data sets that may impact our analysis.
+Validity: We verified the data fell within logical or expected ranges and maintained a consistent format.  
+**Relevance:** All data used contributed to the objectives of our analysis and improved our ability to answer the brief.   
+**Documentation:** All the data sets included documentation on the structure and context of the data. They also included data dictionaries which improved our teams understanding of the variables and terminology used within.
 
 While impossible to eliminate bias from the data we feel the data is as low in bias as possible. Sampling and selection biases were largely eliminated by the size and scope of the data used. For example, data included all admissions meaning the sample was representative of health service users on the whole not discriminating for regional or socio-economic factors. There is the potential for reporting bias as the collection of data was restricted to certain categories or variables. Intentionally or otherwise, there is the potential for including or excluding certain variables that may alter or favour certain findings.
 
