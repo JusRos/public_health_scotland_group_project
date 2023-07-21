@@ -99,7 +99,7 @@ Format: Text/CSV
 Date Created: November 14, 2019
 Last Update: May 30, 2023
 
-**Beds Information in Scotland**
+**Beds by Board of Treatment and Specialty**
 License: UK Open Government Licence (OGL)
 Format: Text/CSV
 Date Created: November 7, 2019
@@ -144,10 +144,11 @@ Last Update: February 23, 2021
 
 # Motivations for using the data you have chosen
 
+Admissions By Health Board, Age and Sex: We used this dataset to answer questions on the impact of Covid on provision of acute care relating to the number of admissions (one of our KPIs), as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also gave weekly statistics allowing us to look at the change over time, and impact of winter.
 
-Admissions By Health Board, Age and Sex: We used this dataset to answer questions on the impact of Covid on provision of acute care as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also helped to answer the winter crisis question as changes across seasons could be identified.
+Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on length of stay for different demographics as it contained information on the length of stay on different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
 
-Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on different demographics as it contained information on the length of stay on different ages and sexes.
+Beds by Board of Treatment and Specialty: We used this dataset on both plots in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health board.
 
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
 
