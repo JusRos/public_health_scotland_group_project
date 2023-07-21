@@ -53,14 +53,14 @@ On Thursday we made sure everyone was happy with the graphs and the story we had
 
 After everyone was happy with the dashboard we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
 
-On Tuesday and Wednesday we worked individually on our own plots for the dashbord. 
-When the plots where complete we then started to create the dashbord and deciding on the final look.
+On Tuesday and Wednesday we worked individually on our own plots for the dashboard. 
+When the plots where complete we then started to create the dashboard and deciding on the final look.
 
 * Tidying 
-On Thursday we made sure everyone was happy with the graphs and the story we had to tell with the dashbord. We made sure all action buttons worked and the dashbord was running the way we wanted.
+On Thursday we made sure everyone was happy with the graphs and the story we had to tell with the dashboard. We made sure all action buttons worked and the dashboard was running the way we wanted.
 
-* Presentation planing
-After everyone one was happy with the dashbord we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
+* Presentation planning
+After everyone one was happy with the dashboard we talked about what roles we would have in the final presentation. We also created our PowerPoint presentation and made sure everyone knew when they would speak.
 
 
 # Which tools were used in the project
@@ -142,7 +142,7 @@ Beds by Board of Treatment and Specialty: We used this dataset on both plots in 
 
 Health Board Labels: We used this dataset on all cleaning scripts to help answer all KPI's we used this because our other datasets only gave us the health board code so this allowed us to plot everything with a Health board name which is understood by non-specialist audience.
 
-Hospital Codes: We used this dataset on our available beds by health bored graph this helped us answer our KPI (Hospital beds availability) we used this because it gave us the latitude and longitude of each health broad so we could plot our graph accurately.
+Hospital Codes: We used this dataset on our available beds by health bored graph this helped us answer our KPI (Hospital beds availability) we used this because it gave us the latitude and longitude of each health board so we could plot our graph accurately.
 
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
 
