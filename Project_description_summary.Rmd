@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Project Description"
 output: html_notebook
 ---
 # Names of group members
@@ -8,15 +8,15 @@ Justyna Rosiak, Emma Menzies, Louise (Weezay) Laurenson, Tom Doyle
 
 # Roles & responsibilities of each member
 
-Justyna worked on analysing and presenting data on demographics including the "Hospital Admissions by Age and Gender" plot, and "Average Length of Stay by Health Board, Admission Type and SIMD". Justyna also played a key role in designing and preparing the final presentation, and introduced the project during this presentation.
+**Justyna** worked on analysing and presenting data on demographics including the "Hospital Admissions by Age and Gender" plot, and "Average Length of Stay by Health Board, Admission Type and SIMD". Justyna also played a key role in designing and preparing the final presentation, and introduced the project during this presentation.
 
-Emma worked on analysing and presenting the number of admissions and the length of hospital stays. This included the preparation of the "Weekly Hospital Admissions" plot and "Average Length of Stay for Inpatients by Demographic". She presented the conclusions of this and the SIMD analysis in the final presentation.
+**Emma** worked on analysing and presenting the number of admissions and the length of hospital stays. This included the preparation of the "Weekly Hospital Admissions" plot and "Average Length of Stay for Inpatients by Demographic". She presented the conclusions of this and the SIMD analysis in the final presentation.
 
-Louise worked on analysing and presenting hospital activity, specialisations, and bed occupancy, this included preparing "Percentage Of Bed Occupancy Over Time". Louise also played a key role in the design of the dashboard and implementation of the winter button to highlight the winter time periods in each plot. She further presented the dashboard at the final presentation.
+**Louise** worked on analysing and presenting hospital activity, specialisations, and bed occupancy, this included preparing "Percentage Of Bed Occupancy Over Time". Louise also played a key role in the design of the dashboard and implementation of the winter button to highlight the winter time periods in each plot. She further presented the dashboard at the final presentation.
 
-Tom worked on analysing and presenting geographical data, particularly relating to bed occupancy and availability. He was responsible for preparing the map of number of staffed beds across Scotland. Tom also presented the conclusions on bed occupancy and staffed bed levels in the final presentation.
+**Tom** worked on analysing and presenting geographical data, particularly relating to bed occupancy and availability. He was responsible for preparing the map of number of staffed beds across Scotland. Tom also presented the conclusions on bed occupancy and staffed bed levels in the final presentation.
 
-Everyone worked on communication and collaboration as a team, sharing ideas and shaping the direction of the project. We discussed and agreed roles, plot themes, text sizes, and key ideas and conclusions to pursue. 
+**Everyone** worked on communication and collaboration as a team, sharing ideas and shaping the direction of the project. We discussed and agreed roles, plot themes, text sizes, and key ideas and conclusions to pursue. 
 
 # Brief description of dashboard topic
 
@@ -132,17 +132,17 @@ Last Update: June 17, 2020
 
 # Motivations for using the data you have chosen
 
-Admissions By Health Board, Age and Sex: We used this dataset to answer questions on the impact of Covid on provision of acute care relating to the number of admissions (one of our KPIs), as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also gave weekly statistics allowing us to look at the change over time, and impact of winter.
+**Admissions By Health Board, Age and Sex**: We used this dataset to answer questions on the impact of Covid on provision of acute care relating to the number of admissions (one of our KPIs), as it had demographic and geographic information relating to the number of hospital admissions compared to the pre-Covid average. It also gave weekly statistics allowing us to look at the change over time, and impact of winter.
 
-Activity by Board of Treatment, Age and Sex: We used this data to answer the impact of Covid on length of stay and number of admissions for different demographics as it contained information on hospital stays for different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
+**Activity by Board of Treatment, Age and Sex**: We used this data to answer the impact of Covid on length of stay and number of admissions for different demographics as it contained information on hospital stays for different ages and sexes. It also provided quarterly information so we could see how this issue has changed over time.
 
-Activity by Board of Treatment and Deprivation: We used this dataset to look at the impact of Covid on different demographics in terms of SIMD level.
+**Activity by Board of Treatment and Deprivation**: We used this dataset to look at the impact of Covid on different demographics in terms of SIMD level.
 
-Beds by Board of Treatment and Specialty: We used this dataset on both plots in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health board.
+**Beds by Board of Treatment and Specialty**: We used this dataset on both plots in our beds tabs to answer our KPI (Hospital beds availability) we used this because the dataset had quarterly information on hospital beds, it contained percentage occupancy which we used to show the percentage of bed occupancy over time and it also had information on all staffed beds which was used to plot our graph to show available beds by health board.
 
-Health Board Labels: We used this dataset on all cleaning scripts to help answer all KPI's we used this because our other datasets only gave us the health board code so this allowed us to plot everything with a Health board name which is understood by non-specialist audience.
+**Health Board Labels**: We used this dataset on all cleaning scripts to help answer all KPI's we used this because our other datasets only gave us the health board code so this allowed us to plot everything with a Health board name which is understood by non-specialist audience.
 
-Hospital Codes: We used this dataset on our available beds by health bored graph this helped us answer our KPI (Hospital beds availability) we used this because it gave us the latitude and longitude of each health board so we could plot our graph accurately.
+**Hospital Codes**: We used this dataset on our available beds by health bored graph this helped us answer our KPI (Hospital beds availability) we used this because it gave us the latitude and longitude of each health board so we could plot our graph accurately.
 
 # Data quality and potential bias, including a brief summary of data cleaning and transformations
 
