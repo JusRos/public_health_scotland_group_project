@@ -2,29 +2,42 @@
 title: "R Notebook"
 output: html_notebook
 ---
-
+Evidence for 2.3. Data transformations including data cleaning
+ 
 ```{r}
 library(tidyverse)
-library(ggplot2)
-library(skimr)
 library(lubridate)
-library(here)
 
-here:: here
-simd <- read_csv("../raw_data/inpatient_and_daycase_by_nhs_board_of_treatment_and_simd.csv")
+
+# read in data on nhs board and simd
+simd <- read_csv("../raw_data/acrivity_by_board_of_treatement_and_deprivation.csv")
+
+# read in data on health board codes
 hb_codes <- read_csv("../raw_data/health_board.csv") %>% select(HB, HBName)
-skim(simd)
+
+
+# as the original file contained range of aggregated data I needed to filter the results based on qualifier codes 
+#NA in HBQF meant that data was summarized down to quarter of a particular year per specific health board
+# !Na in Location QF meant that data was summarized on the health board level not the particular hospital level
 
 simd <- simd %>% 
   filter(is.na(HBQF)& !is.na(LocationQF)) %>% 
+  # focus only on elective and inpatient cases
   filter(AdmissionType == "Elective Inpatients" | AdmissionType == "Emergency Inpatients") %>%
+  #divide column Quarter to two separate ones Year and Quarter_single
   mutate(Year = substr(Quarter, 1, 4),
        Quarter_single = substr(Quarter, 5, 6))
 
-simd <-  left_join(simd, hb_codes, by = "HB") %>% simd <- simd %>% drop_na(SIMD)
 
+# join two tables SIMD and HB_codes to have names of different health boards in the HBNames column instead of not very meaningful codes.
+simd <-  left_join(simd, hb_codes, by = "HB") 
+
+# drop all nas in SIMD column 
+simd <- simd %>% drop_na(SIMD)
+
+# keep only columns that are of interest for further analysis
 simd <- simd %>% select(Quarter, Year, Quarter_single, HBName, AdmissionType, SIMD, Episodes, LengthOfEpisode, AverageLengthOfEpisode, Stays, LengthOfStay, AverageLengthOfStay)
 
-
+# write clean data
 write_csv(simd, file = "../clean_data/simd_clean.csv")
 ```
