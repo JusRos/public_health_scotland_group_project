@@ -22,7 +22,7 @@ age_and_sex %>% filter(HBName == "NHS Ayrshire and Arran" & Sex == "Male" & Age 
   ggplot(aes(x = Quarter, y = AverageLengthOfStay, group = AdmissionType, colour = AdmissionType)) +
   geom_point()+
   geom_line(size = 1)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 
 ```
@@ -82,10 +82,12 @@ theme(axis.text.x = element_text(hjust = 1, size = 12),
 Hospital admissions by gender
 
 ```{r}
-age_and_sex %>% filter(Sex == "Male" & admissionType == "Emergency" group_by(Quarter, Sex) %>% summarise(number_admissions = sum(Stays)) %>% 
+age_and_sex %>% 
+  filter(Sex == "Male" & admissionType == "Emergency Inpatient") %>%
+  group_by(Quarter, Sex) %>% summarise(number_admissions = sum(Stays)) %>% 
   ggplot()+
   geom_line(aes(x = Quarter, y = number_admissions, group = Sex, colour = Sex), size = 1.5)+
-theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
    labs(
     title = "Hospital Admissions by Gender"
   )
